@@ -3,7 +3,7 @@
 Este repositório contém o código-fonte do site institucional da **Ice Dream Produções**, empresa especializada em pistas de gelo real, patinação, hockey, curling e SlideCurl para eventos.
 
 ## 🔗 Site Live
-[icedream-producoes.com.br](https://icedream-producoes.com.br/) *(atualize quando estiver no ar)*
+[icedream-producoes.com.br](https://icedream-producoes.com.br/) 
 
 ---
 
