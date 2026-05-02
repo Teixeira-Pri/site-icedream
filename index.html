@@ -47,10 +47,8 @@
       --blue: #197AD2;
       --ice: #76C4F8;
       --white: #FAFCFF;
-      /* CORES COM CONTRASTE CORRIGIDO */
       --text-dark: #052C5C;
       --text-body: #1a3a5c;
-      --text-light: #2a4a6e;
     }
 
     html {
@@ -63,7 +61,7 @@
       color: var(--text-dark)
     }
 
-    /* SKIP TO CONTENT - PARA ACESSIBILIDADE */
+    /* SKIP TO CONTENT */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -111,29 +109,6 @@
       height: 72px
     }
 
-    .nav-logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1
-    }
-
-    .nav-logo-text strong {
-      font-family: 'DM Sans', sans-serif;
-      font-size: .95rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      color: var(--navy);
-      text-transform: uppercase
-    }
-
-    .nav-logo-text span {
-      font-size: .58rem;
-      font-weight: 400;
-      letter-spacing: .2em;
-      color: var(--blue);
-      text-transform: uppercase
-    }
-
     .nav-links {
       display: flex;
       gap: 2.2rem;
@@ -166,7 +141,7 @@
       background: var(--blue) !important
     }
 
-    /* HERO - CONTRASTE CORRIGIDO */
+    /* HERO */
     #hero {
       position: relative;
       min-height: 100vh;
@@ -188,7 +163,6 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(to right, rgba(5, 44, 92, 0.94) 38%, rgba(5, 44, 92, 0.50) 100%)
-      /* CONTRASTE CORRIGIDO: aumentado de 0.85 para 0.94 */
     }
 
     .hero-content {
@@ -204,7 +178,6 @@
       letter-spacing: .22em;
       text-transform: uppercase;
       color: #b8ddfc;
-      /* CONTRASTE CORRIGIDO: mais claro para contraste */
       margin-bottom: 1.4rem
     }
 
@@ -226,7 +199,6 @@
       font-size: 1rem;
       font-weight: 300;
       color: rgba(255, 255, 255, 0.92);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.7 para 0.92 */
       line-height: 1.8;
       max-width: 400px;
       margin-bottom: 2.6rem
@@ -296,7 +268,7 @@
       white-space: nowrap
     }
 
-    /* SECTION - CONTRASTE CORRIGIDO */
+    /* SECTION */
     .section-label {
       font-size: .7rem;
       font-weight: 500;
@@ -330,7 +302,7 @@
       margin-bottom: 3.5rem
     }
 
-    /* SERVIÇOS - CONTRASTE CORRIGIDO */
+    /* SERVIÇOS */
     #servicos {
       padding: 5rem 7%;
       overflow: visible
@@ -367,7 +339,6 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(5, 44, 92, 0.7) 0%, transparent 55%)
-      /* CONTRASTE CORRIGIDO: aumentado de 0.55 para 0.7 */
     }
 
     .svc-img-label {
@@ -394,7 +365,6 @@
       margin-bottom: .55rem
     }
 
-    /* CONTRASTE CORRIGIDO: texto dos serviços mais escuro */
     .svc-body p {
       font-size: .84rem;
       font-weight: 300;
@@ -403,7 +373,7 @@
       margin-bottom: 1rem
     }
 
-    /* BANNER - CONTRASTE CORRIGIDO */
+    /* BANNER */
     #banner {
       position: relative;
       height: 420px;
@@ -426,7 +396,6 @@
       position: absolute;
       inset: 0;
       background: rgba(5, 44, 92, 0.75);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.48 para 0.75 */
       z-index: 1;
     }
 
@@ -454,11 +423,10 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #b8ddfc;
-      /* CONTRASTE CORRIGIDO: mais claro */
       font-style: normal;
     }
 
-    /* COMO - CONTRASTE CORRIGIDO */
+    /* COMO */
     #como {
       padding: 5rem 7%;
       background: rgba(118, 196, 248, .04);
@@ -507,7 +475,6 @@
       margin-bottom: .35rem
     }
 
-    /* CONTRASTE CORRIGIDO: texto do step */
     .step p {
       font-size: .84rem;
       font-weight: 300;
@@ -535,7 +502,6 @@
 
     .aside-card>p {
       color: rgba(250, 252, 255, 0.85);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.55 para 0.85 */
       font-size: .88rem;
       line-height: 1.75
     }
@@ -566,7 +532,6 @@
       font-size: .84rem;
       font-weight: 300;
       color: rgba(250, 252, 255, 0.85);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.58 para 0.85 */
       line-height: 1.65
     }
 
@@ -575,7 +540,7 @@
       font-weight: 500
     }
 
-    /* CONTATO - CONTRASTE CORRIGIDO */
+    /* CONTATO */
     #contato {
       padding: 5rem 7%;
       display: grid;
@@ -595,7 +560,6 @@
 
     #contato .section-desc {
       color: rgba(250, 252, 255, 0.75);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.48 para 0.75 */
     }
 
     .contact-list {
@@ -608,7 +572,6 @@
     .ci {
       font-size: .84rem;
       color: rgba(250, 252, 255, 0.85);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.58 para 0.85 */
       display: flex;
       gap: .8rem;
       align-items: center
@@ -629,7 +592,6 @@
       margin-bottom: 1rem
     }
 
-    /* CONTRASTE CORRIGIDO: labels mais claras e legíveis */
     .fg label {
       font-size: .67rem;
       font-weight: 500;
@@ -720,13 +682,12 @@
       cursor: not-allowed;
     }
 
-    /* FOOTER - CONTRASTE CORRIGIDO */
+    /* FOOTER */
     footer {
       background: #031e3f;
       text-align: center;
       padding: 1.8rem 7%;
       color: rgba(250, 252, 255, 0.55);
-      /* CONTRASTE CORRIGIDO: aumentado de 0.26 para 0.55 */
       font-size: .78rem
     }
 
@@ -746,7 +707,7 @@
       transform: translateY(0)
     }
 
-    /* SLIDECURL - CONTRASTE CORRIGIDO */
+    /* SLIDECURL */
     #slidecurl {
       background: #052C5C;
       padding: 5rem 7%
@@ -870,7 +831,7 @@
       transform: translateY(-2px)
     }
 
-    /* DEPOIMENTOS - CONTRASTE CORRIGIDO */
+    /* DEPOIMENTOS */
     #depoimentos {
       padding: 5rem 7%;
       background: rgba(118, 196, 248, .04);
@@ -916,7 +877,6 @@
       line-height: 1
     }
 
-    /* CONTRASTE CORRIGIDO: texto do depoimento */
     .dep-text {
       font-size: .9rem;
       font-weight: 300;
@@ -943,7 +903,7 @@
       color: #5a7a9a
     }
 
-    /* FAQ - CONTRASTE CORRIGIDO */
+    /* FAQ */
     #faq {
       padding: 5rem 7%;
       background: #fff
@@ -1078,7 +1038,7 @@
       font-weight: 600
     }
 
-    /* ACESSIBILIDADE - FOCO VISÍVEL PARA TECLADO */
+    /* ACESSIBILIDADE */
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -1096,7 +1056,6 @@
       outline: none;
     }
 
-    /* SR ONLY - PARA LEITORES DE TELA */
     .sr-only {
       position: absolute;
       width: 1px;
@@ -1151,16 +1110,16 @@
 
 <body>
 
-  <!-- SKIP TO CONTENT - PARA NAVEGAÇÃO POR TECLADO -->
   <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">Pular para o conteúdo</a>
 
   <header>
     <nav role="navigation" aria-label="Navegação principal">
-      <a href="#hero" class="nav-logo" aria-label="Voltar à página inicial Ice Dream Produções">
+      <a href="index.html" class="nav-logo" aria-label="Voltar à página inicial Ice Dream Produções">
         <img src="images/logo.jpg" alt="Logo Ice Dream Produções" />
       </a>
       <ul class="nav-links">
         <li><a href="#servicos" aria-label="Ver nossos serviços de pistas de gelo" title="Ir para seção Serviços">Serviços</a></li>
+        <li><a href="/site-icedream/quem-somos.html" aria-label="Conheça nossa história e valores" title="Ir para página Quem Somos">Quem Somos</a></li>
         <li><a href="#como" aria-label="Entender como funciona nosso processo" title="Ir para seção Como Funciona">Como Funciona</a></li>
         <li><a href="#contato" class="nav-cta" aria-label="Solicitar orçamento para seu evento" title="Ir para formulário de contato">Orçamento</a></li>
       </ul>
