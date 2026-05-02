@@ -141,7 +141,7 @@
       background: var(--blue) !important
     }
 
-    /* HERO - CONTRASTE CORRIGIDO */
+    /* HERO */
     #hero {
       position: relative;
       min-height: 100vh;
@@ -540,7 +540,7 @@
       font-weight: 500
     }
 
-    /* CONTATO - FORMULÁRIO CORRIGIDO */
+    /* CONTATO */
     #contato {
       padding: 5rem 7%;
       display: grid;
@@ -1354,7 +1354,7 @@
         </address>
       </div>
       <div class="reveal">
-        <form aria-label="Formulário de solicitação de orçamento" novalidate>
+        <form aria-label="Formulário de solicitação de orçamento" id="contact-form" novalidate>
           <div id="form-live-region" aria-live="polite" class="sr-only"></div>
           <div class="row2">
             <div class="fg">
@@ -1412,20 +1412,37 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    (function () { emailjs.init('iW5F24j0Zpm3LSij3'); })();
+    (function () { 
+      emailjs.init('iW5F24j0Zpm3LSij3'); 
+    })();
 
-    document.querySelector('.btn-submit').addEventListener('click', function (e) {
+    // Função para enviar e-mail usando EmailJS
+    function sendEmail(formData) {
+      return emailjs.send('service_q4uv18l', 'template_2pebzcg', {
+        to_email: 'contato@icedream-producoes.com.br',  // 🔴 DESTINATÁRIO DEFINIDO AQUI!
+        from_name: formData.nome,
+        from_email: formData.email,
+        empresa: formData.empresa,
+        tipo_evento: formData.tipo,
+        modalidade: formData.modalidade,
+        mensagem: formData.mensagem,
+        'g-recaptcha-response': formData.recaptchaResponse
+      });
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      const btn = this;
-      const form = btn.closest('form');
-      const nome = form.querySelector('#nome').value;
-      const empresa = form.querySelector('#empresa').value;
-      const email = form.querySelector('#email').value;
-      const tipo = form.querySelector('#tipo-evento').value;
-      const modalidade = form.querySelector('#modalidade').value;
-      const mensagem = form.querySelector('#mensagem').value;
+      
+      const btn = this.querySelector('.btn-submit');
+      const nome = document.getElementById('nome').value.trim();
+      const empresa = document.getElementById('empresa').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const tipo = document.getElementById('tipo-evento').value;
+      const modalidade = document.getElementById('modalidade').value;
+      const mensagem = document.getElementById('mensagem').value.trim();
       const liveRegion = document.getElementById('form-live-region');
 
+      // Validação de campos obrigatórios
       if (!nome || !email || !mensagem) {
         liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
         liveRegion.setAttribute('aria-live', 'assertive');
@@ -1433,6 +1450,7 @@
         return;
       }
 
+      // Validação do reCAPTCHA
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
@@ -1444,32 +1462,41 @@
       btn.textContent = 'Enviando...';
       btn.disabled = true;
 
-      emailjs.send('service_q4uv18l', 'template_2pebzcg', {
-        name: nome,
+      const formData = {
+        nome: nome,
+        empresa: empresa,
         email: email,
-        telefone: empresa,
-        mensagem: `Empresa/Evento: ${empresa}\nTipo de Evento: ${tipo}\nModalidade: ${modalidade}\n\n${mensagem}`,
-        'g-recaptcha-response': recaptchaResponse
-      }).then(function (response) {
-        btn.textContent = 'Enviado com sucesso!';
-        btn.style.background = '#4CAF50';
-        liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
-        liveRegion.setAttribute('aria-live', 'polite');
-        setTimeout(() => {
-          form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-          grecaptcha.reset();
+        tipo: tipo,
+        modalidade: modalidade,
+        mensagem: mensagem,
+        recaptchaResponse: recaptchaResponse
+      };
+
+      sendEmail(formData)
+        .then(function () {
+          btn.textContent = 'Enviado com sucesso!';
+          btn.style.background = '#4CAF50';
+          liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
+          liveRegion.setAttribute('aria-live', 'polite');
+          
+          // Limpa o formulário
+          setTimeout(() => {
+            document.getElementById('contact-form').reset();
+            grecaptcha.reset();
+            btn.textContent = 'Enviar Solicitação';
+            btn.disabled = false;
+            btn.style.background = '';
+            liveRegion.textContent = '';
+          }, 5000);
+        })
+        .catch(function (error) {
+          console.error('Erro no EmailJS:', error);
+          liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
+          liveRegion.setAttribute('aria-live', 'assertive');
+          setTimeout(() => { liveRegion.textContent = ''; }, 5000);
           btn.textContent = 'Enviar Solicitação';
           btn.disabled = false;
-          btn.style.background = '';
-          liveRegion.textContent = '';
-        }, 5000);
-      }, function (error) {
-        liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
-        liveRegion.setAttribute('aria-live', 'assertive');
-        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
-        btn.textContent = 'Enviar Solicitação';
-        btn.disabled = false;
-      });
+        });
     });
 
     const obs = new IntersectionObserver(es => {
