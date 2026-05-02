@@ -1,303 +1,1507 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="Ba6gg1qSEbIR7GDlxSRLUzNih3UeQuwhwlZr3gO4U68">
-  <title>Ice Dream Produções | Pista de Gelo, Patinação, Hockey, Curling e SlideCurl</title>
-  <meta name="description" content="Ice Dream Produções: pista de patinação no gelo real, hockey, curling e SlideCurl. Atendemos todo o Brasil. Solicite orçamento!">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="Ba6gg1qSEbIR7GDlxSRLUzNih3UeQuwhwlZr3gO4U68" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <title>Ice Dream Produções | Pista de Gelo, Patinação, Hockey, Curling e SlideCurl para Eventos</title>
+  <meta name="description"
+    content="Ice Dream Produções: pista de patinação no gelo real, hockey, curling e SlideCurl para eventos. Atendemos festas, shoppings e ativações de marca em todo o Brasil. Solicite orçamento!">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://icedream-producoes.com.br/">
+  <meta property="og:title" content="Ice Dream Produções | Levamos o gelo para qualquer lugar">
+  <meta property="og:description" content="Pistas de gelo real, hockey, curling e SlideCurl. Levamos a magia do gelo até o seu evento em todo o Brasil.">
+  <meta property="og:image" content="https://icedream-producoes.com.br/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ice Dream Produções">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://icedream-producoes.com.br/">
+  <meta name="twitter:title" content="Ice Dream Produções | Experiências no Gelo para Eventos">
+  <meta name="twitter:description" content="Pistas de gelo real, hockey, curling e SlideCurl. Levamos a magia do gelo até o seu evento em todo o Brasil.">
+  <meta name="twitter:image" content="https://icedream-producoes.com.br/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
 
     :root {
       --navy: #052C5C;
       --blue: #197AD2;
       --ice: #76C4F8;
-      --white: #FFFFFF;
-      --gray-light: #F4F7FA;
+      --white: #FAFCFF;
+      --text-dark: #052C5C;
+      --text-body: #1a3a5c;
+    }
+
+    html {
+      scroll-behavior: smooth
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--white);
-      color: #111;
-      line-height: 1.5;
+      color: var(--text-dark)
     }
 
-    /* SKIP LINK */
+    /* SKIP TO CONTENT */
     .skip-link {
       position: absolute;
       top: -40px;
       left: 0;
-      background: #000;
-      color: #fff;
+      background: var(--navy);
+      color: var(--white);
       padding: 8px 16px;
-      z-index: 100;
       text-decoration: none;
+      z-index: 999;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: top 0.2s;
     }
-    .skip-link:focus { top: 0; }
 
-    /* NAVEGAÇÃO */
+    .skip-link:focus-visible {
+      top: 0;
+      outline: 3px solid var(--ice);
+      outline-offset: 0;
+    }
+
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
+      left: 0;
+      right: 0;
+      z-index: 100;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1rem 5%;
-      z-index: 99;
-      border-bottom: 1px solid #ddd;
+      justify-content: space-between;
+      padding: 1.2rem 7%;
+      background: rgba(250, 252, 255, 0.98);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(5, 44, 92, .08)
     }
-    .nav-logo img { height: 60px; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #052C5C;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .nav-cta { background: #052C5C; color: white !important; padding: 0.5rem 1.2rem; border-radius: 30px; }
 
-    /* HERO - CONTRASTE CORRIGIDO (Fundo escuro e texto claro) */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none
+    }
+
+    .nav-logo img {
+      height: 72px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--blue)
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: .55rem 1.4rem;
+      border-radius: 2px;
+      transition: background .2s !important
+    }
+
+    .nav-cta:hover {
+      background: var(--blue) !important
+    }
+
+    /* HERO - CONTRASTE CORRIGIDO */
     #hero {
       position: relative;
-      min-height: 90vh;
-      background: linear-gradient(135deg, #021a36 0%, #0a3a6b 100%);
+      min-height: 100vh;
       display: flex;
-      align-items: center;
-      padding: 8rem 5% 5rem;
-      margin-top: 70px;
+      align-items: flex-end;
+      overflow: hidden
     }
-    .hero-content { max-width: 600px; }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url(images/hero.png);
+      background-size: cover;
+      background-position: center top
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(5, 44, 92, 0.94) 38%, rgba(5, 44, 92, 0.50) 100%)
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 7% 6rem;
+      max-width: 600px
+    }
+
     .hero-eyebrow {
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      color: #FFD966;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .22em;
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      color: #b8ddfc;
+      margin-bottom: 1.4rem
     }
+
     .hero-content h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4.2rem;
-      font-weight: 600;
-      color: white;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
+      font-weight: 300;
+      font-size: clamp(3.2rem, 6.5vw, 6rem);
+      line-height: 1.02;
+      color: #FFFFFF;
+      margin-bottom: 1.6rem
     }
-    .hero-content h1 em { color: #FFD966; font-style: italic; }
+
+    .hero-content h1 em {
+      font-style: italic;
+      color: #a8d9fc
+    }
+
     .hero-desc {
-      font-size: 1.1rem;
-      color: #E0E0E0;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.8;
+      max-width: 400px;
+      margin-bottom: 2.6rem
     }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
     .btn-primary {
-      background: #FFD966;
-      color: #021a36;
-      padding: 0.8rem 2rem;
-      border-radius: 40px;
+      background: var(--ice);
+      color: var(--navy);
+      padding: .85rem 2.2rem;
       text-decoration: none;
-      font-weight: bold;
-      margin-right: 1rem;
-      display: inline-block;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background .2s
     }
+
+    .btn-primary:hover {
+      background: #a8d9fc
+    }
+
     .btn-ghost {
-      border: 2px solid white;
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: #FFFFFF;
+      padding: .85rem 2.2rem;
       text-decoration: none;
+      font-size: .82rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: border-color .2s
+    }
+
+    .btn-ghost:hover {
+      border-color: #FFFFFF
+    }
+
+    /* DIVIDER */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 7%;
+      margin: 4rem 0
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(5, 44, 92, .15)
+    }
+
+    .divider-text {
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #4a6a8a;
+      white-space: nowrap
+    }
+
+    /* SECTION */
+    .section-label {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #197AD2;
+      margin-bottom: .7rem
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--navy);
+      line-height: 1.08
+    }
+
+    .section-title em {
+      font-style: italic
+    }
+
+    .section-desc {
+      font-size: .9rem;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-top: .8rem
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem
+    }
+
+    /* SERVIÇOS */
+    #servicos {
+      padding: 5rem 7%;
+      overflow: visible
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .svc {
+      border: 1px solid rgba(5, 44, 92, .09);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: box-shadow .35s, transform .35s;
+      background: var(--white)
+    }
+
+    .svc:hover {
+      box-shadow: 0 16px 48px rgba(5, 44, 92, .13);
+      transform: translateY(-5px)
+    }
+
+    .svc-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      position: relative
+    }
+
+    .svc-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5, 44, 92, 0.7) 0%, transparent 55%)
+    }
+
+    .svc-img-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.2rem;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #FFFFFF;
+      letter-spacing: .04em
+    }
+
+    .svc-body {
+      padding: 1.7rem
+    }
+
+    .svc-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: .55rem
+    }
+
+    .svc-body p {
+      font-size: .84rem;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.72;
+      margin-bottom: 1rem
     }
 
     /* BANNER */
     #banner {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/banner_texto.png');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      padding: 5rem 1rem;
-      color: white;
-    }
-    .banner-content blockquote {
-      font-size: 2.5rem;
-      font-family: 'Cormorant Garamond', serif;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .banner-content cite { color: #FFD966; margin-top: 1rem; display: block; }
-
-    /* SERVIÇOS - CARDS COM ALTO CONTRASTE */
-    .container { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .svc {
-      background: white;
-      border-radius: 16px;
+      position: relative;
+      height: 420px;
+      display: flex;
+      align-items: center;
       overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      border: 1px solid #e0e0e0;
     }
-    .svc-img { height: 220px; background-size: cover; background-position: center; }
-    .svc-body { padding: 1.5rem; }
-    .svc-body h3 { color: #052C5C; margin-bottom: 0.5rem; }
-    .svc-body p { color: #2c3e50; line-height: 1.6; } /* Texto escuro sobre fundo claro */
 
-    /* FORMULÁRIO - 100% ACESSÍVEL */
-    .form-group {
-      margin-bottom: 1.5rem;
+    .banner-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 44, 92, 0.75);
+      z-index: 1;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 7%;
+    }
+
+    .banner-content blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      color: #FFFFFF;
+      line-height: 1.08;
+      max-width: 680px;
+    }
+
+    .banner-content cite {
+      display: block;
+      margin-top: 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b8ddfc;
+      font-style: normal;
+    }
+
+    /* COMO */
+    #como {
+      padding: 5rem 7%;
+      background: rgba(118, 196, 248, .04);
+      border-top: 1px solid rgba(5, 44, 92, .06);
+      border-bottom: 1px solid rgba(5, 44, 92, .06)
+    }
+
+    .como-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 1.4rem;
+      align-items: start;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(5, 44, 92, .07)
+    }
+
+    .step:last-child {
+      border-bottom: none
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--ice);
+      line-height: 1
+    }
+
+    .step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: .35rem
+    }
+
+    .step p {
+      font-size: .84rem;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.7
+    }
+
+    .aside-card {
+      background: var(--navy);
+      padding: 2.8rem;
+      border-radius: 3px;
+      position: sticky;
+      top: 6rem
+    }
+
+    .aside-card .big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: #a8d9fc;
+      line-height: 1;
+      display: block;
+      margin-bottom: .8rem
+    }
+
+    .aside-card>p {
+      color: rgba(250, 252, 255, 0.85);
+      font-size: .88rem;
+      line-height: 1.75
+    }
+
+    .dif-list {
       display: flex;
       flex-direction: column;
-    }
-    label {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #052C5C;
-    }
-    .required-star { color: #e74c3c; margin-left: 4px; }
-    input, select, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: inherit;
-    }
-    button {
-      background: #052C5C;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 40px;
-      font-weight: bold;
-      cursor: pointer;
+      gap: 1.4rem;
+      margin-top: 1.8rem
     }
 
-    @media (max-width: 800px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .hero-content h1 { font-size: 2.8rem; }
+    .dif-item {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start
+    }
+
+    .dif-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--ice);
+      flex-shrink: 0;
+      margin-top: 7px
+    }
+
+    .dif-item p {
+      font-size: .84rem;
+      font-weight: 300;
+      color: rgba(250, 252, 255, 0.85);
+      line-height: 1.65
+    }
+
+    .dif-item strong {
+      color: #FFFFFF;
+      font-weight: 500
+    }
+
+    /* CONTATO - FORMULÁRIO CORRIGIDO */
+    #contato {
+      padding: 5rem 7%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      background: var(--navy)
+    }
+
+    #contato .section-label {
+      color: #a8d9fc;
+    }
+
+    #contato .section-title {
+      color: #FFFFFF
+    }
+
+    #contato .section-desc {
+      color: rgba(250, 252, 255, 0.75);
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem
+    }
+
+    .ci {
+      font-size: .84rem;
+      color: rgba(250, 252, 255, 0.85);
+      display: flex;
+      gap: .8rem;
+      align-items: center
+    }
+
+    .ci-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--ice);
+      flex-shrink: 0
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1rem
+    }
+
+    .fg label {
+      font-size: .67rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #b8ddfc;
+    }
+
+    .fg label.required::after {
+      content: " *";
+      color: #ffb347;
+      display: inline-block;
+    }
+
+    .fg label.optional::after {
+      content: " (opcional)";
+      color: rgba(184, 221, 252, 0.7);
+      font-size: 0.6rem;
+      font-weight: normal;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .fg input,
+    .fg textarea,
+    .fg select {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(118, 196, 248, .35);
+      border-radius: 2px;
+      padding: .75rem 1rem;
+      color: #FFFFFF;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .88rem;
+      outline: none;
+      width: 100%;
+      transition: border-color .2s
+    }
+
+    .fg input:focus,
+    .fg textarea:focus,
+    .fg select:focus {
+      border-color: var(--ice)
+    }
+
+    .fg input::placeholder,
+    .fg textarea::placeholder {
+      color: rgba(250, 252, 255, 0.45)
+    }
+
+    .fg textarea {
+      resize: vertical;
+      min-height: 90px
+    }
+
+    .fg select option {
+      background: var(--navy)
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--ice);
+      color: var(--navy);
+      border: none;
+      border-radius: 2px;
+      padding: .9rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: .3rem
+    }
+
+    .btn-submit:hover {
+      background: #a8d9fc
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #031e3f;
+      text-align: center;
+      padding: 1.8rem 7%;
+      color: rgba(250, 252, 255, 0.55);
+      font-size: .78rem
+    }
+
+    footer strong {
+      color: var(--ice)
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s, transform .7s
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* SLIDECURL */
+    #slidecurl {
+      background: #052C5C;
+      padding: 5rem 7%
+    }
+
+    .sc-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem
+    }
+
+    .sc-label {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #a8d9fc;
+      margin-bottom: .9rem
+    }
+
+    .sc-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.08;
+      color: #FFFFFF
+    }
+
+    .sc-header h3 em {
+      font-style: italic;
+      color: var(--ice)
+    }
+
+    .sc-desc {
+      font-size: .9rem;
+      font-weight: 300;
+      color: rgba(250, 252, 255, 0.85);
+      line-height: 1.85;
+      margin-top: 1rem
+    }
+
+    .sc-desc strong {
+      color: #FFFFFF;
+      font-weight: 500
+    }
+
+    .sc-image-wrap {
+      margin: 0 auto 3rem
+    }
+
+    .sc-main-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      object-fit: cover
+    }
+
+    .sc-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(118, 196, 248, .25);
+      margin-bottom: 3rem
+    }
+
+    .sc-step {
+      padding: 2rem 2rem 2rem 0;
+      border-right: 1px solid rgba(118, 196, 248, .15)
+    }
+
+    .sc-step:last-child {
+      border-right: none;
+      padding-right: 0
+    }
+
+    .sc-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: rgba(118, 196, 248, 0.45);
+      line-height: 1;
+      margin-bottom: .6rem
+    }
+
+    .sc-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-bottom: .4rem
+    }
+
+    .sc-step p {
+      font-size: .82rem;
+      font-weight: 300;
+      color: rgba(250, 252, 255, 0.8);
+      line-height: 1.7
+    }
+
+    .sc-foot {
+      text-align: center;
+      padding: 1rem 0 2rem
+    }
+
+    .sc-cta {
+      display: inline-block;
+      background: var(--ice);
+      color: var(--navy);
+      padding: 1rem 2.8rem;
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      transition: background .2s, transform .2s;
+      white-space: nowrap
+    }
+
+    .sc-cta:hover {
+      background: #a8d9fc;
+      transform: translateY(-2px)
+    }
+
+    /* DEPOIMENTOS */
+    #depoimentos {
+      padding: 5rem 7%;
+      background: rgba(118, 196, 248, .04);
+      border-top: 1px solid rgba(5, 44, 92, .06);
+      border-bottom: 1px solid rgba(5, 44, 92, .06)
+    }
+
+    #depoimentos .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem
+    }
+
+    #depoimentos .section-header .section-title {
+      color: var(--navy)
+    }
+
+    .dep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .dep-card {
+      background: var(--white);
+      border: 1px solid rgba(5, 44, 92, .09);
+      border-radius: 3px;
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: box-shadow .3s, transform .3s
+    }
+
+    .dep-card:hover {
+      box-shadow: 0 12px 40px rgba(5, 44, 92, .1);
+      transform: translateY(-4px)
+    }
+
+    .dep-quote {
+      font-size: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--ice);
+      line-height: 1
+    }
+
+    .dep-text {
+      font-size: .9rem;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.8;
+      flex: 1
+    }
+
+    .dep-author {
+      border-top: 1px solid rgba(5, 44, 92, .08);
+      padding-top: 1rem
+    }
+
+    .dep-author strong {
+      display: block;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--navy)
+    }
+
+    .dep-author span {
+      font-size: .78rem;
+      font-weight: 300;
+      color: #5a7a9a
+    }
+
+    /* FAQ */
+    #faq {
+      padding: 5rem 7%;
+      background: #fff
+    }
+
+    #faq .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem
+    }
+
+    .faq-item {
+      border: 1px solid rgba(5, 44, 92, .15);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow .2s
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 20px rgba(5, 44, 92, .08)
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      padding: 1.3rem 1.6rem;
+      cursor: pointer;
+      text-align: left;
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      gap: 1.2rem;
+      line-height: 1.4;
+      transition: background .2s
+    }
+
+    .faq-q:hover {
+      background: rgba(5, 44, 92, .03)
+    }
+
+    .faq-q.open {
+      background: rgba(5, 44, 92, .05)
+    }
+
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      border: 1.5px solid rgba(5, 44, 92, .3);
+      border-radius: 50%;
+      position: relative;
+      transition: border-color .2s, background .2s
+    }
+
+    .faq-q.open .faq-icon {
+      background: var(--navy);
+      border-color: var(--navy)
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s
+    }
+
+    .faq-q.open .faq-icon::before,
+    .faq-q.open .faq-icon::after {
+      background: #fff
+    }
+
+    .faq-icon::before {
+      width: 10px;
+      height: 1.5px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .faq-icon::after {
+      width: 1.5px;
+      height: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .faq-q.open .faq-icon::after {
+      transform: translate(-50%, -50%) scaleY(0);
+      opacity: 0
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .38s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .faq-a.open {
+      max-height: 500px
+    }
+
+    .faq-a-inner {
+      padding: 0 1.6rem 1.4rem 1.6rem;
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.85;
+      border-top: 1px solid rgba(5, 44, 92, .1)
+    }
+
+    .faq-a-inner p {
+      padding-top: 1rem
+    }
+
+    .faq-a-inner strong {
+      color: var(--navy);
+      font-weight: 600
+    }
+
+    /* ACESSIBILIDADE - FOCO VISÍVEL */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible,
+    [role="button"]:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid var(--ice);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    @media(max-width:800px) {
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .como-grid {
+        grid-template-columns: 1fr
+      }
+
+      #contato {
+        grid-template-columns: 1fr;
+        gap: 3rem
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .row2 {
+        grid-template-columns: 1fr
+      }
+
+      .dep-grid {
+        grid-template-columns: 1fr
+      }
+
+      .sc-cta {
+        white-space: normal;
+        font-size: .78rem;
+        padding: .9rem 1.5rem;
+        letter-spacing: .06em;
+        display: block;
+        text-align: center;
+        max-width: 100%;
+        box-sizing: border-box
+      }
     }
   </style>
 </head>
+
 <body>
 
-<a href="#main-content" class="skip-link">Ir para o conteúdo</a>
+  <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">Pular para o conteúdo</a>
 
-<header>
-  <nav>
-    <a href="#hero" class="nav-logo"><img src="images/logo.jpg" alt="Ice Dream Produções - Logotipo"></a>
-    <ul class="nav-links">
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="https://teixeira-pri.github.io/site-icedream/quem-somos.html">Quem Somos</a></li>
-      <li><a href="#como">Como Funciona</a></li>
-      <li><a href="#contato" class="nav-cta">Orçamento</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav role="navigation" aria-label="Navegação principal">
+      <a href="#hero" class="nav-logo" aria-label="Voltar à página inicial Ice Dream Produções">
+        <img src="images/logo.jpg" alt="Logo Ice Dream Produções" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicos" aria-label="Ver nossos serviços de pistas de gelo" title="Ir para seção Serviços">Serviços</a></li>
+        <li><a href="https://teixeira-pri.github.io/site-icedream/quem-somos.html" aria-label="Conheça nossa história e valores" title="Ir para página Quem Somos">Quem Somos</a></li>
+        <li><a href="#como" aria-label="Entender como funciona nosso processo" title="Ir para seção Como Funciona">Como Funciona</a></li>
+        <li><a href="#contato" class="nav-cta" aria-label="Solicitar orçamento para seu evento" title="Ir para formulário de contato">Orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main id="main-content">
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">LEVAMOS O GELO PARA QUALQUER LUGAR</p>
-      <h1>Gelo que <em>transforma</em> eventos</h1>
-      <p class="hero-desc">Instalamos e operamos pistas de gelo real ou adaptado. Inovação, segurança e alto impacto para o seu evento.</p>
-      <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
-      <a href="#servicos" class="btn-ghost">Ver Serviços</a>
+  <main id="main-content">
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" role="img" aria-label="Pista de gelo profissional iluminada, transmitindo atmosfera noturna e acolhedora.">
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Levamos o gelo para qualquer lugar</p>
+        <h1 id="hero-title">Gelo que <em>transforma</em> eventos</h1>
+        <p class="hero-desc">Instalamos e operamos pistas e experiências com gelo real ou adaptado, transformando qualquer espaço em uma atração interativa, inclusiva e de alto impacto. Mais do que uma estrutura, entregamos experiências que engajam, conectam e marcam.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn-primary" aria-label="Preencher formulário e solicitar orçamento personalizado">Solicitar Orçamento</a>
+          <a href="#servicos" class="btn-ghost" aria-label="Conhecer todos os nossos serviços">Ver Serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator">
+      <div class="divider-line"></div><span class="divider-text">O que oferecemos</span>
+      <div class="divider-line"></div>
     </div>
-  </section>
 
-  <!-- BANNER -->
-  <section id="banner">
-    <div class="banner-content">
-      <blockquote>Tudo começa com o gelo.</blockquote>
-      <cite>Ice Dream — Experiências no gelo para eventos em todo o Brasil</cite>
-    </div>
-  </section>
+    <section id="banner" aria-labelledby="banner-quote">
+      <img src="images/banner_texto.png" alt="Frase: Tudo começa com o gelo, em fundo com textura de gelo." class="banner-bg-image">
+      <div class="banner-overlay"></div>
+      <div class="banner-content reveal">
+        <blockquote id="banner-quote">Tudo começa com o gelo.</blockquote>
+        <cite>Ice Dream — Experiências no gelo para eventos em todo o Brasil</cite>
+      </div>
+    </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="container">
-    <h2 style="font-size: 2.5rem;">Três formas de levar <em>o gelo ao seu evento</em></h2>
-    <div class="services-grid">
-      <div class="svc">
-        <div class="svc-img" style="background-image: url('images/patinacao.png');"></div>
-        <div class="svc-body"><h3>Patinação no Gelo</h3><p>Pista completa com patins e monitores. Diversão garantida para todas as idades.</p></div>
+    <section id="servicos" aria-labelledby="servicos-title">
+      <div class="section-header reveal">
+        <p class="section-label">Serviços</p>
+        <h2 id="servicos-title">Três formas de levar<br><em>o gelo ao seu evento</em></h2>
+        <p class="section-desc">Gelo real ou adaptado, temos solução para qualquer espaço e porte de evento.</p>
       </div>
-      <div class="svc">
-        <div class="svc-img" style="background-image: url('images/hockey.png');"></div>
-        <div class="svc-body"><h3>Hockey no Gelo</h3><p>Adrenalina pura! Monte times e transforme seu evento em uma verdadeira arena esportiva.</p></div>
+      <div class="services-grid">
+        <article class="svc reveal">
+          <div class="svc-img" style="background-image:url('images/patinacao.png')" role="img" aria-label="Pessoa patinando no gelo em pista iluminada.">
+            <span class="svc-img-label" aria-hidden="true">Patinação</span>
+          </div>
+          <div class="svc-body">
+            <h3>Patinação no Gelo</h3>
+            <p>Deslizar pelo gelo pela primeira vez é uma experiência que marca. Levamos uma pista completa ao seu evento, criando um ambiente onde as pessoas se divertem e permanecem por muito mais tempo.</p>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-img" style="background-image:url('images/hockey.png')" role="img" aria-label="Puck de hockey iluminado sobre pista de gelo.">
+            <span class="svc-img-label" aria-hidden="true">Hockey</span>
+          </div>
+          <div class="svc-body">
+            <h3>Hockey no Gelo</h3>
+            <p>Velocidade, adrenalina e espírito de equipe. O hockey transforma o espaço em um verdadeiro espetáculo, envolvendo o público do início ao fim, mesmo quem nunca jogou se conecta na primeira jogada.</p>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-img" style="background-image:url('images/curling.png')" role="img" aria-label="Pista de curling com círculos de alvo vermelho e azul.">
+            <span class="svc-img-label" aria-hidden="true">Curling</span>
+          </div>
+          <div class="svc-body">
+            <h3>Curling no Gelo</h3>
+            <p>Precisão, estratégia e trabalho em equipe. O curling surpreende pela simplicidade e conquista pela experiência: fácil de aprender, envolvente de jogar e perfeito para gerar interação entre os participantes.</p>
+          </div>
+        </article>
       </div>
-      <div class="svc">
-        <div class="svc-img" style="background-image: url('images/curling.png');"></div>
-        <div class="svc-body"><h3>Curling no Gelo</h3><p>Estratégia e precisão. Uma experiência olímpica acessível para todos.</p></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMO FUNCIONA -->
-  <section id="como" class="container" style="background: #f8fafc;">
-    <h2>Como <em>funciona</em></h2>
-    <ol>
-      <li><strong>Contato e Briefing:</strong> Entendemos seu evento e espaço.</li>
-      <li><strong>Proposta Personalizada:</strong> Enviamos um plano completo.</li>
-      <li><strong>Montagem e Operação:</strong> Cuidamos de tudo.</li>
-      <li><strong>Experiência Memorável:</strong> Seu público vive a magia do gelo.</li>
-    </ol>
-  </section>
+    <section id="slidecurl" aria-labelledby="slidecurl-title">
+      <div class="sc-header reveal">
+        <p class="sc-label">Experiência Adaptada</p>
+        <h3 id="slidecurl-title">Curling sem gelo?<br><em>É o SlideCurl.</em></h3>
+        <p class="sc-desc">O <strong>SlideCurl</strong> é uma experiência interativa inspirada no curling, onde os participantes deslizam pedras até um alvo, combinando precisão, estratégia e diversão, tudo isso sem precisar de gelo.</p>
+      </div>
+      <div class="sc-image-wrap reveal">
+        <img src="images/slidecurl.png" alt="Pista indoor de SlideCurl com alvo de curling em azul e vermelho, pedras com rodinhas e participantes jogando." class="sc-main-img" />
+      </div>
+      <div class="sc-steps">
+        <div class="sc-step reveal">
+          <div class="sc-step-num" aria-hidden="true">01</div>
+          <div>
+            <h4>Pista portátil</h4>
+            <p>Montada rapidamente em qualquer espaço coberto, salão, lobby ou área indoor. Sem obras ou infraestrutura especial.</p>
+          </div>
+        </div>
+        <div class="sc-step reveal">
+          <div class="sc-step-num" aria-hidden="true">02</div>
+          <div>
+            <h4>Pedras com rodinhas</h4>
+            <p>As pedras de curling são adaptadas com rodinhas que deslizam suavemente, reproduzindo o movimento real do esporte.</p>
+          </div>
+        </div>
+        <div class="sc-step reveal">
+          <div class="sc-step-num" aria-hidden="true">03</div>
+          <div>
+            <h4>Público participa</h4>
+            <p>Qualquer pessoa joga em minutos, crianças, adultos, idosos. Interativo, competitivo e com engajamento imediato.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sc-foot reveal">
+        <a href="#contato" class="sc-cta" aria-label="Entrar em contato para contratar SlideCurl no seu evento">Quero essa experiência no meu evento</a>
+      </div>
+    </section>
 
-  <!-- CONTATO - FORMULÁRIO 100% CORRIGIDO -->
-  <section id="contato" class="container">
-    <h2>Vamos criar algo <em>inesquecível?</em></h2>
-    <form action="#" method="post">
-      <div class="form-group">
-        <label for="nome">Nome <span class="required-star" aria-hidden="true">*</span></label>
-        <input type="text" id="nome" name="nome" required aria-required="true">
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="section-header reveal">
+        <p class="section-label">Dúvidas</p>
+        <h2 id="faq-title">Perguntas <em>Frequentes</em></h2>
+        <p class="section-desc">Tudo o que você precisa saber antes de levar o gelo ao seu evento.</p>
       </div>
-      <div class="form-group">
-        <label for="empresa">Empresa</label>
-        <input type="text" id="empresa" name="empresa">
+      <div class="faq-list" role="list">
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq1" aria-label="Pergunta: Precisa de gelo de verdade para as atrações? Clique para expandir"><span>Precisa de gelo de verdade para as atrações?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq1" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Não. Nossas experiências, como o SlideCurl, foram desenvolvidas para funcionar sem gelo real, garantindo praticidade, segurança e instalação em diversos ambientes.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq2" aria-label="Pergunta: A pista de gelo é real? Clique para expandir"><span>A pista de gelo é real?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq2" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Sim. Oferecemos também experiências com gelo real, como patinação, curling e hockey, criando um ambiente imersivo e de alto impacto.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq3" aria-label="Pergunta: Quanto espaço é necessário? Clique para expandir"><span>Quanto espaço é necessário?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq3" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>O espaço varia conforme a atração escolhida. Adaptamos cada projeto de acordo com o ambiente disponível, desde espaços compactos até grandes áreas para eventos.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq4" aria-label="Pergunta: Qualquer pessoa pode participar? Clique para expandir"><span>Qualquer pessoa pode participar?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq4" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Sim. As atividades são pensadas para serem acessíveis e intuitivas, permitindo a participação de pessoas de diferentes idades e níveis de habilidade.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq5" aria-label="Pergunta: Vocês oferecem suporte durante o evento? Clique para expandir"><span>Vocês oferecem suporte durante o evento?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq5" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Sim. Nossa equipe acompanha toda a experiência, orientando os participantes, garantindo a segurança e o bom funcionamento das atividades.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq6" aria-label="Pergunta: É seguro? Clique para expandir"><span>É seguro?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq6" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Sim. Todas as atividades seguem protocolos de segurança e contam com orientação profissional para garantir uma experiência tranquila e segura.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq7" aria-label="Pergunta: Em quais tipos de eventos a Ice Dream pode atuar? Clique para expandir"><span>Em quais tipos de eventos a Ice Dream pode atuar?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq7" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Eventos recreativos, corporativos e institucionais, escolas, universidades, condomínios, hotéis, feiras, ativações de marca e produções de TV. Se você tem uma ideia diferente, a gente adapta, criamos experiências sob medida para o seu evento.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq8" aria-label="Pergunta: É possível personalizar a experiência? Clique para expandir"><span>É possível personalizar a experiência?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq8" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Sim. Adaptamos a dinâmica, o formato e até a identidade visual da atração de acordo com o objetivo do evento.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq9" aria-label="Pergunta: Vocês atendem em todo o Brasil? Clique para expandir"><span>Vocês atendem em todo o Brasil?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq9" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Sim. Avaliamos cada projeto para oferecer a melhor solução logística conforme a localização do evento.</p></div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq10" aria-label="Pergunta: Como contratar? Clique para expandir"><span>Como contratar?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq10" role="region" aria-hidden="true">
+            <div class="faq-a-inner"><p>Basta entrar em contato pelo e-mail contato@icedream-producoes.com.br ou através do botão "Orçamento" neste site. Nossa equipe irá entender sua necessidade e desenvolver uma proposta personalizada para o seu evento.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email">E-mail <span class="required-star" aria-hidden="true">*</span></label>
-        <input type="email" id="email" name="email" required aria-required="true">
-      </div>
-      <div class="form-group">
-        <label for="tipo-evento">Tipo de Evento</label>
-        <select id="tipo-evento" name="tipo-evento">
-          <option value="">Selecione...</option>
-          <option>Corporativo</option>
-          <option>Festa Privada</option>
-          <option>Shopping</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="mensagem">Mensagem <span class="required-star" aria-hidden="true">*</span></label>
-        <textarea id="mensagem" name="mensagem" required aria-required="true"></textarea>
-      </div>
-      <!-- RECAPTCHA COM LABEL OCULTO PARA ACESSIBILIDADE (Corrige o erro do WAVE) -->
-      <div class="form-group">
-        <span id="recaptcha-label" class="sr-only">Verificação reCAPTCHA - Clique no checkbox para confirmar que você não é um robô</span>
-        <div class="g-recaptcha" data-sitekey="6Leuy9UsAAAAALq6jNal6-ZFZSnFFmnMgIF6Al2i" aria-labelledby="recaptcha-label"></div>
-      </div>
-      <button type="submit">Enviar Solicitação</button>
-    </form>
-  </section>
-</main>
+    </section>
 
-<footer style="text-align: center; padding: 2rem; background: #021a36; color: white;">
-  <p>© 2025 Ice Dream Produções Esportivas — Experiências no gelo em todo o Brasil.</p>
-  <p>contato@icedream-producoes.com.br | @icedream.producoes</p>
-</footer>
+    <section id="como" aria-labelledby="como-title">
+      <div class="como-grid">
+        <div>
+          <div class="section-header reveal">
+            <p class="section-label">Processo</p>
+            <h2 id="como-title">Como <em>funciona</em></h2>
+            <p class="section-desc">Do primeiro contato à experiência completa, cuidamos de cada etapa.</p>
+          </div>
+          <ol class="steps">
+            <li class="step reveal"><div class="step-num" aria-hidden="true">01</div><div><h4>Contato e Briefing</h4><p>Entendemos o seu evento, espaço disponível, público, datas e objetivos.</p></div></li>
+            <li class="step reveal"><div class="step-num" aria-hidden="true">02</div><div><h4>Proposta Personalizada</h4><p>Elaboramos proposta com modalidades, estrutura e investimento, sem surpresas.</p></div></li>
+            <li class="step reveal"><div class="step-num" aria-hidden="true">03</div><div><h4>Montagem e Operação</h4><p>Nossa equipe cuida de toda a instalação, operação e desmontagem ao final.</p></div></li>
+            <li class="step reveal"><div class="step-num" aria-hidden="true">04</div><div><h4>Experiência Memorável</h4><p>Público engajado, surpreso e com memórias que ficam, resultado garantido.</p></div></li>
+          </ol>
+        </div>
+        <aside>
+          <div class="aside-card reveal" aria-labelledby="stats-title">
+            <span class="big" id="stats-title">+50</span>
+            <p>eventos realizados em todo o Brasil</p>
+            <ul class="dif-list">
+              <li class="dif-item"><div class="dif-dot" aria-hidden="true"></div><p><strong>Alto Impacto Visual.</strong> Uma pista de gelo atrai atenção e gera conteúdo espontâneo.</p></li>
+              <li class="dif-item"><div class="dif-dot" aria-hidden="true"></div><p><strong>Engajamento Real.</strong> O público participa, ativações criam memórias afetivas com a sua marca.</p></li>
+              <li class="dif-item"><div class="dif-dot" aria-hidden="true"></div><p><strong>Flexibilidade.</strong> Gelo real ou adaptado, indoor ou outdoor, solução para qualquer ambiente.</p></li>
+              <li class="dif-item"><div class="dif-dot" aria-hidden="true"></div><p><strong>Operação Completa.</strong> Montagem, equipe e desmontagem por nossa conta.</p></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <section id="depoimentos" aria-labelledby="depoimentos-title">
+      <div class="section-header reveal">
+        <p class="section-label">Depoimentos</p>
+        <h2 id="depoimentos-title">O que nossos clientes dizem</h2>
+      </div>
+      <div class="dep-grid">
+        <article class="dep-card reveal"><div class="dep-quote" aria-hidden="true">"</div><p class="dep-text">A ICE DREAM transformou nosso evento corporativo em uma experiência inesquecível. A pista de gelo foi o ponto alto da festa e todos os colaboradores ficaram encantados.</p><div class="dep-author"><strong>Mariana Costa</strong><span>Diretora de Eventos</span></div></article>
+        <article class="dep-card reveal"><div class="dep-quote" aria-hidden="true">"</div><p class="dep-text">Instalamos a pista de patinação no nosso evento e o resultado superou todas as expectativas. A equipe técnica é extremamente profissional e o suporte é impecável.</p><div class="dep-author"><strong>Roberto Almeida</strong><span>Gerente Comercial</span></div></article>
+        <article class="dep-card reveal"><div class="dep-quote" aria-hidden="true">"</div><p class="dep-text">A qualidade e segurança das pistas da ICE DREAM são incomparáveis. Uma atração que encanta pessoas de todas as idades, superamos as expectativas do público.</p><div class="dep-author"><strong>Fernanda Silva</strong><span>Síndica</span></div></article>
+      </div>
+    </section>
+
+    <section id="contato" aria-labelledby="contato-title">
+      <div>
+        <div class="section-header reveal">
+          <p class="section-label">Contato</p>
+          <h2 id="contato-title">Vamos criar algo<br><em>inesquecível?</em></h2>
+          <p class="section-desc">Envie sua solicitação e nossa equipe entrará em contato com a proposta ideal.</p>
+        </div>
+        <address class="contact-list reveal">
+          <div class="ci"><div class="ci-dot" aria-hidden="true"></div>contato@icedream-producoes.com.br</div>
+          <div class="ci"><div class="ci-dot" aria-hidden="true"></div>Atendemos em todo o Brasil</div>
+        </address>
+      </div>
+      <div class="reveal">
+        <form aria-label="Formulário de solicitação de orçamento" novalidate>
+          <div id="form-live-region" aria-live="polite" class="sr-only"></div>
+          <div class="row2">
+            <div class="fg">
+              <label for="nome" class="required">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" />
+            </div>
+            <div class="fg">
+              <label for="empresa" class="optional">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Empresa ou evento" />
+            </div>
+          </div>
+          <div class="fg">
+            <label for="email" class="required">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" />
+          </div>
+          <div class="fg">
+            <label for="tipo-evento">Tipo de Evento</label>
+            <select id="tipo-evento" name="tipo-evento">
+              <option value="">Selecione...</option>
+              <option>Corporativo / Team Building</option>
+              <option>Festival ou Evento Público</option>
+              <option>Shopping ou Varejo</option>
+              <option>Festa Privada</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="modalidade">Modalidade de Interesse</label>
+            <select id="modalidade" name="modalidade">
+              <option value="">Selecione...</option>
+              <option>Patinação no Gelo</option>
+              <option>Curling</option>
+              <option>Hockey</option>
+              <option>SlideCurl Indoor</option>
+              <option>Mais de uma modalidade</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="mensagem" class="required">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva o evento, data, local e número de participantes..." required aria-required="true"></textarea>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6Leuy9UsAAAAALq6jNal6-ZFZSnFFmnMgIF6Al2i" style="margin-bottom: 1rem;"></div>
+          <button type="submit" class="btn-submit" aria-label="Enviar solicitação de orçamento">Enviar Solicitação</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
+    <p style="margin-top:.6rem">E-mail: contato@icedream-producoes.com.br &nbsp;·&nbsp; Instagram: <strong>@icedream.producoes</strong></p>
+    <p style="margin-top:.6rem;font-size:.7rem;opacity:.6">Este site é protegido pelo reCAPTCHA e a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--ice)">Política de Privacidade</a> e <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color:var(--ice)">Termos de Serviço</a> do Google se aplicam.</p>
+  </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () { emailjs.init('iW5F24j0Zpm3LSij3'); })();
+
+    document.querySelector('.btn-submit').addEventListener('click', function (e) {
+      e.preventDefault();
+      const btn = this;
+      const form = btn.closest('form');
+      const nome = form.querySelector('#nome').value;
+      const empresa = form.querySelector('#empresa').value;
+      const email = form.querySelector('#email').value;
+      const tipo = form.querySelector('#tipo-evento').value;
+      const modalidade = form.querySelector('#modalidade').value;
+      const mensagem = form.querySelector('#mensagem').value;
+      const liveRegion = document.getElementById('form-live-region');
+
+      if (!nome || !email || !mensagem) {
+        liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        return;
+      }
+
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        return;
+      }
+
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      emailjs.send('service_q4uv18l', 'template_2pebzcg', {
+        name: nome,
+        email: email,
+        telefone: empresa,
+        mensagem: `Empresa/Evento: ${empresa}\nTipo de Evento: ${tipo}\nModalidade: ${modalidade}\n\n${mensagem}`,
+        'g-recaptcha-response': recaptchaResponse
+      }).then(function (response) {
+        btn.textContent = 'Enviado com sucesso!';
+        btn.style.background = '#4CAF50';
+        liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
+        liveRegion.setAttribute('aria-live', 'polite');
+        setTimeout(() => {
+          form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+          grecaptcha.reset();
+          btn.textContent = 'Enviar Solicitação';
+          btn.disabled = false;
+          btn.style.background = '';
+          liveRegion.textContent = '';
+        }, 5000);
+      }, function (error) {
+        liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        btn.textContent = 'Enviar Solicitação';
+        btn.disabled = false;
+      });
+    });
+
+    const obs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target)
+        }
+      })
+    }, { threshold: .1 });
+
+    document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.classList.contains('open');
+        const answer = btn.nextElementSibling;
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.classList.remove('open');
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+          b.nextElementSibling.setAttribute('aria-hidden', 'true');
+        });
+        if (!isOpen) {
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.classList.add('open');
+          answer.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
