@@ -8,9 +8,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="512x512" href="apple-touch-icon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <title>Ice Dream Produções | Patinação no Gelo e Eventos Interativos</title>
+  <title>Ice Dream Produções | Pista de Gelo, Patinação, Hockey, Curling e SlideCurl para Eventos</title>
   <meta name="description"
-    content="A Ice Dream Produções leva a magia do gelo até você. Especialistas em pistas de patinação, hockey e curling para eventos inesquecíveis.">
+    content="Ice Dream Produções: pista de patinação no gelo real, hockey, curling e SlideCurl para eventos. Atendemos festas, shoppings e ativações de marca em todo o Brasil. Solicite orçamento!">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -46,7 +46,11 @@
       --navy: #052C5C;
       --blue: #197AD2;
       --ice: #76C4F8;
-      --white: #FAFCFF
+      --white: #FAFCFF;
+      /* CORES COM CONTRASTE CORRIGIDO */
+      --text-dark: #052C5C;
+      --text-body: #1a3a5c;
+      --text-light: #2a4a6e;
     }
 
     html {
@@ -56,7 +60,7 @@
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--white);
-      color: var(--navy)
+      color: var(--text-dark)
     }
 
     /* SKIP TO CONTENT - PARA ACESSIBILIDADE */
@@ -91,7 +95,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.2rem 7%;
-      background: rgba(250, 252, 255, 0.94);
+      background: rgba(250, 252, 255, 0.98);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(5, 44, 92, .08)
     }
@@ -162,7 +166,7 @@
       background: var(--blue) !important
     }
 
-    /* HERO */
+    /* HERO - CONTRASTE CORRIGIDO */
     #hero {
       position: relative;
       min-height: 100vh;
@@ -183,7 +187,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(5, 44, 92, .85) 38%, rgba(5, 44, 92, .25) 100%)
+      background: linear-gradient(to right, rgba(5, 44, 92, 0.94) 38%, rgba(5, 44, 92, 0.50) 100%)
+      /* CONTRASTE CORRIGIDO: aumentado de 0.85 para 0.94 */
     }
 
     .hero-content {
@@ -198,7 +203,8 @@
       font-weight: 500;
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--ice);
+      color: #b8ddfc;
+      /* CONTRASTE CORRIGIDO: mais claro para contraste */
       margin-bottom: 1.4rem
     }
 
@@ -207,19 +213,20 @@
       font-weight: 300;
       font-size: clamp(3.2rem, 6.5vw, 6rem);
       line-height: 1.02;
-      color: #fff;
+      color: #FFFFFF;
       margin-bottom: 1.6rem
     }
 
     .hero-content h1 em {
       font-style: italic;
-      color: var(--ice)
+      color: #a8d9fc
     }
 
     .hero-desc {
       font-size: 1rem;
       font-weight: 300;
-      color: rgba(255, 255, 255, .7);
+      color: rgba(255, 255, 255, 0.92);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.7 para 0.92 */
       line-height: 1.8;
       max-width: 400px;
       margin-bottom: 2.6rem
@@ -250,8 +257,8 @@
     }
 
     .btn-ghost {
-      border: 1px solid rgba(255, 255, 255, .4);
-      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: #FFFFFF;
       padding: .85rem 2.2rem;
       text-decoration: none;
       font-size: .82rem;
@@ -263,7 +270,7 @@
     }
 
     .btn-ghost:hover {
-      border-color: #fff
+      border-color: #FFFFFF
     }
 
     /* DIVIDER */
@@ -278,24 +285,24 @@
     .divider-line {
       flex: 1;
       height: 1px;
-      background: rgba(5, 44, 92, .1)
+      background: rgba(5, 44, 92, .15)
     }
 
     .divider-text {
       font-size: .68rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: #8FA8C0;
+      color: #4a6a8a;
       white-space: nowrap
     }
 
-    /* SECTION */
+    /* SECTION - CONTRASTE CORRIGIDO */
     .section-label {
       font-size: .7rem;
       font-weight: 500;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--blue);
+      color: #197AD2;
       margin-bottom: .7rem
     }
 
@@ -314,7 +321,7 @@
     .section-desc {
       font-size: .9rem;
       font-weight: 300;
-      color: #4a6a8a;
+      color: var(--text-body);
       line-height: 1.8;
       margin-top: .8rem
     }
@@ -323,7 +330,7 @@
       margin-bottom: 3.5rem
     }
 
-    /* SERVIÇOS */
+    /* SERVIÇOS - CONTRASTE CORRIGIDO */
     #servicos {
       padding: 5rem 7%;
       overflow: visible
@@ -359,7 +366,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(5, 44, 92, .55) 0%, transparent 55%)
+      background: linear-gradient(to top, rgba(5, 44, 92, 0.7) 0%, transparent 55%)
+      /* CONTRASTE CORRIGIDO: aumentado de 0.55 para 0.7 */
     }
 
     .svc-img-label {
@@ -370,7 +378,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
       font-weight: 300;
-      color: #fff;
+      color: #FFFFFF;
       letter-spacing: .04em
     }
 
@@ -386,15 +394,16 @@
       margin-bottom: .55rem
     }
 
+    /* CONTRASTE CORRIGIDO: texto dos serviços mais escuro */
     .svc-body p {
       font-size: .84rem;
       font-weight: 300;
-      color: #4a6a8a;
+      color: var(--text-body);
       line-height: 1.72;
       margin-bottom: 1rem
     }
 
-    /* BANNER - VERSÃO COM <img> (OPÇÃO 2) */
+    /* BANNER - CONTRASTE CORRIGIDO */
     #banner {
       position: relative;
       height: 420px;
@@ -416,7 +425,8 @@
     .banner-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(5, 44, 92, 0.48);
+      background: rgba(5, 44, 92, 0.75);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.48 para 0.75 */
       z-index: 1;
     }
 
@@ -431,7 +441,7 @@
       font-weight: 300;
       font-style: italic;
       font-size: clamp(2.2rem, 5vw, 4.2rem);
-      color: #fff;
+      color: #FFFFFF;
       line-height: 1.08;
       max-width: 680px;
     }
@@ -443,11 +453,12 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ice);
+      color: #b8ddfc;
+      /* CONTRASTE CORRIGIDO: mais claro */
       font-style: normal;
     }
 
-    /* COMO */
+    /* COMO - CONTRASTE CORRIGIDO */
     #como {
       padding: 5rem 7%;
       background: rgba(118, 196, 248, .04);
@@ -496,10 +507,11 @@
       margin-bottom: .35rem
     }
 
+    /* CONTRASTE CORRIGIDO: texto do step */
     .step p {
       font-size: .84rem;
       font-weight: 300;
-      color: #4a6a8a;
+      color: var(--text-body);
       line-height: 1.7
     }
 
@@ -515,14 +527,15 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 4.5rem;
       font-weight: 300;
-      color: var(--ice);
+      color: #a8d9fc;
       line-height: 1;
       display: block;
       margin-bottom: .8rem
     }
 
     .aside-card>p {
-      color: rgba(250, 252, 255, .55);
+      color: rgba(250, 252, 255, 0.85);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.55 para 0.85 */
       font-size: .88rem;
       line-height: 1.75
     }
@@ -552,16 +565,17 @@
     .dif-item p {
       font-size: .84rem;
       font-weight: 300;
-      color: rgba(250, 252, 255, .58);
+      color: rgba(250, 252, 255, 0.85);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.58 para 0.85 */
       line-height: 1.65
     }
 
     .dif-item strong {
-      color: #fff;
+      color: #FFFFFF;
       font-weight: 500
     }
 
-    /* CONTATO */
+    /* CONTATO - CONTRASTE CORRIGIDO */
     #contato {
       padding: 5rem 7%;
       display: grid;
@@ -572,15 +586,16 @@
     }
 
     #contato .section-label {
-      color: var(--ice)
+      color: #a8d9fc;
     }
 
     #contato .section-title {
-      color: #fff
+      color: #FFFFFF
     }
 
     #contato .section-desc {
-      color: rgba(250, 252, 255, .48)
+      color: rgba(250, 252, 255, 0.75);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.48 para 0.75 */
     }
 
     .contact-list {
@@ -592,7 +607,8 @@
 
     .ci {
       font-size: .84rem;
-      color: rgba(250, 252, 255, .58);
+      color: rgba(250, 252, 255, 0.85);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.58 para 0.85 */
       display: flex;
       gap: .8rem;
       align-items: center
@@ -613,23 +629,24 @@
       margin-bottom: 1rem
     }
 
+    /* CONTRASTE CORRIGIDO: labels mais claras e legíveis */
     .fg label {
       font-size: .67rem;
       font-weight: 500;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--ice)
+      color: #b8ddfc;
     }
 
     .fg label::after {
       content: " *";
-      color: var(--ice);
+      color: #ffb347;
       display: inline-block;
     }
 
     .fg label.optional::after {
       content: " (opcional)";
-      color: rgba(118, 196, 248, 0.6);
+      color: rgba(184, 221, 252, 0.7);
       font-size: 0.6rem;
       font-weight: normal;
       text-transform: none;
@@ -639,11 +656,11 @@
     .fg input,
     .fg textarea,
     .fg select {
-      background: rgba(255, 255, 255, .06);
-      border: 1px solid rgba(118, 196, 248, .16);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(118, 196, 248, .35);
       border-radius: 2px;
       padding: .75rem 1rem;
-      color: #fff;
+      color: #FFFFFF;
       font-family: 'DM Sans', sans-serif;
       font-size: .88rem;
       outline: none;
@@ -659,7 +676,7 @@
 
     .fg input::placeholder,
     .fg textarea::placeholder {
-      color: rgba(250, 252, 255, .26)
+      color: rgba(250, 252, 255, 0.45)
     }
 
     .fg textarea {
@@ -703,12 +720,13 @@
       cursor: not-allowed;
     }
 
-    /* FOOTER */
+    /* FOOTER - CONTRASTE CORRIGIDO */
     footer {
       background: #031e3f;
       text-align: center;
       padding: 1.8rem 7%;
-      color: rgba(250, 252, 255, .26);
+      color: rgba(250, 252, 255, 0.55);
+      /* CONTRASTE CORRIGIDO: aumentado de 0.26 para 0.55 */
       font-size: .78rem
     }
 
@@ -728,7 +746,7 @@
       transform: translateY(0)
     }
 
-    /* SLIDECURL */
+    /* SLIDECURL - CONTRASTE CORRIGIDO */
     #slidecurl {
       background: #052C5C;
       padding: 5rem 7%
@@ -745,7 +763,7 @@
       font-weight: 500;
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--ice);
+      color: #a8d9fc;
       margin-bottom: .9rem
     }
 
@@ -754,7 +772,7 @@
       font-weight: 300;
       font-size: clamp(2rem, 3.5vw, 3rem);
       line-height: 1.08;
-      color: #fff
+      color: #FFFFFF
     }
 
     .sc-header h3 em {
@@ -765,13 +783,13 @@
     .sc-desc {
       font-size: .9rem;
       font-weight: 300;
-      color: rgba(250, 252, 255, .62);
+      color: rgba(250, 252, 255, 0.85);
       line-height: 1.85;
       margin-top: 1rem
     }
 
     .sc-desc strong {
-      color: #fff;
+      color: #FFFFFF;
       font-weight: 500
     }
 
@@ -789,13 +807,13 @@
     .sc-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid rgba(118, 196, 248, .12);
+      border-top: 1px solid rgba(118, 196, 248, .25);
       margin-bottom: 3rem
     }
 
     .sc-step {
       padding: 2rem 2rem 2rem 0;
-      border-right: 1px solid rgba(118, 196, 248, .08)
+      border-right: 1px solid rgba(118, 196, 248, .15)
     }
 
     .sc-step:last-child {
@@ -807,7 +825,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.6rem;
       font-weight: 300;
-      color: rgba(118, 196, 248, .2);
+      color: rgba(118, 196, 248, 0.45);
       line-height: 1;
       margin-bottom: .6rem
     }
@@ -816,14 +834,14 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
       font-weight: 400;
-      color: #fff;
+      color: #FFFFFF;
       margin-bottom: .4rem
     }
 
     .sc-step p {
       font-size: .82rem;
       font-weight: 300;
-      color: rgba(250, 252, 255, .5);
+      color: rgba(250, 252, 255, 0.8);
       line-height: 1.7
     }
 
@@ -852,7 +870,7 @@
       transform: translateY(-2px)
     }
 
-    /* DEPOIMENTOS */
+    /* DEPOIMENTOS - CONTRASTE CORRIGIDO */
     #depoimentos {
       padding: 5rem 7%;
       background: rgba(118, 196, 248, .04);
@@ -898,10 +916,11 @@
       line-height: 1
     }
 
+    /* CONTRASTE CORRIGIDO: texto do depoimento */
     .dep-text {
       font-size: .9rem;
       font-weight: 300;
-      color: #4a6a8a;
+      color: var(--text-body);
       line-height: 1.8;
       flex: 1
     }
@@ -921,10 +940,10 @@
     .dep-author span {
       font-size: .78rem;
       font-weight: 300;
-      color: #8FA8C0
+      color: #5a7a9a
     }
 
-    /* FAQ */
+    /* FAQ - CONTRASTE CORRIGIDO */
     #faq {
       padding: 5rem 7%;
       background: #fff
@@ -944,7 +963,7 @@
     }
 
     .faq-item {
-      border: 1px solid rgba(5, 44, 92, .1);
+      border: 1px solid rgba(5, 44, 92, .15);
       border-radius: 8px;
       overflow: hidden;
       transition: box-shadow .2s
@@ -964,7 +983,7 @@
       padding: 1.3rem 1.6rem;
       cursor: pointer;
       text-align: left;
-      color: #052C5C;
+      color: var(--navy);
       font-family: 'DM Sans', sans-serif;
       font-size: .95rem;
       font-weight: 600;
@@ -985,22 +1004,22 @@
       width: 22px;
       height: 22px;
       flex-shrink: 0;
-      border: 1.5px solid rgba(5, 44, 92, .25);
+      border: 1.5px solid rgba(5, 44, 92, .3);
       border-radius: 50%;
       position: relative;
       transition: border-color .2s, background .2s
     }
 
     .faq-q.open .faq-icon {
-      background: #052C5C;
-      border-color: #052C5C
+      background: var(--navy);
+      border-color: var(--navy)
     }
 
     .faq-icon::before,
     .faq-icon::after {
       content: '';
       position: absolute;
-      background: #052C5C;
+      background: var(--navy);
       border-radius: 2px;
       transition: transform .3s, opacity .3s
     }
@@ -1045,9 +1064,9 @@
       padding: 0 1.6rem 1.4rem 1.6rem;
       font-size: .88rem;
       font-weight: 300;
-      color: #4a6a8a;
+      color: var(--text-body);
       line-height: 1.85;
-      border-top: 1px solid rgba(5, 44, 92, .07)
+      border-top: 1px solid rgba(5, 44, 92, .1)
     }
 
     .faq-a-inner p {
@@ -1055,7 +1074,7 @@
     }
 
     .faq-a-inner strong {
-      color: #052C5C;
+      color: var(--navy);
       font-weight: 600
     }
 
@@ -1072,7 +1091,6 @@
       border-radius: 2px;
     }
 
-    /* Remove outline apenas para mouse (mantém para teclado) */
     a:focus:not(:focus-visible),
     button:focus:not(:focus-visible) {
       outline: none;
@@ -1114,574 +1132,4 @@
       }
 
       .dep-grid {
-        grid-template-columns: 1fr
-      }
-
-      .sc-cta {
-        white-space: normal;
-        font-size: .78rem;
-        padding: .9rem 1.5rem;
-        letter-spacing: .06em;
-        display: block;
-        text-align: center;
-        max-width: 100%;
-        box-sizing: border-box
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- SKIP TO CONTENT - PARA NAVEGAÇÃO POR TECLADO -->
-  <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">Pular para o conteúdo</a>
-
-  <header>
-    <nav role="navigation" aria-label="Navegação principal">
-      <a href="#hero" class="nav-logo" aria-label="Voltar à página inicial Ice Dream Produções">
-        <img src="images/logo.jpg" alt="Logotipo Ice Dream Produções - Especialistas em eventos no gelo." />
-      </a>
-      <ul class="nav-links">
-        <li><a href="#servicos" aria-label="Ver nossos serviços de pistas de gelo"
-            title="Ir para seção Serviços">Serviços</a></li>
-        <li><a href="quem-somos.html" aria-label="Conheça nossa história e valores"
-            title="Ir para página Quem Somos">Quem Somos</a></li>
-        <li><a href="#como" aria-label="Entender como funciona nosso processo" title="Ir para seção Como Funciona">Como
-            Funciona</a></li>
-        <li><a href="#contato" class="nav-cta" aria-label="Solicitar orçamento para seu evento"
-            title="Ir para formulário de contato">Orçamento</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main-content">
-    <section id="hero" aria-labelledby="hero-title">
-      <div class="hero-bg" role="img"
-        aria-label="Pista de gelo profissional com holofotes e partículas de gelo brilhando, transmitindo atmosfera noturna e mágica.">
-      </div>
-      <div class="hero-content">
-        <p class="hero-eyebrow">Experiências no gelo para eventos</p>
-        <h1 id="hero-title">Levamos o gelo<br>para <em>qualquer lugar</em></h1>
-        <p class="hero-desc">Instalamos e operamos pistas e experiências com gelo real ou adaptado, transformando qualquer espaço em uma atração interativa, inclusiva e de alto impacto. Mais do que uma estrutura, entregamos experiências que engajam, conectam e marcam.</p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn-primary"
-            aria-label="Preencher formulário e solicitar orçamento personalizado">Solicitar Orçamento</a>
-          <a href="#servicos" class="btn-ghost"
-            aria-label="Conhecer todos os nossos serviços de experiências no gelo">Ver Serviços</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider" role="separator">
-      <div class="divider-line"></div><span class="divider-text">O que oferecemos</span>
-      <div class="divider-line"></div>
-    </div>
-
-    <section id="banner" aria-labelledby="banner-quote">
-      <img src="images/banner_texto.png"
-        alt="Frase inspiradora 'Tudo começa com o gelo' sobre fundo com textura de gelo e movimento, representando a magia das experiências no gelo."
-        class="banner-bg-image">
-      <div class="banner-overlay"></div>
-      <div class="banner-content reveal">
-        <blockquote id="banner-quote">Tudo começa com o gelo.</blockquote>
-        <cite>Ice Dream — Experiências no gelo para eventos em todo o Brasil</cite>
-      </div>
-    </section>
-
-    <section id="servicos" aria-labelledby="servicos-title">
-      <div class="section-header reveal">
-        <p class="section-label">Serviços</p>
-        <h2 id="servicos-title">Três formas de levar<br><em>o gelo ao seu evento</em></h2>
-        <p class="section-desc">Gelo real ou adaptado, temos solução para qualquer espaço e porte de evento.</p>
-      </div>
-      <div class="services-grid">
-        <article class="svc reveal" aria-labelledby="servico-patinacao">
-          <div class="svc-img" style="background-image:url('images/patinacao.png')" role="img"
-            aria-label="Pessoa patinando no gelo com patins brancos artísticos, deslizando sobre pista iluminada.">
-            <span class="svc-img-label" aria-hidden="true">Patinação</span>
-          </div>
-          <div class="svc-body">
-            <h3 id="servico-patinacao">Patinação no Gelo</h3>
-            <p>Deslizar pelo gelo pela primeira vez é uma experiência que marca. Levamos uma pista completa ao seu
-              evento, criando um ambiente onde as pessoas se divertem, se desafiam e permanecem por muito mais tempo do
-              que o esperado.</p>
-          </div>
-        </article>
-        <article class="svc reveal" aria-labelledby="servico-hockey">
-          <div class="svc-img" style="background-image:url('images/hockey.png')" role="img"
-            aria-label="Puck de hockey iluminado sobre pista de gelo profissional com holofotes ao fundo, transmitindo intensidade e adrenalina.">
-            <span class="svc-img-label" aria-hidden="true">Hockey</span>
-          </div>
-          <div class="svc-body">
-            <h3 id="servico-hockey">Hockey no Gelo</h3>
-            <p>Velocidade, adrenalina e espírito de equipe. O hockey transforma o espaço em um verdadeiro espetáculo,
-              envolvendo o público do início ao fim, mesmo quem nunca jogou se conecta na primeira jogada.</p>
-          </div>
-        </article>
-        <article class="svc reveal" aria-labelledby="servico-curling">
-          <div class="svc-img" style="background-image:url('images/curling.png')" role="img"
-            aria-label="Pista de curling vista de cima, com círculos de alvo vermelho e azul, arena iluminada e névoa sobre o gelo.">
-            <span class="svc-img-label" aria-hidden="true">Curling</span>
-          </div>
-          <div class="svc-body">
-            <h3 id="servico-curling">Curling no Gelo</h3>
-            <p>Precisão, estratégia e trabalho em equipe. O curling surpreende pela simplicidade e conquista pela
-              experiência: fácil de aprender, envolvente de jogar e perfeito para gerar interação entre os
-              participantes.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="slidecurl" aria-labelledby="slidecurl-title">
-      <div class="sc-header reveal">
-        <p class="sc-label">Experiência Adaptada</p>
-        <h3 id="slidecurl-title">Curling sem gelo?<br><em>É o SlideCurl.</em></h3>
-        <p class="sc-desc">O <strong>SlideCurl</strong> é uma experiência interativa inspirada no curling, onde os
-          participantes deslizam pedras até um alvo, combinando precisão, estratégia e diversão, tudo isso sem precisar
-          de gelo.</p>
-      </div>
-      <div class="sc-image-wrap reveal">
-        <img src="images/slidecurl.png"
-          alt="Pista indoor de SlideCurl instalada em ginásio, mostrando superfície branca com alvo de curling em cores azul e vermelho, pedras com rodinhas e participantes jogando em ambiente acessível sem necessidade de refrigeração"
-          class="sc-main-img" />
-      </div>
-      <div class="sc-steps">
-        <div class="sc-step reveal">
-          <div class="sc-step-num" aria-hidden="true">01</div>
-          <div>
-            <h4>Pista portátil</h4>
-            <p>Montada rapidamente em qualquer espaço coberto, salão, lobby ou área indoor. Sem obras ou infraestrutura
-              especial.</p>
-          </div>
-        </div>
-        <div class="sc-step reveal">
-          <div class="sc-step-num" aria-hidden="true">02</div>
-          <div>
-            <h4>Pedras com rodinhas</h4>
-            <p>As pedras de curling são adaptadas com rodinhas que deslizam suavemente, reproduzindo o movimento real do
-              esporte.</p>
-          </div>
-        </div>
-        <div class="sc-step reveal">
-          <div class="sc-step-num" aria-hidden="true">03</div>
-          <div>
-            <h4>Público participa</h4>
-            <p>Qualquer pessoa joga em minutos, crianças, adultos, idosos. Interativo, competitivo e com engajamento
-              imediato.</p>
-          </div>
-        </div>
-      </div>
-      <div class="sc-foot reveal">
-        <a href="#contato" class="sc-cta" aria-label="Entrar em contato para contratar SlideCurl no seu evento">Quero
-          essa experiência no meu evento</a>
-      </div>
-    </section>
-
-    <section id="faq" aria-labelledby="faq-title">
-      <div class="section-header reveal">
-        <p class="section-label">Dúvidas</p>
-        <h2 id="faq-title">Perguntas <em>Frequentes</em></h2>
-        <p class="section-desc">Tudo o que você precisa saber antes de levar o gelo ao seu evento.</p>
-      </div>
-      <div class="faq-list" role="list">
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq1"
-            aria-label="Pergunta: Precisa de gelo de verdade para as atrações? Clique para expandir a resposta"><span>Precisa
-              de gelo de verdade para as atrações?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq1" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Não. Nossas experiências, como o SlideCurl, foram desenvolvidas para funcionar sem gelo real,
-                garantindo praticidade, segurança e instalação em diversos ambientes.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq2"
-            aria-label="Pergunta: A pista de gelo é real? Clique para expandir a resposta"><span>A pista de gelo é
-              real?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq2" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Sim. Oferecemos também experiências com gelo real, como patinação, curling e hockey, criando um
-                ambiente imersivo e de alto impacto.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq3"
-            aria-label="Pergunta: Quanto espaço é necessário? Clique para expandir a resposta"><span>Quanto espaço é
-              necessário?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq3" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>O espaço varia conforme a atração escolhida. Adaptamos cada projeto de acordo com o ambiente
-                disponível, desde espaços compactos até grandes áreas para eventos.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq4"
-            aria-label="Pergunta: Qualquer pessoa pode participar? Clique para expandir a resposta"><span>Qualquer
-              pessoa pode participar?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq4" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Sim. As atividades são pensadas para serem acessíveis e intuitivas, permitindo a participação de
-                pessoas de diferentes idades e níveis de habilidade.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq5"
-            aria-label="Pergunta: Vocês oferecem suporte durante o evento? Clique para expandir a resposta"><span>Vocês
-              oferecem suporte durante o evento?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq5" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Sim. Nossa equipe acompanha toda a experiência, orientando os participantes, garantindo a segurança e o
-                bom funcionamento das atividades.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq6"
-            aria-label="Pergunta: É seguro? Clique para expandir a resposta"><span>É seguro?</span><span
-              class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq6" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Sim. Todas as atividades seguem protocolos de segurança e contam com orientação profissional para
-                garantir uma experiência tranquila e segura.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq7"
-            aria-label="Pergunta: Em quais tipos de eventos a Ice Dream pode atuar? Clique para expandir a resposta"><span>Em
-              quais tipos de eventos a Ice Dream pode atuar?</span><span class="faq-icon"
-              aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq7" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Eventos recreativos, corporativos e institucionais, escolas, universidades, condomínios, hotéis,
-                feiras, ativações de marca e produções de TV. Se você tem uma ideia diferente, a gente adapta, criamos
-                experiências sob medida para o seu evento.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq8"
-            aria-label="Pergunta: É possível personalizar a experiência? Clique para expandir a resposta"><span>É
-              possível personalizar a experiência?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq8" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Sim. Adaptamos a dinâmica, o formato e até a identidade visual da atração de acordo com o objetivo do
-                evento.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq9"
-            aria-label="Pergunta: Vocês atendem em todo o Brasil? Clique para expandir a resposta"><span>Vocês atendem
-              em todo o Brasil?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq9" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Sim. Avaliamos cada projeto para oferecer a melhor solução logística conforme a localização do evento.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq10"
-            aria-label="Pergunta: Como contratar? Clique para expandir a resposta"><span>Como contratar?</span><span
-              class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq10" role="region" aria-hidden="true">
-            <div class="faq-a-inner">
-              <p>Basta entrar em contato pelo e-mail contato@icedream-producoes.com.br ou através do botão "Orçamento"
-                neste site. Nossa equipe irá entender sua necessidade e desenvolver uma proposta personalizada para o
-                seu evento.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="como" aria-labelledby="como-title">
-      <div class="como-grid">
-        <div>
-          <div class="section-header reveal">
-            <p class="section-label">Processo</p>
-            <h2 id="como-title">Como <em>funciona</em></h2>
-            <p class="section-desc">Do primeiro contato à experiência completa, cuidamos de cada etapa.</p>
-          </div>
-          <ol class="steps">
-            <li class="step reveal">
-              <div class="step-num" aria-hidden="true">01</div>
-              <div>
-                <h4>Contato e Briefing</h4>
-                <p>Entendemos o seu evento, espaço disponível, público, datas e objetivos.</p>
-              </div>
-            </li>
-            <li class="step reveal">
-              <div class="step-num" aria-hidden="true">02</div>
-              <div>
-                <h4>Proposta Personalizada</h4>
-                <p>Elaboramos proposta com modalidades, estrutura e investimento, sem surpresas.</p>
-              </div>
-            </li>
-            <li class="step reveal">
-              <div class="step-num" aria-hidden="true">03</div>
-              <div>
-                <h4>Montagem e Operação</h4>
-                <p>Nossa equipe cuida de toda a instalação, operação e desmontagem ao final.</p>
-              </div>
-            </li>
-            <li class="step reveal">
-              <div class="step-num" aria-hidden="true">04</div>
-              <div>
-                <h4>Experiência Memorável</h4>
-                <p>Público engajado, surpreso e com memórias que ficam, resultado garantido.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-        <aside>
-          <div class="aside-card reveal" aria-labelledby="stats-title">
-            <span class="big" id="stats-title">+50</span>
-            <p>eventos realizados em todo o Brasil</p>
-            <ul class="dif-list">
-              <li class="dif-item">
-                <div class="dif-dot" aria-hidden="true"></div>
-                <p><strong>Alto Impacto Visual.</strong> Uma pista de gelo atrai atenção e gera conteúdo espontâneo.</p>
-              </li>
-              <li class="dif-item">
-                <div class="dif-dot" aria-hidden="true"></div>
-                <p><strong>Engajamento Real.</strong> O público participa, ativações criam memórias afetivas com a sua
-                  marca.</p>
-              </li>
-              <li class="dif-item">
-                <div class="dif-dot" aria-hidden="true"></div>
-                <p><strong>Flexibilidade.</strong> Gelo real ou adaptado, indoor ou outdoor, solução para qualquer
-                  ambiente.</p>
-              </li>
-              <li class="dif-item">
-                <div class="dif-dot" aria-hidden="true"></div>
-                <p><strong>Operação Completa.</strong> Montagem, equipe e desmontagem por nossa conta.</p>
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="depoimentos" aria-labelledby="depoimentos-title">
-      <div class="section-header reveal">
-        <p class="section-label">Depoimentos</p>
-        <h2 id="depoimentos-title">O que nossos clientes dizem</h2>
-      </div>
-      <div class="dep-grid">
-        <article class="dep-card reveal">
-          <div class="dep-quote" aria-hidden="true">"</div>
-          <p class="dep-text">A ICE DREAM transformou nosso evento corporativo em uma experiência inesquecível. A pista
-            de gelo foi o ponto alto da festa e todos os colaboradores ficaram encantados.</p>
-          <div class="dep-author">
-            <strong>Mariana Costa</strong>
-            <span>Diretora de Eventos</span>
-          </div>
-        </article>
-        <article class="dep-card reveal">
-          <div class="dep-quote" aria-hidden="true">"</div>
-          <p class="dep-text">Instalamos a pista de patinação no nosso evento e o resultado superou todas as
-            expectativas. A equipe técnica é extremamente profissional e o suporte é impecável.</p>
-          <div class="dep-author">
-            <strong>Roberto Almeida</strong>
-            <span>Gerente Comercial</span>
-          </div>
-        </article>
-        <article class="dep-card reveal">
-          <div class="dep-quote" aria-hidden="true">"</div>
-          <p class="dep-text">A qualidade e segurança das pistas da ICE DREAM são incomparáveis. Uma atração que encanta
-            pessoas de todas as idades, superamos as expectativas do público.</p>
-          <div class="dep-author">
-            <strong>Fernanda Silva</strong>
-            <span>Síndica</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contato" aria-labelledby="contato-title">
-      <div>
-        <div class="section-header reveal">
-          <p class="section-label">Contato</p>
-          <h2 id="contato-title">Vamos criar algo<br><em>inesquecível?</em></h2>
-          <p class="section-desc">Envie sua solicitação e nossa equipe entrará em contato com a proposta ideal.</p>
-        </div>
-        <address class="contact-list reveal">
-          <div class="ci">
-            <div class="ci-dot" aria-hidden="true"></div>contato@icedream-producoes.com.br
-          </div>
-          <div class="ci">
-            <div class="ci-dot" aria-hidden="true"></div>Atendemos em todo o Brasil
-          </div>
-        </address>
-      </div>
-      <div class="reveal">
-        <form aria-label="Formulário de solicitação de orçamento" novalidate>
-          <div id="form-live-region" aria-live="polite" class="sr-only"></div>
-          <div class="row2">
-            <div class="fg">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" />
-            </div>
-            <div class="fg">
-              <label for="empresa" class="optional">Empresa</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Empresa ou evento" />
-            </div>
-          </div>
-          <div class="fg">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" />
-          </div>
-          <div class="fg">
-            <label for="tipo-evento">Tipo de Evento</label>
-            <select id="tipo-evento" name="tipo-evento">
-              <option value="">Selecione...</option>
-              <option>Corporativo / Team Building</option>
-              <option>Festival ou Evento Público</option>
-              <option>Shopping ou Varejo</option>
-              <option>Festa Privada</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="modalidade">Modalidade de Interesse</label>
-            <select id="modalidade" name="modalidade">
-              <option value="">Selecione...</option>
-              <option>Patinação no Gelo</option>
-              <option>Curling</option>
-              <option>Hockey</option>
-              <option>SlideCurl Indoor</option>
-              <option>Mais de uma modalidade</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem"
-              placeholder="Descreva o evento, data, local e número de participantes..." required
-              aria-required="true"></textarea>
-          </div>
-          <div class="g-recaptcha" data-sitekey="6Leuy9UsAAAAALq6jNal6-ZFZSnFFmnMgIF6Al2i" style="margin-bottom: 1rem;"></div>
-          <button type="submit" class="btn-submit" aria-label="Enviar solicitação de orçamento">Enviar
-            Solicitação</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
-    <p style="margin-top:.6rem">
-      E-mail: contato@icedream-producoes.com.br &nbsp;·&nbsp;
-      Instagram: <strong>@icedream.producoes</strong>
-    </p>
-    <p style="margin-top:.6rem;font-size:.7rem;opacity:.6">
-      Este site é protegido pelo reCAPTCHA e a 
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--ice)">Política de Privacidade</a> e 
-      <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color:var(--ice)">Termos de Serviço</a> do Google se aplicam.
-    </p>
-  </footer>
-
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    (function () { emailjs.init('iW5F24j0Zpm3LSij3'); })();
-
-    document.querySelector('.btn-submit').addEventListener('click', function (e) {
-      e.preventDefault();
-      const btn = this;
-      const form = btn.closest('form');
-      const nome = form.querySelector('#nome').value;
-      const empresa = form.querySelector('#empresa').value;
-      const email = form.querySelector('#email').value;
-      const tipo = form.querySelector('#tipo-evento').value;
-      const modalidade = form.querySelector('#modalidade').value;
-      const mensagem = form.querySelector('#mensagem').value;
-      const liveRegion = document.getElementById('form-live-region');
-
-      // Validação de campos obrigatórios
-      if (!nome || !email || !mensagem) {
-        liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
-        liveRegion.setAttribute('aria-live', 'assertive');
-        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
-        return;
-      }
-
-      // Validação do reCAPTCHA v2
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-        liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
-        liveRegion.setAttribute('aria-live', 'assertive');
-        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
-        return;
-      }
-
-      btn.textContent = 'Enviando...';
-      btn.disabled = true;
-
-      emailjs.send('service_q4uv18l', 'template_2pebzcg', {
-        name: nome,
-        email: email,
-        telefone: empresa,
-        mensagem: `Empresa/Evento: ${empresa}\nTipo de Evento: ${tipo}\nModalidade: ${modalidade}\n\n${mensagem}`,
-        'g-recaptcha-response': recaptchaResponse
-      }).then(function (response) {
-        btn.textContent = 'Enviado com sucesso!';
-        btn.style.background = '#4CAF50';
-        liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
-        liveRegion.setAttribute('aria-live', 'polite');
-        setTimeout(() => {
-          form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-          grecaptcha.reset();
-          btn.textContent = 'Enviar Solicitação';
-          btn.disabled = false;
-          btn.style.background = '';
-          liveRegion.textContent = '';
-        }, 5000);
-      }, function (error) {
-        liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
-        liveRegion.setAttribute('aria-live', 'assertive');
-        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
-        btn.textContent = 'Enviar Solicitação';
-        btn.disabled = false;
-      });
-    });
-
-    const obs = new IntersectionObserver(es => {
-      es.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target)
-        }
-      })
-    }, { threshold: .1 });
-
-    document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
-
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const isOpen = btn.classList.contains('open');
-        const answer = btn.nextElementSibling;
-        document.querySelectorAll('.faq-q').forEach(b => {
-          b.classList.remove('open');
-          b.setAttribute('aria-expanded', 'false');
-          b.nextElementSibling.classList.remove('open');
-          b.nextElementSibling.setAttribute('aria-hidden', 'true');
-        });
-        if (!isOpen) {
-          btn.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          answer.classList.add('open');
-          answer.setAttribute('aria-hidden', 'false');
-        }
-      });
-    });
-  </script>
-</body>
-
-</html>
+        grid-template
