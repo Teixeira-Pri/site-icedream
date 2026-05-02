@@ -53,7 +53,7 @@ O principal diferencial deste projeto foi o cuidado com a acessibilidade.
 
 ## 🚀 Como Executar Localmente
 
-```bash
+```bash 
 # Clone o repositório
 git clone https://github.com/teixeira-pri/teixeira-pri.github.io.git
 
