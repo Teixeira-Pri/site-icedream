@@ -1132,4 +1132,505 @@
       }
 
       .dep-grid {
-        grid-template
+        grid-template-columns: 1fr
+      }
+
+      .sc-cta {
+        white-space: normal;
+        font-size: .78rem;
+        padding: .9rem 1.5rem;
+        letter-spacing: .06em;
+        display: block;
+        text-align: center;
+        max-width: 100%;
+        box-sizing: border-box
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SKIP TO CONTENT - PARA NAVEGAÇÃO POR TECLADO -->
+  <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">Pular para o conteúdo</a>
+
+  <header>
+    <nav role="navigation" aria-label="Navegação principal">
+      <a href="#hero" class="nav-logo" aria-label="Voltar à página inicial Ice Dream Produções">
+        <img src="images/logo.jpg" alt="Logo Ice Dream Produções" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicos" aria-label="Ver nossos serviços de pistas de gelo" title="Ir para seção Serviços">Serviços</a></li>
+        <li><a href="#como" aria-label="Entender como funciona nosso processo" title="Ir para seção Como Funciona">Como Funciona</a></li>
+        <li><a href="#contato" class="nav-cta" aria-label="Solicitar orçamento para seu evento" title="Ir para formulário de contato">Orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" role="img" aria-label="Pista de gelo profissional iluminada, transmitindo atmosfera noturna e acolhedora.">
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Experiências no gelo para eventos</p>
+        <h1 id="hero-title">Levamos o gelo<br>para <em>qualquer lugar</em></h1>
+        <p class="hero-desc">Instalamos e operamos pistas e experiências com gelo real ou adaptado, transformando qualquer espaço em uma atração interativa, inclusiva e de alto impacto.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn-primary" aria-label="Preencher formulário e solicitar orçamento personalizado">Solicitar Orçamento</a>
+          <a href="#servicos" class="btn-ghost" aria-label="Conhecer todos os nossos serviços">Ver Serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator">
+      <div class="divider-line"></div><span class="divider-text">O que oferecemos</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <section id="banner" aria-labelledby="banner-quote">
+      <img src="images/banner_texto.png" alt="Frase: Tudo começa com o gelo, em fundo com textura de gelo." class="banner-bg-image">
+      <div class="banner-overlay"></div>
+      <div class="banner-content reveal">
+        <blockquote id="banner-quote">Tudo começa com o gelo.</blockquote>
+        <cite>Ice Dream — Experiências no gelo para eventos em todo o Brasil</cite>
+      </div>
+    </section>
+
+    <section id="servicos" aria-labelledby="servicos-title">
+      <div class="section-header reveal">
+        <p class="section-label">Serviços</p>
+        <h2 id="servicos-title">Três formas de levar<br><em>o gelo ao seu evento</em></h2>
+        <p class="section-desc">Gelo real ou adaptado, temos solução para qualquer espaço e porte de evento.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc reveal">
+          <div class="svc-img" style="background-image:url('images/patinacao.png')" role="img" aria-label="Pessoa patinando no gelo em pista iluminada.">
+            <span class="svc-img-label" aria-hidden="true">Patinação</span>
+          </div>
+          <div class="svc-body">
+            <h3>Patinação no Gelo</h3>
+            <p>Deslizar pelo gelo pela primeira vez é uma experiência que marca. Levamos uma pista completa ao seu evento, criando um ambiente onde as pessoas se divertem e permanecem por muito mais tempo.</p>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-img" style="background-image:url('images/hockey.png')" role="img" aria-label="Puck de hockey iluminado sobre pista de gelo.">
+            <span class="svc-img-label" aria-hidden="true">Hockey</span>
+          </div>
+          <div class="svc-body">
+            <h3>Hockey no Gelo</h3>
+            <p>Velocidade, adrenalina e espírito de equipe. O hockey transforma o espaço em um verdadeiro espetáculo, envolvendo o público do início ao fim, mesmo quem nunca jogou se conecta na primeira jogada.</p>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-img" style="background-image:url('images/curling.png')" role="img" aria-label="Pista de curling com círculos de alvo vermelho e azul.">
+            <span class="svc-img-label" aria-hidden="true">Curling</span>
+          </div>
+          <div class="svc-body">
+            <h3>Curling no Gelo</h3>
+            <p>Precisão, estratégia e trabalho em equipe. O curling surpreende pela simplicidade e conquista pela experiência: fácil de aprender, envolvente de jogar e perfeito para gerar interação entre os participantes.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="slidecurl" aria-labelledby="slidecurl-title">
+      <div class="sc-header reveal">
+        <p class="sc-label">Experiência Adaptada</p>
+        <h3 id="slidecurl-title">Curling sem gelo?<br><em>É o SlideCurl.</em></h3>
+        <p class="sc-desc">O <strong>SlideCurl</strong> é uma experiência interativa inspirada no curling, onde os participantes deslizam pedras até um alvo, combinando precisão, estratégia e diversão, tudo isso sem precisar de gelo.</p>
+      </div>
+      <div class="sc-image-wrap reveal">
+        <img src="images/slidecurl.png" alt="Pista indoor de SlideCurl com alvo de curling em azul e vermelho, pedras com rodinhas e participantes jogando." class="sc-main-img" />
+      </div>
+      <div class="sc-steps">
+        <div class="sc-step reveal">
+          <div class="sc-step-num" aria-hidden="true">01</div>
+          <div>
+            <h4>Pista portátil</h4>
+            <p>Montada rapidamente em qualquer espaço coberto, salão, lobby ou área indoor. Sem obras ou infraestrutura especial.</p>
+          </div>
+        </div>
+        <div class="sc-step reveal">
+          <div class="sc-step-num" aria-hidden="true">02</div>
+          <div>
+            <h4>Pedras com rodinhas</h4>
+            <p>As pedras de curling são adaptadas com rodinhas que deslizam suavemente, reproduzindo o movimento real do esporte.</p>
+          </div>
+        </div>
+        <div class="sc-step reveal">
+          <div class="sc-step-num" aria-hidden="true">03</div>
+          <div>
+            <h4>Público participa</h4>
+            <p>Qualquer pessoa joga em minutos, crianças, adultos, idosos. Interativo, competitivo e com engajamento imediato.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sc-foot reveal">
+        <a href="#contato" class="sc-cta" aria-label="Entrar em contato para contratar SlideCurl no seu evento">Quero essa experiência no meu evento</a>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="section-header reveal">
+        <p class="section-label">Dúvidas</p>
+        <h2 id="faq-title">Perguntas <em>Frequentes</em></h2>
+        <p class="section-desc">Tudo o que você precisa saber antes de levar o gelo ao seu evento.</p>
+      </div>
+      <div class="faq-list" role="list">
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq1" aria-label="Pergunta: Precisa de gelo de verdade para as atrações? Clique para expandir"><span>Precisa de gelo de verdade para as atrações?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq1" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Não. Nossas experiências, como o SlideCurl, foram desenvolvidas para funcionar sem gelo real, garantindo praticidade, segurança e instalação em diversos ambientes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq2" aria-label="Pergunta: A pista de gelo é real? Clique para expandir"><span>A pista de gelo é real?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq2" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Sim. Oferecemos também experiências com gelo real, como patinação, curling e hockey, criando um ambiente imersivo e de alto impacto.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq3" aria-label="Pergunta: Quanto espaço é necessário? Clique para expandir"><span>Quanto espaço é necessário?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq3" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>O espaço varia conforme a atração escolhida. Adaptamos cada projeto de acordo com o ambiente disponível, desde espaços compactos até grandes áreas para eventos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq4" aria-label="Pergunta: Qualquer pessoa pode participar? Clique para expandir"><span>Qualquer pessoa pode participar?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq4" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Sim. As atividades são pensadas para serem acessíveis e intuitivas, permitindo a participação de pessoas de diferentes idades e níveis de habilidade.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq5" aria-label="Pergunta: Vocês oferecem suporte durante o evento? Clique para expandir"><span>Vocês oferecem suporte durante o evento?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq5" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Sim. Nossa equipe acompanha toda a experiência, orientando os participantes, garantindo a segurança e o bom funcionamento das atividades.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq6" aria-label="Pergunta: É seguro? Clique para expandir"><span>É seguro?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq6" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Sim. Todas as atividades seguem protocolos de segurança e contam com orientação profissional para garantir uma experiência tranquila e segura.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq7" aria-label="Pergunta: Em quais tipos de eventos a Ice Dream pode atuar? Clique para expandir"><span>Em quais tipos de eventos a Ice Dream pode atuar?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq7" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Eventos recreativos, corporativos e institucionais, escolas, universidades, condomínios, hotéis, feiras, ativações de marca e produções de TV. Se você tem uma ideia diferente, a gente adapta, criamos experiências sob medida para o seu evento.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq8" aria-label="Pergunta: É possível personalizar a experiência? Clique para expandir"><span>É possível personalizar a experiência?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq8" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Sim. Adaptamos a dinâmica, o formato e até a identidade visual da atração de acordo com o objetivo do evento.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq9" aria-label="Pergunta: Vocês atendem em todo o Brasil? Clique para expandir"><span>Vocês atendem em todo o Brasil?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq9" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Sim. Avaliamos cada projeto para oferecer a melhor solução logística conforme a localização do evento.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq10" aria-label="Pergunta: Como contratar? Clique para expandir"><span>Como contratar?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a" id="faq10" role="region" aria-hidden="true">
+            <div class="faq-a-inner">
+              <p>Basta entrar em contato pelo e-mail contato@icedream-producoes.com.br ou através do botão "Orçamento" neste site. Nossa equipe irá entender sua necessidade e desenvolver uma proposta personalizada para o seu evento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como" aria-labelledby="como-title">
+      <div class="como-grid">
+        <div>
+          <div class="section-header reveal">
+            <p class="section-label">Processo</p>
+            <h2 id="como-title">Como <em>funciona</em></h2>
+            <p class="section-desc">Do primeiro contato à experiência completa, cuidamos de cada etapa.</p>
+          </div>
+          <ol class="steps">
+            <li class="step reveal">
+              <div class="step-num" aria-hidden="true">01</div>
+              <div>
+                <h4>Contato e Briefing</h4>
+                <p>Entendemos o seu evento, espaço disponível, público, datas e objetivos.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <div class="step-num" aria-hidden="true">02</div>
+              <div>
+                <h4>Proposta Personalizada</h4>
+                <p>Elaboramos proposta com modalidades, estrutura e investimento, sem surpresas.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <div class="step-num" aria-hidden="true">03</div>
+              <div>
+                <h4>Montagem e Operação</h4>
+                <p>Nossa equipe cuida de toda a instalação, operação e desmontagem ao final.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <div class="step-num" aria-hidden="true">04</div>
+              <div>
+                <h4>Experiência Memorável</h4>
+                <p>Público engajado, surpreso e com memórias que ficam, resultado garantido.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <aside>
+          <div class="aside-card reveal" aria-labelledby="stats-title">
+            <span class="big" id="stats-title">+50</span>
+            <p>eventos realizados em todo o Brasil</p>
+            <ul class="dif-list">
+              <li class="dif-item">
+                <div class="dif-dot" aria-hidden="true"></div>
+                <p><strong>Alto Impacto Visual.</strong> Uma pista de gelo atrai atenção e gera conteúdo espontâneo.</p>
+              </li>
+              <li class="dif-item">
+                <div class="dif-dot" aria-hidden="true"></div>
+                <p><strong>Engajamento Real.</strong> O público participa, ativações criam memórias afetivas com a sua marca.</p>
+              </li>
+              <li class="dif-item">
+                <div class="dif-dot" aria-hidden="true"></div>
+                <p><strong>Flexibilidade.</strong> Gelo real ou adaptado, indoor ou outdoor, solução para qualquer ambiente.</p>
+              </li>
+              <li class="dif-item">
+                <div class="dif-dot" aria-hidden="true"></div>
+                <p><strong>Operação Completa.</strong> Montagem, equipe e desmontagem por nossa conta.</p>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="depoimentos" aria-labelledby="depoimentos-title">
+      <div class="section-header reveal">
+        <p class="section-label">Depoimentos</p>
+        <h2 id="depoimentos-title">O que nossos clientes dizem</h2>
+      </div>
+      <div class="dep-grid">
+        <article class="dep-card reveal">
+          <div class="dep-quote" aria-hidden="true">"</div>
+          <p class="dep-text">A ICE DREAM transformou nosso evento corporativo em uma experiência inesquecível. A pista de gelo foi o ponto alto da festa e todos os colaboradores ficaram encantados.</p>
+          <div class="dep-author">
+            <strong>Mariana Costa</strong>
+            <span>Diretora de Eventos</span>
+          </div>
+        </article>
+        <article class="dep-card reveal">
+          <div class="dep-quote" aria-hidden="true">"</div>
+          <p class="dep-text">Instalamos a pista de patinação no nosso evento e o resultado superou todas as expectativas. A equipe técnica é extremamente profissional e o suporte é impecável.</p>
+          <div class="dep-author">
+            <strong>Roberto Almeida</strong>
+            <span>Gerente Comercial</span>
+          </div>
+        </article>
+        <article class="dep-card reveal">
+          <div class="dep-quote" aria-hidden="true">"</div>
+          <p class="dep-text">A qualidade e segurança das pistas da ICE DREAM são incomparáveis. Uma atração que encanta pessoas de todas as idades, superamos as expectativas do público.</p>
+          <div class="dep-author">
+            <strong>Fernanda Silva</strong>
+            <span>Síndica</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" aria-labelledby="contato-title">
+      <div>
+        <div class="section-header reveal">
+          <p class="section-label">Contato</p>
+          <h2 id="contato-title">Vamos criar algo<br><em>inesquecível?</em></h2>
+          <p class="section-desc">Envie sua solicitação e nossa equipe entrará em contato com a proposta ideal.</p>
+        </div>
+        <address class="contact-list reveal">
+          <div class="ci">
+            <div class="ci-dot" aria-hidden="true"></div>contato@icedream-producoes.com.br
+          </div>
+          <div class="ci">
+            <div class="ci-dot" aria-hidden="true"></div>Atendemos em todo o Brasil
+          </div>
+        </address>
+      </div>
+      <div class="reveal">
+        <form aria-label="Formulário de solicitação de orçamento" novalidate>
+          <div id="form-live-region" aria-live="polite" class="sr-only"></div>
+          <div class="row2">
+            <div class="fg">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" />
+            </div>
+            <div class="fg">
+              <label for="empresa" class="optional">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Empresa ou evento" />
+            </div>
+          </div>
+          <div class="fg">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" />
+          </div>
+          <div class="fg">
+            <label for="tipo-evento">Tipo de Evento</label>
+            <select id="tipo-evento" name="tipo-evento">
+              <option value="">Selecione...</option>
+              <option>Corporativo / Team Building</option>
+              <option>Festival ou Evento Público</option>
+              <option>Shopping ou Varejo</option>
+              <option>Festa Privada</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="modalidade">Modalidade de Interesse</label>
+            <select id="modalidade" name="modalidade">
+              <option value="">Selecione...</option>
+              <option>Patinação no Gelo</option>
+              <option>Curling</option>
+              <option>Hockey</option>
+              <option>SlideCurl Indoor</option>
+              <option>Mais de uma modalidade</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva o evento, data, local e número de participantes..." required aria-required="true"></textarea>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6Leuy9UsAAAAALq6jNal6-ZFZSnFFmnMgIF6Al2i" style="margin-bottom: 1rem;"></div>
+          <button type="submit" class="btn-submit" aria-label="Enviar solicitação de orçamento">Enviar Solicitação</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
+    <p style="margin-top:.6rem">
+      E-mail: contato@icedream-producoes.com.br &nbsp;·&nbsp;
+      Instagram: <strong>@icedream.producoes</strong>
+    </p>
+    <p style="margin-top:.6rem;font-size:.7rem;opacity:.6">
+      Este site é protegido pelo reCAPTCHA e a 
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--ice)">Política de Privacidade</a> e 
+      <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color:var(--ice)">Termos de Serviço</a> do Google se aplicam.
+    </p>
+  </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () { emailjs.init('iW5F24j0Zpm3LSij3'); })();
+
+    document.querySelector('.btn-submit').addEventListener('click', function (e) {
+      e.preventDefault();
+      const btn = this;
+      const form = btn.closest('form');
+      const nome = form.querySelector('#nome').value;
+      const empresa = form.querySelector('#empresa').value;
+      const email = form.querySelector('#email').value;
+      const tipo = form.querySelector('#tipo-evento').value;
+      const modalidade = form.querySelector('#modalidade').value;
+      const mensagem = form.querySelector('#mensagem').value;
+      const liveRegion = document.getElementById('form-live-region');
+
+      if (!nome || !email || !mensagem) {
+        liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        return;
+      }
+
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        return;
+      }
+
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      emailjs.send('service_q4uv18l', 'template_2pebzcg', {
+        name: nome,
+        email: email,
+        telefone: empresa,
+        mensagem: `Empresa/Evento: ${empresa}\nTipo de Evento: ${tipo}\nModalidade: ${modalidade}\n\n${mensagem}`,
+        'g-recaptcha-response': recaptchaResponse
+      }).then(function (response) {
+        btn.textContent = 'Enviado com sucesso!';
+        btn.style.background = '#4CAF50';
+        liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
+        liveRegion.setAttribute('aria-live', 'polite');
+        setTimeout(() => {
+          form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+          grecaptcha.reset();
+          btn.textContent = 'Enviar Solicitação';
+          btn.disabled = false;
+          btn.style.background = '';
+          liveRegion.textContent = '';
+        }, 5000);
+      }, function (error) {
+        liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        btn.textContent = 'Enviar Solicitação';
+        btn.disabled = false;
+      });
+    });
+
+    const obs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target)
+        }
+      })
+    }, { threshold: .1 });
+
+    document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.classList.contains('open');
+        const answer = btn.nextElementSibling;
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.classList.remove('open');
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+          b.nextElementSibling.setAttribute('aria-hidden', 'true');
+        });
+        if (!isOpen) {
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.classList.add('open');
+          answer.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
