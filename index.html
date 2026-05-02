@@ -15,7 +15,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://icedream-producoes.com.br/">
-  <meta property="og:title" content="Ice Dream Produções | Experiências no Gelo para Eventos">
+  <meta property="og:title" content="Ice Dream Produções | Levamos o gelo para qualquer lugar">
   <meta property="og:description" content="Pistas de gelo real, hockey, curling e SlideCurl. Levamos a magia do gelo até o seu evento em todo o Brasil.">
   <meta property="og:image" content="https://icedream-producoes.com.br/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -1144,6 +1144,8 @@
       <ul class="nav-links">
         <li><a href="#servicos" aria-label="Ver nossos serviços de pistas de gelo"
             title="Ir para seção Serviços">Serviços</a></li>
+        <li><a href="quem-somos.html" aria-label="Conheça nossa história e valores"
+            title="Ir para página Quem Somos">Quem Somos</a></li>
         <li><a href="#como" aria-label="Entender como funciona nosso processo" title="Ir para seção Como Funciona">Como
             Funciona</a></li>
         <li><a href="#contato" class="nav-cta" aria-label="Solicitar orçamento para seu evento"
@@ -1159,9 +1161,8 @@
       </div>
       <div class="hero-content">
         <p class="hero-eyebrow">Experiências no gelo para eventos</p>
-        <h1 id="hero-title">O gelo que<br><em>transforma</em><br>eventos</h1>
-        <p class="hero-desc">Criamos experiências imersivas e interativas de pistas de gelo real a soluções adaptadas
-          para qualquer espaço. Alto impacto visual, engajamento garantido.</p>
+        <h1 id="hero-title">Levamos o gelo<br>para <em>qualquer lugar</em></h1>
+        <p class="hero-desc">Instalamos e operamos pistas e experiências com gelo real ou adaptado, transformando qualquer espaço em uma atração interativa, inclusiva e de alto impacto. Mais do que uma estrutura, entregamos experiências que engajam, conectam e marcam.</p>
         <div class="hero-actions">
           <a href="#contato" class="btn-primary"
             aria-label="Preencher formulário e solicitar orçamento personalizado">Solicitar Orçamento</a>
@@ -1565,6 +1566,7 @@
               placeholder="Descreva o evento, data, local e número de participantes..." required
               aria-required="true"></textarea>
           </div>
+          <div class="g-recaptcha" data-sitekey="6Leuy9UsAAAAALq6jNal6-ZFZSnFFmnMgIF6Al2i" style="margin-bottom: 1rem;"></div>
           <button type="submit" class="btn-submit" aria-label="Enviar solicitação de orçamento">Enviar
             Solicitação</button>
         </form>
@@ -1576,10 +1578,16 @@
     <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
     <p style="margin-top:.6rem">
       E-mail: contato@icedream-producoes.com.br &nbsp;·&nbsp;
-      Instagram: <strong>@icedream.producoes</strong> &nbsp;·&nbsp;
+      Instagram: <strong>@icedream.producoes</strong>
+    </p>
+    <p style="margin-top:.6rem;font-size:.7rem;opacity:.6">
+      Este site é protegido pelo reCAPTCHA e a 
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--ice)">Política de Privacidade</a> e 
+      <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color:var(--ice)">Termos de Serviço</a> do Google se aplicam.
     </p>
   </footer>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     (function () { emailjs.init('iW5F24j0Zpm3LSij3'); })();
@@ -1596,8 +1604,18 @@
       const mensagem = form.querySelector('#mensagem').value;
       const liveRegion = document.getElementById('form-live-region');
 
+      // Validação de campos obrigatórios
       if (!nome || !email || !mensagem) {
         liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
+        liveRegion.setAttribute('aria-live', 'assertive');
+        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
+        return;
+      }
+
+      // Validação do reCAPTCHA v2
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
         liveRegion.setAttribute('aria-live', 'assertive');
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
@@ -1610,7 +1628,8 @@
         name: nome,
         email: email,
         telefone: empresa,
-        mensagem: `Empresa/Evento: ${empresa}\nTipo de Evento: ${tipo}\nModalidade: ${modalidade}\n\n${mensagem}`
+        mensagem: `Empresa/Evento: ${empresa}\nTipo de Evento: ${tipo}\nModalidade: ${modalidade}\n\n${mensagem}`,
+        'g-recaptcha-response': recaptchaResponse
       }).then(function (response) {
         btn.textContent = 'Enviado com sucesso!';
         btn.style.background = '#4CAF50';
@@ -1618,6 +1637,7 @@
         liveRegion.setAttribute('aria-live', 'polite');
         setTimeout(() => {
           form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+          grecaptcha.reset();
           btn.textContent = 'Enviar Solicitação';
           btn.disabled = false;
           btn.style.background = '';
