@@ -443,7 +443,8 @@
 
     .steps {
       display: flex;
-      flex-direction: column
+      flex-direction: column;
+      list-style: none;
     }
 
     .step {
@@ -510,7 +511,8 @@
       display: flex;
       flex-direction: column;
       gap: 1.4rem;
-      margin-top: 1.8rem
+      margin-top: 1.8rem;
+      list-style: none;
     }
 
     .dif-item {
@@ -566,7 +568,8 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      margin-top: 2rem
+      margin-top: 2rem;
+      font-style: normal;
     }
 
     .ci {
@@ -769,7 +772,8 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       border-top: 1px solid rgba(118, 196, 248, .25);
-      margin-bottom: 3rem
+      margin-bottom: 3rem;
+      list-style: none;
     }
 
     .sc-step {
@@ -1201,29 +1205,29 @@
       <div class="sc-image-wrap reveal">
         <img src="images/slidecurl.png" alt="Pista indoor de SlideCurl com alvo de curling em azul e vermelho, pedras com rodinhas e participantes jogando." class="sc-main-img" />
       </div>
-      <div class="sc-steps">
-        <div class="sc-step reveal">
+      <ul class="sc-steps">
+        <li class="sc-step reveal">
           <div class="sc-step-num" aria-hidden="true">01</div>
           <div>
             <h4>Pista portátil</h4>
             <p>Montada rapidamente em qualquer espaço coberto, salão, lobby ou área indoor. Sem obras ou infraestrutura especial.</p>
           </div>
-        </div>
-        <div class="sc-step reveal">
+        </li>
+        <li class="sc-step reveal">
           <div class="sc-step-num" aria-hidden="true">02</div>
           <div>
             <h4>Pedras com rodinhas</h4>
             <p>As pedras de curling são adaptadas com rodinhas que deslizam suavemente, reproduzindo o movimento real do esporte.</p>
           </div>
-        </div>
-        <div class="sc-step reveal">
+        </li>
+        <li class="sc-step reveal">
           <div class="sc-step-num" aria-hidden="true">03</div>
           <div>
             <h4>Público participa</h4>
             <p>Qualquer pessoa joga em minutos, crianças, adultos, idosos. Interativo, competitivo e com engajamento imediato.</p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
       <div class="sc-foot reveal">
         <a href="#contato" class="sc-cta" aria-label="Entrar em contato para contratar SlideCurl no seu evento">Quero essa experiência no meu evento</a>
       </div>
@@ -1235,64 +1239,64 @@
         <h2 id="faq-title">Perguntas <em>Frequentes</em></h2>
         <p class="section-desc">Tudo o que você precisa saber antes de levar o gelo ao seu evento.</p>
       </div>
-      <div class="faq-list" role="list">
-        <div class="faq-item reveal" role="listitem">
+      <div class="faq-list">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq1" aria-label="Pergunta: Precisa de gelo de verdade para as atrações? Clique para expandir"><span>Precisa de gelo de verdade para as atrações?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq1" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq1" aria-hidden="true">
             <div class="faq-a-inner"><p>Não. Nossas experiências, como o SlideCurl, foram desenvolvidas para funcionar sem gelo real, garantindo praticidade, segurança e instalação em diversos ambientes.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq2" aria-label="Pergunta: A pista de gelo é real? Clique para expandir"><span>A pista de gelo é real?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq2" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq2" aria-hidden="true">
             <div class="faq-a-inner"><p>Sim. Oferecemos também experiências com gelo real, como patinação, curling e hockey, criando um ambiente imersivo e de alto impacto.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq3" aria-label="Pergunta: Quanto espaço é necessário? Clique para expandir"><span>Quanto espaço é necessário?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq3" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq3" aria-hidden="true">
             <div class="faq-a-inner"><p>O espaço varia conforme a atração escolhida. Adaptamos cada projeto de acordo com o ambiente disponível, desde espaços compactos até grandes áreas para eventos.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq4" aria-label="Pergunta: Qualquer pessoa pode participar? Clique para expandir"><span>Qualquer pessoa pode participar?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq4" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq4" aria-hidden="true">
             <div class="faq-a-inner"><p>Sim. As atividades são pensadas para serem acessíveis e intuitivas, permitindo a participação de pessoas de diferentes idades e níveis de habilidade.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq5" aria-label="Pergunta: Vocês oferecem suporte durante o evento? Clique para expandir"><span>Vocês oferecem suporte durante o evento?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq5" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq5" aria-hidden="true">
             <div class="faq-a-inner"><p>Sim. Nossa equipe acompanha toda a experiência, orientando os participantes, garantindo a segurança e o bom funcionamento das atividades.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq6" aria-label="Pergunta: É seguro? Clique para expandir"><span>É seguro?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq6" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq6" aria-hidden="true">
             <div class="faq-a-inner"><p>Sim. Todas as atividades seguem protocolos de segurança e contam com orientação profissional para garantir uma experiência tranquila e segura.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq7" aria-label="Pergunta: Em quais tipos de eventos a Ice Dream pode atuar? Clique para expandir"><span>Em quais tipos de eventos a Ice Dream pode atuar?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq7" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq7" aria-hidden="true">
             <div class="faq-a-inner"><p>Eventos recreativos, corporativos e institucionais, escolas, universidades, condomínios, hotéis, feiras, ativações de marca e produções de TV. Se você tem uma ideia diferente, a gente adapta, criamos experiências sob medida para o seu evento.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq8" aria-label="Pergunta: É possível personalizar a experiência? Clique para expandir"><span>É possível personalizar a experiência?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq8" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq8" aria-hidden="true">
             <div class="faq-a-inner"><p>Sim. Adaptamos a dinâmica, o formato e até a identidade visual da atração de acordo com o objetivo do evento.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq9" aria-label="Pergunta: Vocês atendem em todo o Brasil? Clique para expandir"><span>Vocês atendem em todo o Brasil?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq9" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq9" aria-hidden="true">
             <div class="faq-a-inner"><p>Sim. Avaliamos cada projeto para oferecer a melhor solução logística conforme a localização do evento.</p></div>
           </div>
         </div>
-        <div class="faq-item reveal" role="listitem">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false" aria-controls="faq10" aria-label="Pergunta: Como contratar? Clique para expandir"><span>Como contratar?</span><span class="faq-icon" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq10" role="region" aria-hidden="true">
+          <div class="faq-a" id="faq10" aria-hidden="true">
             <div class="faq-a-inner"><p>Basta entrar em contato pelo e-mail contato@icedream-producoes.com.br ou através do botão "Orçamento" neste site. Nossa equipe irá entender sua necessidade e desenvolver uma proposta personalizada para o seu evento.</p></div>
           </div>
         </div>
