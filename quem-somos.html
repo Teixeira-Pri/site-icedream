@@ -9,14 +9,13 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <title>Quem Somos | Ice Dream Produções</title>
   <meta name="description" content="Conheça a Ice Dream Produções: nosso propósito, missão, visão e valores. Geramos impacto real através de experiências com gelo que unem, incluem e transformam.">
-  
-  <!-- Open Graph / Facebook -->
+ 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://icedream-producoes.com.br/quem-somos.html">
   <meta property="og:title" content="Quem Somos | Ice Dream Produções">
   <meta property="og:description" content="Conheça a Ice Dream Produções: nosso propósito, missão, visão e valores. Geramos impacto real através de experiências com gelo que unem, incluem e transformam.">
   <meta property="og:image" content="https://icedream-producoes.com.br/og-image.jpg">
-  
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
@@ -24,9 +23,13 @@
     :root{--navy:#052C5C;--blue:#197AD2;--ice:#76C4F8;--white:#FAFCFF}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);line-height:1.6}
-
+ 
+    /* SKIP LINK */
+    .skip-link{position:absolute;top:-40px;left:0;background:var(--navy);color:var(--white);padding:8px 16px;text-decoration:none;z-index:999;font-size:.875rem;font-weight:500;transition:top .2s}
+    .skip-link:focus-visible{top:0;outline:3px solid var(--ice);outline-offset:0}
+ 
     /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 7%;background:rgba(250,252,255,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(5,44,92,.08)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 7%;background:rgba(250,252,255,0.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(5,44,92,.08)}
     .nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
     .nav-logo img{height:72px}
     .nav-links{display:flex;gap:2.2rem;list-style:none}
@@ -34,60 +37,85 @@
     .nav-links a:hover{color:var(--blue)}
     .nav-cta{background:var(--navy);color:var(--white)!important;padding:.55rem 1.4rem;border-radius:2px;transition:background .2s!important}
     .nav-cta:hover{background:var(--blue)!important}
-
+ 
+    /* HAMBURGUER */
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;flex-direction:column;gap:5px;z-index:101}
+    .nav-toggle-bar{display:block;width:26px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s,opacity .3s}
+    .nav-toggle.open .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.open .nav-toggle-bar:nth-child(2){opacity:0}
+    .nav-toggle.open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+ 
     /* HERO */
-    .hero{position:relative;min-height:75vh;display:flex;align-items:center;background:linear-gradient(135deg, #052C5C 0%, #197AD2 100%);padding:8rem 7% 4rem;margin-top:100px}
+    .hero{position:relative;min-height:75vh;display:flex;align-items:center;padding:8rem 7% 4rem;margin-top:100px;background-image:linear-gradient(rgba(5,44,92,0.55),rgba(5,44,92,0.55)),url('images/banner_quem_somos.png');background-size:cover;background-position:center;background-color:#052C5C}
     .hero-content{max-width:800px;margin:0 auto;text-align:center}
-    .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin-bottom:1rem;text-shadow:0 2px 8px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.6)}
-    .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,6vw,5rem);line-height:1.1;color:#fff;margin-bottom:1.2rem;text-shadow:0 2px 12px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.7)}
-    .hero-desc{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.85);line-height:1.8;max-width:600px;margin:0 auto;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
-
+    .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#b8ddfc;margin-bottom:1rem}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,6vw,5rem);line-height:1.1;color:#fff;margin-bottom:1.2rem}
+ 
     /* CONTENT */
     .content{padding:5rem 7%;max-width:1200px;margin:0 auto}
-    
     .section-block{margin-bottom:5rem}
     .section-block:last-child{margin-bottom:0}
-    
     .section-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.5rem;color:var(--navy);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-    .section-title::before{content:'';width:60px;height:3px;background:var(--ice)}
-    
-    .section-text{font-size:1.05rem;line-height:1.9;color:#4a6a8a;margin-bottom:2rem}
-
-    /* VALORES GRID */
-    .valores-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;margin-top:2.5rem}
-    .valor-card{background:#fff;border:1px solid rgba(5,44,92,.08);border-radius:8px;padding:2rem;transition:all .3s}
-    .valor-card:hover{box-shadow:0 8px 32px rgba(5,44,92,.1);transform:translateY(-4px);border-color:var(--ice)}
-    .valor-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
-    .valor-title{font-family:'DM Sans',sans-serif;font-weight:600;font-size:1.2rem;color:var(--navy);margin-bottom:.8rem}
-    .valor-desc{font-size:.95rem;line-height:1.75;color:#4a6a8a}
-
+    .section-title::before{content:'';width:60px;height:3px;background:var(--ice);flex-shrink:0}
+    .section-text{font-size:1.05rem;line-height:1.9;color:#4a6a8a;margin-bottom:1.4rem}
+    .section-text:last-child{margin-bottom:0}
+ 
     /* MISSION BOX */
     .mission-box{background:rgba(118,196,248,.06);border-left:4px solid var(--blue);padding:2rem;border-radius:4px;margin:2rem 0}
     .mission-box p{font-size:1.05rem;line-height:1.85;color:var(--navy);margin:0}
-
+ 
+    /* VALORES */
+    .valores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem;margin-top:2.5rem}
+    .valor-card{background:#fff;border:1px solid rgba(5,44,92,.08);border-radius:8px;padding:2rem;transition:box-shadow .3s,transform .3s,border-color .3s}
+    .valor-card:hover{box-shadow:0 8px 32px rgba(5,44,92,.1);transform:translateY(-4px);border-color:var(--ice)}
+    .valor-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+    .valor-title{font-family:'DM Sans',sans-serif;font-weight:600;font-size:1.1rem;color:var(--navy);margin-bottom:.7rem}
+    .valor-desc{font-size:.92rem;line-height:1.75;color:#4a6a8a}
+ 
     /* FOOTER */
-    footer{background:#031e3f;text-align:center;padding:1.8rem 7%;color:rgba(250,252,255,.26);font-size:.78rem}
+    footer{background:#031e3f;text-align:center;padding:1.8rem 7%;color:rgba(250,252,255,.6);font-size:.78rem}
     footer strong{color:var(--ice)}
     footer a{color:var(--ice);text-decoration:none}
     footer a:hover{text-decoration:underline}
-
+ 
+    /* FOCUS */
+    a:focus-visible,button:focus-visible{outline:3px solid var(--ice);outline-offset:3px;border-radius:2px}
+ 
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+ 
+    /* MOBILE */
     @media(max-width:800px){
-      .nav-links{display:none}
-      .hero{padding:6rem 5% 3rem;margin-top:80px}
+      .nav-toggle{display:flex}
+      .nav-links{position:fixed;top:0;right:0;height:100vh;width:75%;max-width:320px;background:var(--white);flex-direction:column;justify-content:center;align-items:center;gap:2rem;padding:2rem;transform:translateX(100%);transition:transform .35s ease;box-shadow:-4px 0 20px rgba(5,44,92,.15)}
+      .nav-links.open{transform:translateX(0)}
+      .nav-links a{font-size:1rem}
+      .hero{padding:6rem 5% 3rem;margin-top:80px;min-height:55vh}
       .content{padding:3rem 5%}
       .valores-grid{grid-template-columns:1fr}
-      .section-title{font-size:2rem}
+      .section-title{font-size:1.8rem}
+      .section-block{margin-bottom:3.5rem}
     }
   </style>
 </head>
 <body>
-
+ 
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+ 
 <header>
-  <nav role="navigation" aria-label="Navegação principal">
+  <nav aria-label="Navegação principal">
     <a href="index.html" class="nav-logo" aria-label="Voltar à página inicial Ice Dream Produções">
       <img src="images/logo.jpg" alt="Logotipo Ice Dream Produções"/>
     </a>
-    <ul class="nav-links">
+ 
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+ 
+    <ul class="nav-links" id="nav-menu">
       <li><a href="index.html#servicos">Serviços</a></li>
       <li><a href="quem-somos.html" aria-current="page">Quem Somos</a></li>
       <li><a href="index.html#como">Como Funciona</a></li>
@@ -95,76 +123,71 @@
     </ul>
   </nav>
 </header>
-
-<main>
-  <section class="hero" aria-labelledby="hero-title" style="background-image: linear-gradient(rgba(5,44,92,0.2), rgba(5,44,92,0.2)), url('images/banner_quem_somos.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #052C5C;">
+ 
+<main id="main-content">
+  <section class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
       <p class="hero-eyebrow">Conheça a Ice Dream</p>
       <h1 id="hero-title">Quem Somos</h1>
     </div>
   </section>
-
+ 
   <div class="content">
-    <section class="section-block" aria-labelledby="intro-title">
+ 
+    <section class="section-block reveal" aria-labelledby="intro-title">
       <h2 class="section-title" id="intro-title">E se o gelo pudesse acontecer em qualquer lugar?</h2>
-      <p class="section-text">Somos uma empresa especializada no desenvolvimento, instalação e operação de experiências com gelo real ou adaptadas como o Slide Curl, levando inovação, entretenimento e esporte para ambientes onde isso antes parecia impossível.</p>
+      <p class="section-text">Somos uma empresa especializada no desenvolvimento, instalação e operação de experiências com gelo real ou adaptadas como o SlideCurl, levando inovação, entretenimento e esporte para ambientes onde isso antes parecia impossível.</p>
       <p class="section-text">Mais do que montar pistas, criamos experiências completas: estruturamos, operamos e entregamos ao cliente uma solução segura, funcional e de alto impacto, seja com pistas de gelo reais para patinação, curling e hóquei, ou com versões adaptadas que ampliam o acesso e tornam a experiência possível em qualquer espaço.</p>
       <p class="section-text">Nosso diferencial está na combinação entre excelência técnica e capacidade de adaptação. Levamos o universo dos esportes no gelo para empresas, eventos, espaços de lazer e projetos institucionais, criando experiências que engajam, conectam e geram memória.</p>
       <p class="section-text">Acreditamos que o gelo não deve ser limitado por clima, estrutura ou localização. Por isso, desenvolvemos soluções que permitem que mais pessoas, com e sem deficiência, tenham acesso a essa vivência, promovendo inclusão, interação e novas possibilidades de entretenimento.</p>
       <p class="section-text">A Ice Dream existe para transformar espaços e eventos em experiências memoráveis, unindo inovação, emoção e impacto real na vida das pessoas.</p>
     </section>
-
-    <section class="section-block" aria-labelledby="proposito-title">
+ 
+    <section class="section-block reveal" aria-labelledby="proposito-title">
       <h2 class="section-title" id="proposito-title">Propósito</h2>
       <div class="mission-box">
         <p>Gerar impacto real na vida das pessoas através do gelo ou de experiências adaptadas, criando experiências que unem, incluem e transformam, levando oportunidade, emoção e pertencimento para todos, com e sem deficiência.</p>
       </div>
     </section>
-
-    <section class="section-block" aria-labelledby="missao-title">
+ 
+    <section class="section-block reveal" aria-labelledby="missao-title">
       <h2 class="section-title" id="missao-title">Missão</h2>
       <p class="section-text">Desenvolver, instalar e operar experiências com gelo, reais ou adaptadas, transformando eventos e espaços em ambientes de conexão, inclusão e alto impacto, com excelência técnica, segurança e inovação.</p>
     </section>
-
-    <section class="section-block" aria-labelledby="visao-title">
+ 
+    <section class="section-block reveal" aria-labelledby="visao-title">
       <h2 class="section-title" id="visao-title">Visão</h2>
       <p class="section-text">Ser referência na América Latina no desenvolvimento e operação de experiências com gelo reais e adaptadas, ampliando o acesso aos esportes no gelo e liderando novos formatos de entretenimento, ativação e impacto social.</p>
     </section>
-
-    <section class="section-block" aria-labelledby="valores-title">
+ 
+    <section class="section-block reveal" aria-labelledby="valores-title">
       <h2 class="section-title" id="valores-title">Valores</h2>
-      
       <div class="valores-grid">
         <article class="valor-card">
           <span class="valor-icon" aria-hidden="true">🧊</span>
           <h3 class="valor-title">Inovação</h3>
           <p class="valor-desc">Buscamos constantemente novas formas de levar o universo do gelo para diferentes contextos, seja com gelo real ou através de soluções adaptadas, criando experiências únicas e fora do padrão.</p>
         </article>
-
         <article class="valor-card">
           <span class="valor-icon" aria-hidden="true">🧠</span>
           <h3 class="valor-title">Excelência técnica</h3>
           <p class="valor-desc">Garantimos qualidade, segurança e profissionalismo em todas as etapas: instalação, operação e manutenção, tanto em estruturas com gelo quanto em experiências adaptadas.</p>
         </article>
-
         <article class="valor-card">
           <span class="valor-icon" aria-hidden="true">🌍</span>
           <h3 class="valor-title">Acessibilidade e inclusão</h3>
           <p class="valor-desc">Desenvolvemos experiências que permitem que pessoas com e sem deficiência participem, ampliando o acesso ao esporte e ao entretenimento por meio de soluções com gelo real e alternativas sem gelo, como o SlideCurl.</p>
         </article>
-
         <article class="valor-card">
           <span class="valor-icon" aria-hidden="true">🤝</span>
           <h3 class="valor-title">Conexão</h3>
           <p class="valor-desc">Criamos experiências que aproximam pessoas, estimulam interação e fortalecem vínculos através do esporte, da diversão e da vivência compartilhada.</p>
         </article>
-
         <article class="valor-card">
           <span class="valor-icon" aria-hidden="true">🎯</span>
           <h3 class="valor-title">Impacto e memorabilidade</h3>
           <p class="valor-desc">Desenvolvemos projetos que geram engajamento, emoção e lembrança duradoura, independentemente do formato, gelo real ou adaptado.</p>
         </article>
-
         <article class="valor-card">
           <span class="valor-icon" aria-hidden="true">🔧</span>
           <h3 class="valor-title">Responsabilidade operacional</h3>
@@ -172,9 +195,10 @@
         </article>
       </div>
     </section>
+ 
   </div>
 </main>
-
+ 
 <footer role="contentinfo">
   <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
   <p style="margin-top:.6rem">
@@ -183,6 +207,42 @@
     <a href="index.html">Voltar ao site</a>
   </p>
 </footer>
-
+ 
+<script>
+  // Menu hambúrguer mobile
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+ 
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.classList.toggle('open');
+    navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+  });
+ 
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menu');
+      }
+    });
+  });
+ 
+  // Reveal animations
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: .1 });
+ 
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+ 
 </body>
 </html>
