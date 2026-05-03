@@ -118,6 +118,16 @@
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
     .reveal.visible{opacity:1;transform:translateY(0)}
  
+    /* VLibras - Ajuste de z-index para não conflitar com o menu */
+    .vw-access-button {
+      z-index: 99 !important;
+      bottom: 20px !important;
+      right: 20px !important;
+    }
+    .vw-plugin-wrapper {
+      z-index: 98 !important;
+    }
+ 
     /* MOBILE */
     @media(max-width:800px){
       .nav-toggle{display:flex}
@@ -138,6 +148,13 @@
       .valores-grid{grid-template-columns:1fr}
       .section-title{font-size:1.8rem}
       .section-block{margin-bottom:3.5rem}
+      
+      /* VLibras mobile - ajuste de posição */
+      .vw-access-button {
+        bottom: 15px !important;
+        right: 15px !important;
+        transform: scale(0.9);
+      }
     }
   </style>
 </head>
@@ -257,6 +274,26 @@
     <a href="index.html">Voltar ao site</a>
   </p>
 </footer>
+ 
+<!-- =============================================
+     VLibras - Acessibilidade em Libras
+     Botão azul aparece no canto inferior direito.
+     Ao clicar, o boneco 3D traduz a página em Libras.
+     Funciona em desktop e mobile.
+============================================== -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+<!-- =============================================
+     Fim VLibras
+============================================== -->
  
 <script>
   const navToggle = document.getElementById('nav-toggle');
