@@ -45,11 +45,35 @@
     .nav-toggle.open .nav-toggle-bar:nth-child(2){opacity:0}
     .nav-toggle.open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
  
-    /* HERO */
-    .hero{position:relative;min-height:75vh;display:flex;align-items:center;padding:8rem 7% 4rem;margin-top:100px;background-image:linear-gradient(rgba(5,44,92,0.55),rgba(5,44,92,0.55)),url('images/banner_quem_somos.png');background-size:cover;background-position:center;background-color:#052C5C}
-    .hero-content{max-width:800px;margin:0 auto;text-align:center}
+    /* HERO — imagem real, sem corte */
+    .hero{
+      position:relative;
+      margin-top:100px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background-color:#052C5C; /* fallback enquanto imagem carrega */
+    }
+    .hero-img{
+      width:100%;
+      height:auto;       /* respeita proporção original — sem corte */
+      display:block;
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(5,44,92,0.55);
+    }
+    .hero-content{
+      position:absolute;
+      z-index:1;
+      text-align:center;
+      padding:2rem;
+      width:100%;
+    }
     .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#b8ddfc;margin-bottom:1rem}
-    .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,6vw,5rem);line-height:1.1;color:#fff;margin-bottom:1.2rem}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,6vw,5rem);line-height:1.1;color:#fff}
  
     /* CONTENT */
     .content{padding:5rem 7%;max-width:1200px;margin:0 auto}
@@ -88,10 +112,16 @@
     /* MOBILE */
     @media(max-width:800px){
       .nav-toggle{display:flex}
-      .nav-links{position:fixed;top:0;right:0;height:100vh;width:75%;max-width:320px;background:var(--white);flex-direction:column;justify-content:center;align-items:center;gap:2rem;padding:2rem;transform:translateX(100%);transition:transform .35s ease;box-shadow:-4px 0 20px rgba(5,44,92,.15)}
+      .nav-links{
+        position:fixed;top:0;right:0;height:100vh;width:75%;max-width:320px;
+        background:var(--white);flex-direction:column;justify-content:center;
+        align-items:center;gap:2rem;padding:2rem;
+        transform:translateX(100%);transition:transform .35s ease;
+        box-shadow:-4px 0 20px rgba(5,44,92,.15)
+      }
       .nav-links.open{transform:translateX(0)}
       .nav-links a{font-size:1rem}
-      .hero{padding:6rem 5% 3rem;margin-top:80px;min-height:55vh}
+      .hero{margin-top:80px}
       .content{padding:3rem 5%}
       .valores-grid{grid-template-columns:1fr}
       .section-title{font-size:1.8rem}
@@ -125,7 +155,16 @@
 </header>
  
 <main id="main-content">
+ 
+  <!-- HERO: imagem real, sem background-size cover, sem corte -->
   <section class="hero" aria-labelledby="hero-title">
+    <img
+      src="images/banner_quem_somos.png"
+      alt=""
+      class="hero-img"
+      aria-hidden="true"
+    />
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Conheça a Ice Dream</p>
       <h1 id="hero-title">Quem Somos</h1>
