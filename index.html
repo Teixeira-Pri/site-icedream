@@ -11,7 +11,7 @@
   <title>Ice Dream Produções | Pista de Gelo, Patinação, Hockey, Curling e SlideCurl para Eventos</title>
   <meta name="description"
     content="Ice Dream Produções: pista de patinação no gelo real, hockey, curling e SlideCurl para eventos. Atendemos festas, shoppings e ativações de marca em todo o Brasil. Solicite orçamento!">
-  
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://icedream-producoes.com.br/">
   <meta property="og:title" content="Ice Dream Produções | Levamos o gelo para qualquer lugar">
@@ -21,7 +21,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Ice Dream Produções">
-  
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://icedream-producoes.com.br/">
   <meta name="twitter:title" content="Ice Dream Produções | Experiências no Gelo para Eventos">
@@ -135,6 +135,39 @@
 
     .nav-cta:hover {
       background: var(--blue) !important
+    }
+
+    /* Botão hambúrguer (escondido no desktop) */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .5rem;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 101;
+    }
+
+    .nav-toggle-bar {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .nav-toggle.open .nav-toggle-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open .nav-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
     }
 
     #hero {
@@ -1064,8 +1097,36 @@
         gap: 3rem
       }
 
+      /* Mostra botão hambúrguer */
+      .nav-toggle {
+        display: flex;
+      }
+
+      /* Menu mobile */
       .nav-links {
-        display: none
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 75%;
+        max-width: 320px;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        transform: translateX(100%);
+        transition: transform .35s ease;
+        box-shadow: -4px 0 20px rgba(5, 44, 92, .15);
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        font-size: 1rem;
       }
 
       .row2 {
@@ -1074,6 +1135,20 @@
 
       .dep-grid {
         grid-template-columns: 1fr
+      }
+
+      .sc-steps {
+        grid-template-columns: 1fr
+      }
+
+      .sc-step {
+        border-right: none;
+        border-bottom: 1px solid rgba(118, 196, 248, .15);
+        padding: 2rem 0
+      }
+
+      .sc-step:last-child {
+        border-bottom: none
       }
 
       .sc-cta {
@@ -1099,7 +1174,14 @@
       <a href="#hero" class="nav-logo" aria-label="Ice Dream Produções - voltar ao início">
         <img src="images/logo.jpg" alt="Logo Ice Dream Produções" />
       </a>
-      <ul class="nav-links">
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="https://teixeira-pri.github.io/site-icedream/quem-somos.html">Quem Somos</a></li>
         <li><a href="#como">Como Funciona</a></li>
@@ -1110,7 +1192,7 @@
 
   <main id="main-content">
     <section id="hero" aria-labelledby="hero-title">
-      <div class="hero-bg" role="img" aria-label="Pista de gelo profissional iluminada"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="hero-eyebrow">Levamos o gelo para qualquer lugar</p>
         <h1 id="hero-title">Gelo que <em>transforma</em> eventos</h1>
@@ -1122,14 +1204,14 @@
       </div>
     </section>
 
-    <div class="divider" role="separator">
+    <div class="divider">
       <div class="divider-line"></div>
       <span class="divider-text">O que oferecemos</span>
       <div class="divider-line"></div>
     </div>
 
     <section id="banner" aria-labelledby="banner-quote">
-      <img src="images/banner_texto.png" alt="Frase: Tudo começa com o gelo" class="banner-bg-image">
+      <img src="images/banner_texto.png" alt="" class="banner-bg-image">
       <div class="banner-overlay"></div>
       <div class="banner-content reveal">
         <blockquote id="banner-quote">Tudo começa com o gelo</blockquote>
@@ -1140,7 +1222,7 @@
     <section id="servicos" aria-labelledby="servicos-title">
       <div class="section-header reveal">
         <p class="section-label">Serviços</p>
-        <h2 id="servicos-title">Três formas de levar<br><em>o gelo ao seu evento</em></h2>
+        <h2 id="servicos-title" class="section-title">Três formas de levar<br><em>o gelo ao seu evento</em></h2>
         <p class="section-desc">Gelo real ou adaptado, temos solução para qualquer espaço e porte de evento.</p>
       </div>
       <div class="services-grid">
@@ -1214,7 +1296,7 @@
     <section id="faq" aria-labelledby="faq-title">
       <div class="section-header reveal">
         <p class="section-label">Dúvidas</p>
-        <h2 id="faq-title">Perguntas <em>Frequentes</em></h2>
+        <h2 id="faq-title" class="section-title">Perguntas <em>Frequentes</em></h2>
         <p class="section-desc">Tudo o que você precisa saber antes de levar o gelo ao seu evento.</p>
       </div>
       <div class="faq-list">
@@ -1286,7 +1368,7 @@
         <div>
           <div class="section-header reveal">
             <p class="section-label">Processo</p>
-            <h2 id="como-title">Como <em>funciona</em></h2>
+            <h2 id="como-title" class="section-title">Como <em>funciona</em></h2>
             <p class="section-desc">Do primeiro contato à experiência completa, cuidamos de cada etapa.</p>
           </div>
           <ol class="steps">
@@ -1314,7 +1396,7 @@
     <section id="depoimentos" aria-labelledby="depoimentos-title">
       <div class="section-header reveal">
         <p class="section-label">Depoimentos</p>
-        <h2 id="depoimentos-title">O que nossos clientes dizem</h2>
+        <h2 id="depoimentos-title" class="section-title">O que nossos clientes dizem</h2>
       </div>
       <div class="dep-grid">
         <article class="dep-card reveal"><div class="dep-quote" aria-hidden="true">"</div><p class="dep-text">A ICE DREAM transformou nosso evento corporativo em uma experiência inesquecível. A pista de gelo foi o ponto alto da festa.</p><div class="dep-author"><strong>Mariana Costa</strong><span>Diretora de Eventos</span></div></article>
@@ -1327,7 +1409,7 @@
       <div>
         <div class="section-header reveal">
           <p class="section-label">Contato</p>
-          <h2 id="contato-title">Vamos criar algo<br><em>inesquecível?</em></h2>
+          <h2 id="contato-title" class="section-title">Vamos criar algo<br><em>inesquecível?</em></h2>
           <p class="section-desc">Envie sua solicitação e nossa equipe entrará em contato com a proposta ideal.</p>
         </div>
         <address class="contact-list reveal">
@@ -1341,16 +1423,22 @@
           <div class="row2">
             <div class="fg">
               <label for="nome" class="required">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" />
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" autocomplete="name" />
             </div>
             <div class="fg">
               <label for="empresa" class="optional">Empresa</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Empresa ou evento" />
+              <input type="text" id="empresa" name="empresa" placeholder="Empresa ou evento" autocomplete="organization" />
             </div>
           </div>
-          <div class="fg">
-            <label for="email" class="required">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" />
+          <div class="row2">
+            <div class="fg">
+              <label for="email" class="required">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" autocomplete="email" />
+            </div>
+            <div class="fg">
+              <label for="telefone" class="optional">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" />
+            </div>
           </div>
           <div class="fg">
             <label for="tipo-evento">Tipo de Evento</label>
@@ -1391,32 +1479,33 @@
   </footer>
 
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  
+
   <script>
-    // ✅ URL do Google Apps Script (SEU ID já inserido)
+    // ✅ URL do Google Apps Script (atualizada após nova implementação)
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzbc01BDLuvsTrwRpFYlYQnOxlxcLc5oR0-LGwweKFD7qwMlbbp61CgSWT_dhIXiCePKQ/exec";
-    
+
     const form = document.getElementById('contact-form');
     const liveRegion = document.getElementById('form-live-region');
-    
-    form.addEventListener('submit', async function(e) {
+
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      
+
       const nome = document.getElementById('nome').value.trim();
       const empresa = document.getElementById('empresa').value.trim();
       const email = document.getElementById('email').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
       const tipoEvento = document.getElementById('tipo-evento').value;
       const modalidade = document.getElementById('modalidade').value;
       const mensagem = document.getElementById('mensagem').value.trim();
       const btn = form.querySelector('.btn-submit');
-      
+
       if (!nome || !email || !mensagem) {
         liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
         liveRegion.setAttribute('aria-live', 'assertive');
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
       }
-      
+
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
@@ -1424,20 +1513,21 @@
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
       }
-      
+
       btn.disabled = true;
       btn.textContent = 'Enviando...';
-      
+
       const dados = {
         nome: nome,
         empresa: empresa,
         email: email,
+        telefone: telefone,
         tipoEvento: tipoEvento,
         modalidade: modalidade,
         mensagem: mensagem,
         recaptcha: recaptchaResponse
       };
-      
+
       try {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
@@ -1445,22 +1535,22 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(dados)
         });
-        
+
         liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
         liveRegion.setAttribute('aria-live', 'polite');
         btn.textContent = 'Enviado com sucesso!';
         btn.style.background = '#4CAF50';
-        
+
         form.reset();
         grecaptcha.reset();
-        
+
         setTimeout(() => {
           btn.textContent = 'Enviar Solicitação';
           btn.disabled = false;
           btn.style.background = '';
           liveRegion.textContent = '';
         }, 5000);
-        
+
       } catch (error) {
         liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
         liveRegion.setAttribute('aria-live', 'assertive');
@@ -1469,7 +1559,30 @@
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
       }
     });
-    
+
+    // Menu hambúrguer mobile
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    });
+
+    // Fecha menu ao clicar em um link (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('open')) {
+          navToggle.classList.remove('open');
+          navMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Abrir menu');
+        }
+      });
+    });
+
     // FAQ Accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1492,7 +1605,7 @@
         }
       });
     });
-    
+
     // Reveal animations
     const obs = new IntersectionObserver(es => {
       es.forEach(e => {
@@ -1502,7 +1615,7 @@
         }
       });
     }, { threshold: .1 });
-    
+
     document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
   </script>
 </body>
