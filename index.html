@@ -750,18 +750,17 @@
       margin-bottom: .9rem
     }
 
-    .sc-header h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      line-height: 1.08;
-      color: #FFFFFF
-    }
-
-    .sc-header h3 em {
-      font-style: italic;
-      color: var(--ice)
-    }
+   .sc-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.08;
+  color: #FFFFFF
+}
+.sc-header h2 em {
+  font-style: italic;
+  color: var(--ice)
+}
 
     .sc-desc {
       font-size: .9rem;
@@ -1259,7 +1258,7 @@
     <section id="slidecurl" aria-labelledby="slidecurl-title">
       <div class="sc-header reveal">
         <p class="sc-label">Experiência Adaptada</p>
-        <h3 id="slidecurl-title">Curling sem gelo?<br><em>É o SlideCurl.</em></h3>
+        <h2 id="slidecurl-title">Curling sem gelo?<br><em>É o SlideCurl.</em></h2>
         <p class="sc-desc">O <strong>SlideCurl</strong> é uma experiência interativa inspirada no curling, onde os participantes deslizam pedras até um alvo, combinando precisão, estratégia e diversão, tudo isso sem precisar de gelo.</p>
       </div>
       <div class="sc-image-wrap reveal">
@@ -1466,10 +1465,7 @@
             <label for="mensagem" class="required">Mensagem</label>
             <textarea id="mensagem" name="mensagem" placeholder="Descreva o evento, data, local e número de participantes..." required aria-required="true"></textarea>
           </div>
-          <div role="group" aria-labelledby="recaptcha-label">
-            <span id="recaptcha-label" class="sr-only">Verificação de segurança</span>
-            <div class="g-recaptcha" data-sitekey="6LdvSdcsAAAAAKK2bhkd0Kt7ukatLOCO03wzKvH6"></div>
-          </div>
+          <div class="g-recaptcha" data-sitekey="6LdvSdcsAAAAAKK2bhkd0Kt7ukatLOCO03wzKvH6"></div>
           <button type="submit" class="btn-submit">Enviar Solicitação</button>
         </form>
       </div>
@@ -1620,6 +1616,16 @@
     }, { threshold: .1 });
 
     document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const rcFrame = document.querySelector('.g-recaptcha iframe');
+        if (rcFrame) {
+          rcFrame.setAttribute('title', 'Verificação de segurança reCAPTCHA');
+        }
+      }, 2000);
+    });
+
   </script>
 </body>
 
