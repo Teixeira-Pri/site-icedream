@@ -1466,7 +1466,10 @@
             <label for="mensagem" class="required">Mensagem</label>
             <textarea id="mensagem" name="mensagem" placeholder="Descreva o evento, data, local e número de participantes..." required aria-required="true"></textarea>
           </div>
-          <div class="g-recaptcha" data-sitekey="6LdvSdcsAAAAAKK2bhkd0Kt7ukatLOCO03wzKvH6"></div>
+          <div role="group" aria-labelledby="recaptcha-label">
+            <span id="recaptcha-label" class="sr-only">Verificação de segurança</span>
+            <div class="g-recaptcha" data-sitekey="6LdvSdcsAAAAAKK2bhkd0Kt7ukatLOCO03wzKvH6"></div>
+          </div>
           <button type="submit" class="btn-submit">Enviar Solicitação</button>
         </form>
       </div>
