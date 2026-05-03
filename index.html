@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+ 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
   <title>Ice Dream Produções | Pista de Gelo, Patinação, Hockey, Curling e SlideCurl para Eventos</title>
   <meta name="description"
     content="Ice Dream Produções: pista de patinação no gelo real, hockey, curling e SlideCurl para eventos. Atendemos festas, shoppings e ativações de marca em todo o Brasil. Solicite orçamento!">
-
+ 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://icedream-producoes.com.br/">
   <meta property="og:title" content="Ice Dream Produções | Levamos o gelo para qualquer lugar">
@@ -21,7 +21,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Ice Dream Produções">
-
+ 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://icedream-producoes.com.br/">
   <meta name="twitter:title" content="Ice Dream Produções | Experiências no Gelo para Eventos">
@@ -39,7 +39,7 @@
       margin: 0;
       padding: 0
     }
-
+ 
     :root {
       --navy: #052C5C;
       --blue: #197AD2;
@@ -48,17 +48,17 @@
       --text-dark: #052C5C;
       --text-body: #1a3a5c;
     }
-
+ 
     html {
       scroll-behavior: smooth
     }
-
+ 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--white);
       color: var(--text-dark)
     }
-
+ 
     .skip-link {
       position: absolute;
       top: -40px;
@@ -72,13 +72,13 @@
       font-weight: 500;
       transition: top 0.2s;
     }
-
+ 
     .skip-link:focus-visible {
       top: 0;
       outline: 3px solid var(--ice);
       outline-offset: 0;
     }
-
+ 
     nav {
       position: fixed;
       top: 0;
@@ -93,24 +93,24 @@
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(5, 44, 92, .08)
     }
-
+ 
     .nav-logo {
       display: flex;
       align-items: center;
       gap: .7rem;
       text-decoration: none
     }
-
+ 
     .nav-logo img {
       height: 72px
     }
-
+ 
     .nav-links {
       display: flex;
       gap: 2.2rem;
       list-style: none
     }
-
+ 
     .nav-links a {
       color: var(--navy);
       text-decoration: none;
@@ -120,11 +120,11 @@
       text-transform: uppercase;
       transition: color .2s
     }
-
+ 
     .nav-links a:hover {
       color: var(--blue)
     }
-
+ 
     .nav-cta {
       background: var(--navy);
       color: var(--white) !important;
@@ -132,11 +132,11 @@
       border-radius: 2px;
       transition: background .2s !important
     }
-
+ 
     .nav-cta:hover {
       background: var(--blue) !important
     }
-
+ 
     /* Botão hambúrguer (escondido no desktop) */
     .nav-toggle {
       display: none;
@@ -148,7 +148,7 @@
       gap: 5px;
       z-index: 101;
     }
-
+ 
     .nav-toggle-bar {
       display: block;
       width: 26px;
@@ -157,19 +157,19 @@
       border-radius: 2px;
       transition: transform .3s, opacity .3s;
     }
-
+ 
     .nav-toggle.open .nav-toggle-bar:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
-
+ 
     .nav-toggle.open .nav-toggle-bar:nth-child(2) {
       opacity: 0;
     }
-
+ 
     .nav-toggle.open .nav-toggle-bar:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
-
+ 
     #hero {
       position: relative;
       min-height: 100vh;
@@ -177,7 +177,7 @@
       align-items: flex-end;
       overflow: hidden
     }
-
+ 
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -185,21 +185,21 @@
       background-size: cover;
       background-position: center top
     }
-
+ 
     .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(to right, rgba(5, 44, 92, 0.94) 38%, rgba(5, 44, 92, 0.50) 100%)
     }
-
+ 
     .hero-content {
       position: relative;
       z-index: 1;
       padding: 8rem 7% 6rem;
       max-width: 600px
     }
-
+ 
     .hero-eyebrow {
       font-size: .72rem;
       font-weight: 500;
@@ -208,7 +208,7 @@
       color: #b8ddfc;
       margin-bottom: 1.4rem
     }
-
+ 
     .hero-content h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -217,12 +217,12 @@
       color: #FFFFFF;
       margin-bottom: 1.6rem
     }
-
+ 
     .hero-content h1 em {
       font-style: italic;
       color: #a8d9fc
     }
-
+ 
     .hero-desc {
       font-size: 1rem;
       font-weight: 300;
@@ -231,14 +231,14 @@
       max-width: 400px;
       margin-bottom: 2.6rem
     }
-
+ 
     .hero-actions {
       display: flex;
       gap: 1.2rem;
       align-items: center;
       flex-wrap: wrap
     }
-
+ 
     .btn-primary {
       background: var(--ice);
       color: var(--navy);
@@ -251,11 +251,11 @@
       border-radius: 2px;
       transition: background .2s
     }
-
+ 
     .btn-primary:hover {
       background: #a8d9fc
     }
-
+ 
     .btn-ghost {
       border: 1px solid rgba(255, 255, 255, 0.7);
       color: #FFFFFF;
@@ -268,11 +268,11 @@
       border-radius: 2px;
       transition: border-color .2s
     }
-
+ 
     .btn-ghost:hover {
       border-color: #FFFFFF
     }
-
+ 
     .divider {
       display: flex;
       align-items: center;
@@ -280,13 +280,13 @@
       padding: 0 7%;
       margin: 4rem 0
     }
-
+ 
     .divider-line {
       flex: 1;
       height: 1px;
       background: rgba(5, 44, 92, .15)
     }
-
+ 
     .divider-text {
       font-size: .68rem;
       letter-spacing: .2em;
@@ -294,7 +294,7 @@
       color: #4a6a8a;
       white-space: nowrap
     }
-
+ 
     .section-label {
       font-size: .7rem;
       font-weight: 500;
@@ -303,7 +303,7 @@
       color: #197AD2;
       margin-bottom: .7rem
     }
-
+ 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -311,11 +311,11 @@
       color: var(--navy);
       line-height: 1.08
     }
-
+ 
     .section-title em {
       font-style: italic
     }
-
+ 
     .section-desc {
       font-size: .9rem;
       font-weight: 300;
@@ -323,22 +323,22 @@
       line-height: 1.8;
       margin-top: .8rem
     }
-
+ 
     .section-header {
       margin-bottom: 3.5rem
     }
-
+ 
     #servicos {
       padding: 5rem 7%;
       overflow: visible
     }
-
+ 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem
     }
-
+ 
     .svc {
       border: 1px solid rgba(5, 44, 92, .09);
       border-radius: 3px;
@@ -346,26 +346,26 @@
       transition: box-shadow .35s, transform .35s;
       background: var(--white)
     }
-
+ 
     .svc:hover {
       box-shadow: 0 16px 48px rgba(5, 44, 92, .13);
       transform: translateY(-5px)
     }
-
+ 
     .svc-img {
       height: 240px;
       background-size: cover;
       background-position: center;
       position: relative
     }
-
+ 
     .svc-img::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(5, 44, 92, 0.7) 0%, transparent 55%)
     }
-
+ 
     .svc-img-label {
       position: absolute;
       bottom: 1rem;
@@ -377,11 +377,11 @@
       color: #FFFFFF;
       letter-spacing: .04em
     }
-
+ 
     .svc-body {
       padding: 1.7rem
     }
-
+ 
     .svc-body h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem;
@@ -389,7 +389,7 @@
       color: var(--navy);
       margin-bottom: .55rem
     }
-
+ 
     .svc-body p {
       font-size: .84rem;
       font-weight: 300;
@@ -397,7 +397,7 @@
       line-height: 1.72;
       margin-bottom: 1rem
     }
-
+ 
     #banner {
       position: relative;
       height: 420px;
@@ -405,7 +405,7 @@
       align-items: center;
       overflow: hidden;
     }
-
+ 
     .banner-bg-image {
       position: absolute;
       top: 0;
@@ -415,20 +415,20 @@
       object-fit: cover;
       z-index: 0;
     }
-
+ 
     .banner-overlay {
       position: absolute;
       inset: 0;
       background: rgba(5, 44, 92, 0.75);
       z-index: 1;
     }
-
+ 
     .banner-content {
       position: relative;
       z-index: 2;
       padding: 0 7%;
     }
-
+ 
     .banner-content blockquote {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -438,7 +438,7 @@
       line-height: 1.08;
       max-width: 680px;
     }
-
+ 
     .banner-content cite {
       display: block;
       margin-top: 1.2rem;
@@ -449,27 +449,27 @@
       color: #b8ddfc;
       font-style: normal;
     }
-
+ 
     #como {
       padding: 5rem 7%;
       background: rgba(118, 196, 248, .04);
       border-top: 1px solid rgba(5, 44, 92, .06);
       border-bottom: 1px solid rgba(5, 44, 92, .06)
     }
-
+ 
     .como-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: start
     }
-
+ 
     .steps {
       display: flex;
       flex-direction: column;
       list-style: none;
     }
-
+ 
     .step {
       display: grid;
       grid-template-columns: 52px 1fr;
@@ -478,11 +478,11 @@
       padding: 1.8rem 0;
       border-bottom: 1px solid rgba(5, 44, 92, .07)
     }
-
+ 
     .step:last-child {
       border-bottom: none
     }
-
+ 
     .step-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.2rem;
@@ -490,7 +490,7 @@
       color: var(--ice);
       line-height: 1
     }
-
+ 
     .step h4 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
@@ -498,14 +498,14 @@
       color: var(--navy);
       margin-bottom: .35rem
     }
-
+ 
     .step p {
       font-size: .84rem;
       font-weight: 300;
       color: var(--text-body);
       line-height: 1.7
     }
-
+ 
     .aside-card {
       background: var(--navy);
       padding: 2.8rem;
@@ -513,7 +513,7 @@
       position: sticky;
       top: 6rem
     }
-
+ 
     .aside-card .big {
       font-family: 'Cormorant Garamond', serif;
       font-size: 4.5rem;
@@ -523,13 +523,13 @@
       display: block;
       margin-bottom: .8rem
     }
-
+ 
     .aside-card>p {
       color: rgba(250, 252, 255, 0.85);
       font-size: .88rem;
       line-height: 1.75
     }
-
+ 
     .dif-list {
       display: flex;
       flex-direction: column;
@@ -537,13 +537,13 @@
       margin-top: 1.8rem;
       list-style: none;
     }
-
+ 
     .dif-item {
       display: flex;
       gap: .9rem;
       align-items: flex-start
     }
-
+ 
     .dif-dot {
       width: 5px;
       height: 5px;
@@ -552,19 +552,19 @@
       flex-shrink: 0;
       margin-top: 7px
     }
-
+ 
     .dif-item p {
       font-size: .84rem;
       font-weight: 300;
       color: rgba(250, 252, 255, 0.85);
       line-height: 1.65
     }
-
+ 
     .dif-item strong {
       color: #FFFFFF;
       font-weight: 500
     }
-
+ 
     #contato {
       padding: 5rem 7%;
       display: grid;
@@ -573,19 +573,19 @@
       align-items: start;
       background: var(--navy)
     }
-
+ 
     #contato .section-label {
       color: #a8d9fc;
     }
-
+ 
     #contato .section-title {
       color: #FFFFFF
     }
-
+ 
     #contato .section-desc {
       color: rgba(250, 252, 255, 0.75);
     }
-
+ 
     .contact-list {
       display: flex;
       flex-direction: column;
@@ -593,7 +593,7 @@
       margin-top: 2rem;
       font-style: normal;
     }
-
+ 
     .ci {
       font-size: .84rem;
       color: rgba(250, 252, 255, 0.85);
@@ -601,7 +601,7 @@
       gap: .8rem;
       align-items: center
     }
-
+ 
     .ci-dot {
       width: 5px;
       height: 5px;
@@ -609,14 +609,14 @@
       background: var(--ice);
       flex-shrink: 0
     }
-
+ 
     .fg {
       display: flex;
       flex-direction: column;
       gap: .4rem;
       margin-bottom: 1rem
     }
-
+ 
     .fg label {
       font-size: .67rem;
       font-weight: 500;
@@ -624,13 +624,13 @@
       text-transform: uppercase;
       color: #b8ddfc;
     }
-
+ 
     .fg label.required::after {
       content: " *";
       color: #ffb347;
       display: inline-block;
     }
-
+ 
     .fg label.optional::after {
       content: " (opcional)";
       color: rgba(184, 221, 252, 0.7);
@@ -639,7 +639,7 @@
       text-transform: none;
       letter-spacing: normal;
     }
-
+ 
     .fg input,
     .fg textarea,
     .fg select {
@@ -654,33 +654,33 @@
       width: 100%;
       transition: border-color .2s
     }
-
+ 
     .fg input:focus,
     .fg textarea:focus,
     .fg select:focus {
       border-color: var(--ice)
     }
-
+ 
     .fg input::placeholder,
     .fg textarea::placeholder {
       color: rgba(250, 252, 255, 0.45)
     }
-
+ 
     .fg textarea {
       resize: vertical;
       min-height: 90px
     }
-
+ 
     .fg select option {
       background: var(--navy)
     }
-
+ 
     .row2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem
     }
-
+ 
     .btn-submit {
       width: 100%;
       background: var(--ice);
@@ -697,16 +697,16 @@
       transition: background .2s;
       margin-top: .3rem
     }
-
+ 
     .btn-submit:hover {
       background: #a8d9fc
     }
-
+ 
     .btn-submit:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }
-
+ 
     footer {
       background: #031e3f;
       text-align: center;
@@ -714,33 +714,33 @@
       color: rgba(250, 252, 255, 0.55);
       font-size: .78rem
     }
-
+ 
     footer strong {
       color: var(--ice)
     }
-
+ 
     .reveal {
       opacity: 0;
       transform: translateY(22px);
       transition: opacity .7s, transform .7s
     }
-
+ 
     .reveal.visible {
       opacity: 1;
       transform: translateY(0)
     }
-
+ 
     #slidecurl {
       background: #052C5C;
       padding: 5rem 7%
     }
-
+ 
     .sc-header {
       text-align: center;
       max-width: 680px;
       margin: 0 auto 3rem
     }
-
+ 
     .sc-label {
       font-size: .7rem;
       font-weight: 500;
@@ -749,7 +749,7 @@
       color: #a8d9fc;
       margin-bottom: .9rem
     }
-
+ 
    .sc-header h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
@@ -761,7 +761,7 @@
   font-style: italic;
   color: var(--ice)
 }
-
+ 
     .sc-desc {
       font-size: .9rem;
       font-weight: 300;
@@ -769,23 +769,23 @@
       line-height: 1.85;
       margin-top: 1rem
     }
-
+ 
     .sc-desc strong {
       color: #FFFFFF;
       font-weight: 500
     }
-
+ 
     .sc-image-wrap {
       margin: 0 auto 3rem
     }
-
+ 
     .sc-main-img {
       width: 100%;
       border-radius: 8px;
       display: block;
       object-fit: cover
     }
-
+ 
     .sc-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -793,17 +793,17 @@
       margin-bottom: 3rem;
       list-style: none;
     }
-
+ 
     .sc-step {
       padding: 2rem 2rem 2rem 0;
       border-right: 1px solid rgba(118, 196, 248, .15)
     }
-
+ 
     .sc-step:last-child {
       border-right: none;
       padding-right: 0
     }
-
+ 
     .sc-step-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.6rem;
@@ -812,7 +812,7 @@
       line-height: 1;
       margin-bottom: .6rem
     }
-
+ 
     .sc-step h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
@@ -820,19 +820,19 @@
       color: #FFFFFF;
       margin-bottom: .4rem
   }
-
+ 
     .sc-step p {
       font-size: .82rem;
       font-weight: 300;
       color: rgba(250, 252, 255, 0.8);
       line-height: 1.7
     }
-
+ 
     .sc-foot {
       text-align: center;
       padding: 1rem 0 2rem
     }
-
+ 
     .sc-cta {
       display: inline-block;
       background: var(--ice);
@@ -847,34 +847,34 @@
       transition: background .2s, transform .2s;
       white-space: nowrap
     }
-
+ 
     .sc-cta:hover {
       background: #a8d9fc;
       transform: translateY(-2px)
     }
-
+ 
     #depoimentos {
       padding: 5rem 7%;
       background: rgba(118, 196, 248, .04);
       border-top: 1px solid rgba(5, 44, 92, .06);
       border-bottom: 1px solid rgba(5, 44, 92, .06)
     }
-
+ 
     #depoimentos .section-header {
       text-align: center;
       margin-bottom: 3.5rem
     }
-
+ 
     #depoimentos .section-header .section-title {
       color: var(--navy)
     }
-
+ 
     .dep-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem
     }
-
+ 
     .dep-card {
       background: var(--white);
       border: 1px solid rgba(5, 44, 92, .09);
@@ -885,19 +885,19 @@
       gap: 1.2rem;
       transition: box-shadow .3s, transform .3s
     }
-
+ 
     .dep-card:hover {
       box-shadow: 0 12px 40px rgba(5, 44, 92, .1);
       transform: translateY(-4px)
     }
-
+ 
     .dep-quote {
       font-size: 2rem;
       font-family: 'Cormorant Garamond', serif;
       color: var(--ice);
       line-height: 1
     }
-
+ 
     .dep-text {
       font-size: .9rem;
       font-weight: 300;
@@ -905,35 +905,35 @@
       line-height: 1.8;
       flex: 1
     }
-
+ 
     .dep-author {
       border-top: 1px solid rgba(5, 44, 92, .08);
       padding-top: 1rem
     }
-
+ 
     .dep-author strong {
       display: block;
       font-size: .88rem;
       font-weight: 600;
       color: var(--navy)
     }
-
+ 
     .dep-author span {
       font-size: .78rem;
       font-weight: 300;
       color: #5a7a9a
     }
-
+ 
     #faq {
       padding: 5rem 7%;
       background: #fff
     }
-
+ 
     #faq .section-header {
       text-align: center;
       margin-bottom: 3.5rem
     }
-
+ 
     .faq-list {
       max-width: 760px;
       margin: 0 auto;
@@ -941,18 +941,18 @@
       flex-direction: column;
       gap: .5rem
     }
-
+ 
     .faq-item {
       border: 1px solid rgba(5, 44, 92, .15);
       border-radius: 8px;
       overflow: hidden;
       transition: box-shadow .2s
     }
-
+ 
     .faq-item:hover {
       box-shadow: 0 4px 20px rgba(5, 44, 92, .08)
     }
-
+ 
     .faq-q {
       width: 100%;
       display: flex;
@@ -971,15 +971,15 @@
       line-height: 1.4;
       transition: background .2s
     }
-
+ 
     .faq-q:hover {
       background: rgba(5, 44, 92, .03)
     }
-
+ 
     .faq-q.open {
       background: rgba(5, 44, 92, .05)
     }
-
+ 
     .faq-icon {
       width: 22px;
       height: 22px;
@@ -989,12 +989,12 @@
       position: relative;
       transition: border-color .2s, background .2s
     }
-
+ 
     .faq-q.open .faq-icon {
       background: var(--navy);
       border-color: var(--navy)
     }
-
+ 
     .faq-icon::before,
     .faq-icon::after {
       content: '';
@@ -1003,12 +1003,12 @@
       border-radius: 2px;
       transition: transform .3s, opacity .3s
     }
-
+ 
     .faq-q.open .faq-icon::before,
     .faq-q.open .faq-icon::after {
       background: #fff
     }
-
+ 
     .faq-icon::before {
       width: 10px;
       height: 1.5px;
@@ -1016,7 +1016,7 @@
       left: 50%;
       transform: translate(-50%, -50%)
     }
-
+ 
     .faq-icon::after {
       width: 1.5px;
       height: 10px;
@@ -1024,22 +1024,22 @@
       left: 50%;
       transform: translate(-50%, -50%)
     }
-
+ 
     .faq-q.open .faq-icon::after {
       transform: translate(-50%, -50%) scaleY(0);
       opacity: 0
     }
-
+ 
     .faq-a {
       max-height: 0;
       overflow: hidden;
       transition: max-height .38s cubic-bezier(.4, 0, .2, 1)
     }
-
+ 
     .faq-a.open {
       max-height: 500px
     }
-
+ 
     .faq-a-inner {
       padding: 0 1.6rem 1.4rem 1.6rem;
       font-size: .88rem;
@@ -1048,16 +1048,16 @@
       line-height: 1.85;
       border-top: 1px solid rgba(5, 44, 92, .1)
     }
-
+ 
     .faq-a-inner p {
       padding-top: 1rem
     }
-
+ 
     .faq-a-inner strong {
       color: var(--navy);
       font-weight: 600
     }
-
+ 
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -1069,7 +1069,7 @@
       outline-offset: 3px;
       border-radius: 2px;
     }
-
+ 
     .sr-only {
       position: absolute;
       width: 1px;
@@ -1081,26 +1081,26 @@
       white-space: nowrap;
       border-width: 0;
     }
-
+ 
     @media(max-width:800px) {
       .services-grid {
         grid-template-columns: 1fr
       }
-
+ 
       .como-grid {
         grid-template-columns: 1fr
       }
-
+ 
       #contato {
         grid-template-columns: 1fr;
         gap: 3rem
       }
-
+ 
       /* Mostra botão hambúrguer */
       .nav-toggle {
         display: flex;
       }
-
+ 
       /* Menu mobile */
       .nav-links {
         position: fixed;
@@ -1119,37 +1119,37 @@
         transition: transform .35s ease;
         box-shadow: -4px 0 20px rgba(5, 44, 92, .15);
       }
-
+ 
       .nav-links.open {
         transform: translateX(0);
       }
-
+ 
       .nav-links a {
         font-size: 1rem;
       }
-
+ 
       .row2 {
         grid-template-columns: 1fr
       }
-
+ 
       .dep-grid {
         grid-template-columns: 1fr
       }
-
+ 
       .sc-steps {
         grid-template-columns: 1fr
       }
-
+ 
       .sc-step {
         border-right: none;
         border-bottom: 1px solid rgba(118, 196, 248, .15);
         padding: 2rem 0
       }
-
+ 
       .sc-step:last-child {
         border-bottom: none
       }
-
+ 
       .sc-cta {
         white-space: normal;
         font-size: .78rem;
@@ -1163,23 +1163,23 @@
     }
   </style>
 </head>
-
+ 
 <body>
-
+ 
   <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-
+ 
   <header>
     <nav aria-label="Navegação principal">
       <a href="#hero" class="nav-logo" aria-label="Ice Dream Produções - voltar ao início">
         <img src="images/logo.jpg" alt="Logo Ice Dream Produções" />
       </a>
-
+ 
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
       </button>
-
+ 
       <ul class="nav-links" id="nav-menu">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="https://teixeira-pri.github.io/site-icedream/quem-somos.html">Quem Somos</a></li>
@@ -1188,7 +1188,7 @@
       </ul>
     </nav>
   </header>
-
+ 
   <main id="main-content">
     <section id="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
@@ -1202,13 +1202,13 @@
         </div>
       </div>
     </section>
-
+ 
     <div class="divider">
       <div class="divider-line"></div>
       <span class="divider-text">O que oferecemos</span>
       <div class="divider-line"></div>
     </div>
-
+ 
     <section id="banner" aria-labelledby="banner-quote">
       <img src="images/banner_texto.png" alt="" class="banner-bg-image">
       <div class="banner-overlay"></div>
@@ -1217,7 +1217,7 @@
         <cite>Ice Dream - Montamos pistas de gelo reais e adaptadas para criar experiências completas</cite>
       </div>
     </section>
-
+ 
     <section id="servicos" aria-labelledby="servicos-title">
       <div class="section-header reveal">
         <p class="section-label">Serviços</p>
@@ -1254,7 +1254,7 @@
         </article>
       </div>
     </section>
-
+ 
     <section id="slidecurl" aria-labelledby="slidecurl-title">
       <div class="sc-header reveal">
         <p class="sc-label">Experiência Adaptada</p>
@@ -1291,7 +1291,7 @@
         <a href="#contato" class="sc-cta">Quero essa experiência no meu evento</a>
       </div>
     </section>
-
+ 
     <section id="faq" aria-labelledby="faq-title">
       <div class="section-header reveal">
         <p class="section-label">Dúvidas</p>
@@ -1361,7 +1361,7 @@
         </div>
       </div>
     </section>
-
+ 
     <section id="como" aria-labelledby="como-title">
       <div class="como-grid">
         <div>
@@ -1391,7 +1391,7 @@
         </aside>
       </div>
     </section>
-
+ 
     <section id="depoimentos" aria-labelledby="depoimentos-title">
       <div class="section-header reveal">
         <p class="section-label">Depoimentos</p>
@@ -1403,7 +1403,7 @@
         <article class="dep-card reveal"><div class="dep-quote" aria-hidden="true">"</div><p class="dep-text">A qualidade e segurança das pistas da ICE DREAM são incomparáveis. Uma atração que encanta pessoas de todas as idades.</p><div class="dep-author"><strong>Fernanda Silva</strong><span>Síndica</span></div></article>
       </div>
     </section>
-
+ 
     <section id="contato" aria-labelledby="contato-title">
       <div>
         <div class="section-header reveal">
@@ -1471,24 +1471,43 @@
       </div>
     </section>
   </main>
-
+ 
   <footer>
     <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
     <p style="margin-top:.6rem">E-mail: contato@icedream-producoes.com.br &nbsp;·&nbsp; Instagram: <strong>@icedream.producoes</strong></p>
   </footer>
-
+ 
+  <!-- =============================================
+       VLibras - Acessibilidade em Libras
+       Botão azul aparece no canto inferior direito.
+       Ao clicar, o boneco 3D traduz a página em Libras.
+  ============================================== -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- =============================================
+       Fim VLibras
+  ============================================== -->
+ 
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+ 
   <script>
     // ✅ URL do Google Apps Script (atualizada após nova implementação)
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzbc01BDLuvsTrwRpFYlYQnOxlxcLc5oR0-LGwweKFD7qwMlbbp61CgSWT_dhIXiCePKQ/exec";
-
+ 
     const form = document.getElementById('contact-form');
     const liveRegion = document.getElementById('form-live-region');
-
+ 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
-
+ 
       const nome = document.getElementById('nome').value.trim();
       const empresa = document.getElementById('empresa').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -1497,14 +1516,14 @@
       const modalidade = document.getElementById('modalidade').value;
       const mensagem = document.getElementById('mensagem').value.trim();
       const btn = form.querySelector('.btn-submit');
-
+ 
       if (!nome || !email || !mensagem) {
         liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
         liveRegion.setAttribute('aria-live', 'assertive');
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
       }
-
+ 
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
@@ -1512,10 +1531,10 @@
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
       }
-
+ 
       btn.disabled = true;
       btn.textContent = 'Enviando...';
-
+ 
       const dados = {
         nome: nome,
         empresa: empresa,
@@ -1526,7 +1545,7 @@
         mensagem: mensagem,
         recaptcha: recaptchaResponse
       };
-
+ 
       try {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
@@ -1534,22 +1553,22 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(dados)
         });
-
+ 
         liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
         liveRegion.setAttribute('aria-live', 'polite');
         btn.textContent = 'Enviado com sucesso!';
         btn.style.background = '#4CAF50';
-
+ 
         form.reset();
         grecaptcha.reset();
-
+ 
         setTimeout(() => {
           btn.textContent = 'Enviar Solicitação';
           btn.disabled = false;
           btn.style.background = '';
           liveRegion.textContent = '';
         }, 5000);
-
+ 
       } catch (error) {
         liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
         liveRegion.setAttribute('aria-live', 'assertive');
@@ -1558,18 +1577,18 @@
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
       }
     });
-
+ 
     // Menu hambúrguer mobile
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-
+ 
     navToggle.addEventListener('click', () => {
       const isOpen = navToggle.classList.toggle('open');
       navMenu.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen);
       navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
     });
-
+ 
     // Fecha menu ao clicar em um link (mobile)
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
@@ -1581,7 +1600,7 @@
         }
       });
     });
-
+ 
     // FAQ Accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1604,7 +1623,7 @@
         }
       });
     });
-
+ 
     // Reveal animations
     const obs = new IntersectionObserver(es => {
       es.forEach(e => {
@@ -1614,9 +1633,9 @@
         }
       });
     }, { threshold: .1 });
-
+ 
     document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
-
+ 
     window.addEventListener('load', () => {
       setTimeout(() => {
         const rcFrame = document.querySelector('.g-recaptcha iframe');
@@ -1625,8 +1644,8 @@
         }
       }, 2000);
     });
-
+ 
   </script>
 </body>
-
+ 
 </html>
