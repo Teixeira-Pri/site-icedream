@@ -1551,9 +1551,12 @@
     const form = document.getElementById('contact-form');
     const liveRegion = document.getElementById('form-live-region');
  
+    // ========================================================
+    // ENVIO DO FORMULÁRIO - INÍCIO
+    // ========================================================
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
- 
+
       const nome = document.getElementById('nome').value.trim();
       const empresa = document.getElementById('empresa').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -1562,15 +1565,15 @@
       const modalidade = document.getElementById('modalidade').value;
       const mensagem = document.getElementById('mensagem').value.trim();
       const btn = form.querySelector('.btn-submit');
- 
-      // CORREÇÃO: Mensagem de erro mais descritiva
+
+      // Validação de campos obrigatórios
       if (!nome || !email || !mensagem) {
         liveRegion.textContent = 'Erro: Por favor, preencha os campos obrigatórios: nome, e-mail e mensagem.';
         liveRegion.setAttribute('aria-live', 'assertive');
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
       }
- 
+
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         liveRegion.textContent = 'Erro: Por favor, confirme que você não é um robô.';
@@ -1578,10 +1581,10 @@
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
       }
- 
+
       btn.disabled = true;
       btn.textContent = 'Enviando...';
- 
+
       const dados = {
         nome: nome,
         empresa: empresa,
@@ -1592,38 +1595,51 @@
         mensagem: mensagem,
         recaptcha: recaptchaResponse
       };
- 
+
       try {
-        await fetch(GOOGLE_SCRIPT_URL, {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(dados)
+          headers: { 
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(dados),
+          redirect: 'follow'
         });
- 
+
+        const resultado = await response.json();
+        console.log('Resposta do Apps Script:', resultado);
+
+        if (!resultado.success) {
+          throw new Error(resultado.error || 'Erro desconhecido');
+        }
+
         liveRegion.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
         liveRegion.setAttribute('aria-live', 'polite');
         btn.textContent = 'Enviado com sucesso!';
         btn.style.background = '#4CAF50';
- 
+
         form.reset();
         grecaptcha.reset();
- 
+
         setTimeout(() => {
           btn.textContent = 'Enviar Solicitação';
           btn.disabled = false;
           btn.style.background = '';
           liveRegion.textContent = '';
         }, 5000);
- 
+
       } catch (error) {
-        liveRegion.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
+        console.error('Erro ao enviar:', error);
+        liveRegion.textContent = 'Erro ao enviar: ' + error.message;
         liveRegion.setAttribute('aria-live', 'assertive');
         btn.textContent = 'Enviar Solicitação';
         btn.disabled = false;
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
       }
     });
+    // ========================================================
+    // ENVIO DO FORMULÁRIO - FIM
+    // ========================================================
  
     // Menu hambúrguer mobile
     const navToggle = document.getElementById('nav-toggle');
@@ -1693,6 +1709,5 @@
     });
  
   </script>
-</body>
- 
+</body> 
 </html>
