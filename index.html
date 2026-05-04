@@ -53,6 +53,19 @@
       scroll-behavior: smooth
     }
  
+    /* Controle de animação para usuários que preferem reduzir movimento */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        transition: none;
+      }
+      .nav-links.open {
+        transition: none;
+      }
+    }
+ 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--white);
@@ -223,10 +236,12 @@
       color: #a8d9fc
     }
  
+    /* CORREÇÃO DE CONTRASTE: texto da hero com cor sólida + sombra suave */
     .hero-desc {
       font-size: 1rem;
       font-weight: 300;
-      color: rgba(255, 255, 255, 0.92);
+      color: #FFFFFF;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       line-height: 1.8;
       max-width: 400px;
       margin-bottom: 2.6rem
@@ -356,7 +371,16 @@
       height: 240px;
       background-size: cover;
       background-position: center;
-      position: relative
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    /* CORREÇÃO: imagem via <img> para ter alt text */
+    .svc-img-src {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
  
     .svc-img::after {
@@ -617,12 +641,13 @@
       margin-bottom: 1rem
     }
  
+    /* CORREÇÃO DE CONTRASTE: labels do formulário em branco puro para melhor legibilidade */
     .fg label {
       font-size: .67rem;
       font-weight: 500;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: #b8ddfc;
+      color: #FFFFFF;
     }
  
     .fg label.required::after {
@@ -633,7 +658,7 @@
  
     .fg label.optional::after {
       content: " (opcional)";
-      color: rgba(184, 221, 252, 0.7);
+      color: rgba(255, 255, 255, 0.7);
       font-size: 0.6rem;
       font-weight: normal;
       text-transform: none;
@@ -661,9 +686,10 @@
       border-color: var(--ice)
     }
  
+    /* CORREÇÃO DE CONTRASTE: placeholders com opacidade 0.7 para melhor legibilidade */
     .fg input::placeholder,
     .fg textarea::placeholder {
-      color: rgba(250, 252, 255, 0.45)
+      color: rgba(250, 252, 255, 0.7)
     }
  
     .fg textarea {
@@ -711,7 +737,8 @@
       background: #031e3f;
       text-align: center;
       padding: 1.8rem 7%;
-      color: rgba(250, 252, 255, 0.55);
+      /* CORREÇÃO DE CONTRASTE: texto mais claro (0.85 em vez de 0.55) */
+      color: rgba(250, 252, 255, 0.85);
       font-size: .78rem
     }
  
@@ -1058,6 +1085,7 @@
       font-weight: 600
     }
  
+    /* MELHORIA: foco visível mais robusto */
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -1065,9 +1093,22 @@
     select:focus-visible,
     [role="button"]:focus-visible,
     [tabindex]:focus-visible {
-      outline: 3px solid var(--ice);
-      outline-offset: 3px;
-      border-radius: 2px;
+      outline: 3px solid #FFD966;
+      outline-offset: 4px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 0, 0.05);
+    }
+ 
+    /* Suporte para Windows High Contrast Mode */
+    @media (forced-colors: active) {
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 3px solid CanvasText;
+        outline-offset: 4px;
+      }
     }
  
     .sr-only {
@@ -1210,7 +1251,7 @@
     </div>
  
     <section id="banner" aria-labelledby="banner-quote">
-      <img src="images/banner_texto.png" alt="" class="banner-bg-image">
+      <img src="images/banner_texto.png" alt="" class="banner-bg-image" aria-hidden="true">
       <div class="banner-overlay"></div>
       <div class="banner-content reveal">
         <blockquote id="banner-quote">Tudo começa com o gelo</blockquote>
@@ -1226,7 +1267,8 @@
       </div>
       <div class="services-grid">
         <article class="svc reveal">
-          <div class="svc-img" style="background-image:url('images/patinacao.png')" role="img" aria-label="Pessoa patinando no gelo">
+          <div class="svc-img">
+            <img src="images/patinacao.png" alt="Pessoa patinando em pista de gelo cristalino" class="svc-img-src">
             <span class="svc-img-label" aria-hidden="true">Patinação</span>
           </div>
           <div class="svc-body">
@@ -1235,7 +1277,8 @@
           </div>
         </article>
         <article class="svc reveal">
-          <div class="svc-img" style="background-image:url('images/hockey.png')" role="img" aria-label="Puck de hockey iluminado">
+          <div class="svc-img">
+            <img src="images/hockey.png" alt="Puck de hockey iluminado sobre superfície de gelo" class="svc-img-src">
             <span class="svc-img-label" aria-hidden="true">Hockey</span>
           </div>
           <div class="svc-body">
@@ -1244,7 +1287,8 @@
           </div>
         </article>
         <article class="svc reveal">
-          <div class="svc-img" style="background-image:url('images/curling.png')" role="img" aria-label="Pista de curling com alvos vermelho e azul">
+          <div class="svc-img">
+            <img src="images/curling.png" alt="Pista de curling com alvos vermelho e azul" class="svc-img-src">
             <span class="svc-img-label" aria-hidden="true">Curling</span>
           </div>
           <div class="svc-body">
@@ -1440,6 +1484,7 @@
             </div>
           </div>
           <div class="fg">
+            <!-- CORREÇÃO: adicionado id="tipo-evento" no select e mantido for no label -->
             <label for="tipo-evento">Tipo de Evento</label>
             <select id="tipo-evento" name="tipo-evento">
               <option value="">Selecione...</option>
@@ -1451,6 +1496,7 @@
             </select>
           </div>
           <div class="fg">
+            <!-- CORREÇÃO: adicionado id="modalidade" no select e mantido for no label -->
             <label for="modalidade">Modalidade de Interesse</label>
             <select id="modalidade" name="modalidade">
               <option value="">Selecione...</option>
@@ -1472,7 +1518,7 @@
     </section>
   </main>
  
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 <strong>Ice Dream Produções Esportivas</strong> — Experiências no gelo em todo o Brasil.</p>
     <p style="margin-top:.6rem">E-mail: contato@icedream-producoes.com.br &nbsp;·&nbsp; Instagram: <strong>@icedream.producoes</strong></p>
   </footer>
@@ -1518,7 +1564,7 @@
       const btn = form.querySelector('.btn-submit');
  
       if (!nome || !email || !mensagem) {
-        liveRegion.textContent = 'Erro: Por favor, preencha nome, e-mail e mensagem.';
+        liveRegion.textContent = 'Erro: Por favor, preencha os campos obrigatórios: nome, e-mail e mensagem.';
         liveRegion.setAttribute('aria-live', 'assertive');
         setTimeout(() => { liveRegion.textContent = ''; }, 5000);
         return;
