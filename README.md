@@ -1,65 +1,81 @@
 # Site Institucional - Ice Dream Produções
 
-Este repositório contém o código-fonte do site institucional da **Ice Dream Produções**, empresa especializada em pistas de gelo real, patinação, hockey, curling e SlideCurl para eventos.
+Este repositório contém o código-fonte do site institucional da Ice Dream Produções, empresa especializada em pistas de gelo real, patinação, hockey, curling e SlideCurl para eventos.
 
-## 🔗 Site Live
-[icedream-producoes.com.br](https://icedream-producoes.com.br/) 
+🔗 Site Live  
+https://icedream-producoes.com.br
 
 ---
 
-## ✨ Destaques do Projeto
+## ✨ Sobre o Projeto
 
-- ✅ **Acessibilidade 10/10** - Desenvolvido seguindo boas práticas WCAG 2.1
-- ✅ **100% responsivo** - Funciona em dispositivos móveis, tablets e desktops
-- ✅ **SEO otimizado** - Meta tags, palavras-chave e estrutura semântica
-- ✅ **Design original** - Mantido integralmente, sem alterações visuais
-- ✅ **Formulário funcional** - Integração com EmailJS (com whitelist de domínio)
+Este projeto foi desenvolvido com foco em performance, responsividade e, principalmente, **acessibilidade em evolução contínua**.
+
+Durante o desenvolvimento, foram aplicadas boas práticas de acessibilidade mas, ao testar com ferramentas e leitores de tela, ficou claro que ainda há pontos importantes de melhoria.
+
+Ou seja: este não é um projeto “finalizado” em acessibilidade, mas sim um **caso real de aprendizado e evolução prática em A11y**.
 
 ---
 
 ## ♿ Acessibilidade (A11y)
 
-O principal diferencial deste projeto foi o cuidado com a acessibilidade.
+A acessibilidade foi tratada como parte do processo, não como etapa final.
 
-### Implementações realizadas:
+### ✔️ Implementações já realizadas
 
-| Recurso | Descrição |
-|---------|-----------|
-| **Navegação por teclado** | Via `Tab`, `Enter` e `Space` |
-| **Leitores de tela** | Atributos `aria-*`, hierarquia correta de títulos, HTML semântico |
-| **Contraste de cores** | Níveis WCAG AA (e superiores) |
-| **Texto alternativo** | Todas as imagens com `alt` descritivo |
-| **Skip to content** | Link para pular navegação |
-| **Foco visível** | Indicadores claros para navegação por teclado |
-| **Formulário acessível** | Labels associadas, `aria-required`, `aria-live` para mensagens |
+- Navegação por teclado (Tab, Enter e Space)
+- Estrutura semântica com HTML5
+- Uso de atributos `aria-*`
+- Hierarquia de títulos organizada
+- Textos alternativos em imagens
+- Link "skip to content"
+- Estados de foco visíveis
+- Formulário com labels associadas e feedback acessível
+- Contraste de cores próximo aos níveis recomendados WCAG
+- Implementação de recurso com suporte em **Libras (assistente visual)**
 
-### Ferramentas de validação:
-- Lighthouse (Chrome DevTools) - pontuação 100/100 em acessibilidade
-- WAVE Evaluation Tool
+---
+
+### ⚠️ Pontos em evolução
+
+Testes com ferramentas automatizadas e leitores de tela indicaram que ainda existem melhorias a serem feitas, como:
+
+- Ajustes na experiência com leitores de tela
+- Melhorias na navegação não visual
+- Refinamento de semântica em alguns componentes
+- Otimizações adicionais de contraste e feedbacks dinâmicos
+
+Pontuação atual em ferramenta automatizada:
+→ Aproximadamente **5.7 / 10**
+
+---
+
+### 🧪 Testes realizados
+
 - Testes manuais com leitores de tela (NVDA, VoiceOver)
+- Avaliação com ferramentas automatizadas
+- Navegação apenas por teclado
+
+> Observação: ferramentas automatizadas não substituem testes reais com usuários.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia | Finalidade |
-|------------|------------|
-| HTML5 | Estrutura semântica |
-| CSS3 | Estilização (design original mantido) |
-| EmailJS | Envio de formulário de contato |
-| GitHub Pages | Hospedagem |
+- HTML5 — Estrutura semântica  
+- CSS3 — Estilização (design original mantido)  
+- GitHub Pages — Hospedagem  
 
 ---
 
 ## 🚀 Como Executar Localmente
 
-```bash 
+```bash
 # Clone o repositório
 git clone https://github.com/teixeira-pri/teixeira-pri.github.io.git
 
 # Acesse a pasta
 cd teixeira-pri.github.io
 
-# Abra o arquivo principal (clique duas vezes ou use um servidor local)
-# Opção com servidor local (recomendado para testes):
+# Execute com servidor local (recomendado)
 npx serve .
