@@ -131,42 +131,97 @@
       color: #EEEEEE;
     }
  
-    /* Ajuste de fonte */
-    body.font-size-90 {
-      font-size: 0.9rem;
+    /* ========== AJUSTE DE FONTE CORRIGIDO ========== */
+    /* Classes de tamanho de fonte com !important para garantir aplicação */
+    body.font-size-90,
+    body.font-size-90 * {
+      font-size: 90% !important;
     }
-    body.font-size-100 {
-      font-size: 1rem;
+    
+    body.font-size-100,
+    body.font-size-100 * {
+      font-size: 100% !important;
     }
-    body.font-size-110 {
-      font-size: 1.1rem;
+    
+    body.font-size-110,
+    body.font-size-110 * {
+      font-size: 110% !important;
     }
-    body.font-size-120 {
-      font-size: 1.2rem;
+    
+    body.font-size-120,
+    body.font-size-120 * {
+      font-size: 120% !important;
     }
-    body.font-size-130 {
-      font-size: 1.3rem;
+    
+    body.font-size-130,
+    body.font-size-130 * {
+      font-size: 130% !important;
     }
-    body.font-size-140 {
-      font-size: 1.4rem;
+    
+    body.font-size-140,
+    body.font-size-140 * {
+      font-size: 140% !important;
     }
-    body.font-size-150 {
-      font-size: 1.5rem;
+    
+    body.font-size-150,
+    body.font-size-150 * {
+      font-size: 150% !important;
     }
-    body.font-size-160 {
-      font-size: 1.6rem;
+    
+    body.font-size-160,
+    body.font-size-160 * {
+      font-size: 160% !important;
     }
-    body.font-size-170 {
-      font-size: 1.7rem;
+    
+    body.font-size-170,
+    body.font-size-170 * {
+      font-size: 170% !important;
     }
-    body.font-size-180 {
-      font-size: 1.8rem;
+    
+    body.font-size-180,
+    body.font-size-180 * {
+      font-size: 180% !important;
     }
-    body.font-size-190 {
-      font-size: 1.9rem;
+    
+    body.font-size-190,
+    body.font-size-190 * {
+      font-size: 190% !important;
     }
-    body.font-size-200 {
-      font-size: 2rem;
+    
+    body.font-size-200,
+    body.font-size-200 * {
+      font-size: 200% !important;
+    }
+    
+    /* Exceções para elementos que não devem ter fonte aumentada drasticamente */
+    body.font-size-190 .nav-links a,
+    body.font-size-190 .btn-primary,
+    body.font-size-190 .btn-ghost,
+    body.font-size-190 .sc-cta,
+    body.font-size-190 .btn-submit,
+    body.font-size-190 .accessibility-btn,
+    body.font-size-190 .accessibility-option {
+      font-size: 0.95rem !important;
+    }
+    
+    body.font-size-200 .nav-links a,
+    body.font-size-200 .btn-primary,
+    body.font-size-200 .btn-ghost,
+    body.font-size-200 .sc-cta,
+    body.font-size-200 .btn-submit,
+    body.font-size-200 .accessibility-btn,
+    body.font-size-200 .accessibility-option {
+      font-size: 1rem !important;
+    }
+    
+    /* Títulos mantêm proporção */
+    body.font-size-190 h1,
+    body.font-size-190 h2,
+    body.font-size-190 h3,
+    body.font-size-200 h1,
+    body.font-size-200 h2,
+    body.font-size-200 h3 {
+      font-size: inherit !important;
     }
  
     .skip-link {
@@ -1821,30 +1876,16 @@
     let currentFontSize = 100; // porcentagem
     let highContrastActive = false;
  
-    // Carregar configurações do localStorage
-    function loadAccessibilitySettings() {
-      const savedFontSize = localStorage.getItem('accessibility_fontSize');
-      const savedHighContrast = localStorage.getItem('accessibility_highContrast');
-      
-      if (savedFontSize) {
-        currentFontSize = parseInt(savedFontSize);
-        applyFontSize(currentFontSize);
-      }
-      
-      if (savedHighContrast === 'true') {
-        highContrastActive = true;
-        document.body.classList.add('high-contrast');
-      }
-    }
- 
-    // Aplicar tamanho da fonte
+    // Aplicar tamanho da fonte - VERSÃO CORRIGIDA
     function applyFontSize(percent) {
-      // Remove classes de fonte existentes
-      const classes = ['font-size-90', 'font-size-100', 'font-size-110', 'font-size-120', 'font-size-130', 
-                       'font-size-140', 'font-size-150', 'font-size-160', 'font-size-170', 'font-size-180', 
-                       'font-size-190', 'font-size-200'];
+      // Remove todas as classes de fonte existentes
+      const classes = ['font-size-90', 'font-size-100', 'font-size-110', 'font-size-120', 
+                       'font-size-130', 'font-size-140', 'font-size-150', 'font-size-160', 
+                       'font-size-170', 'font-size-180', 'font-size-190', 'font-size-200'];
+      
       document.body.classList.remove(...classes);
       
+      // Adiciona a nova classe
       let className = 'font-size-100';
       if (percent === 90) className = 'font-size-90';
       else if (percent === 100) className = 'font-size-100';
@@ -1861,6 +1902,31 @@
       
       document.body.classList.add(className);
       localStorage.setItem('accessibility_fontSize', percent);
+      
+      // Debug - verificar se a classe foi aplicada
+      console.log('Fonte alterada para:', percent + '%', 'Classe adicionada:', className);
+      console.log('Classes atuais do body:', document.body.className);
+    }
+ 
+    // Carregar configurações do localStorage
+    function loadAccessibilitySettings() {
+      const savedFontSize = localStorage.getItem('accessibility_fontSize');
+      const savedHighContrast = localStorage.getItem('accessibility_highContrast');
+      
+      console.log('Carregando configurações - Fonte:', savedFontSize, 'Contraste:', savedHighContrast);
+      
+      if (savedFontSize) {
+        currentFontSize = parseInt(savedFontSize);
+        applyFontSize(currentFontSize);
+      } else {
+        // Garantir fonte padrão 100%
+        applyFontSize(100);
+      }
+      
+      if (savedHighContrast === 'true') {
+        highContrastActive = true;
+        document.body.classList.add('high-contrast');
+      }
     }
  
     // Aumentar fonte
@@ -1868,6 +1934,8 @@
       if (currentFontSize < 200) {
         currentFontSize += 10;
         applyFontSize(currentFontSize);
+      } else {
+        console.log('Fonte já está no máximo (200%)');
       }
     }
  
@@ -1876,6 +1944,8 @@
       if (currentFontSize > 80) {
         currentFontSize -= 10;
         applyFontSize(currentFontSize);
+      } else {
+        console.log('Fonte já está no mínimo (80%)');
       }
     }
  
@@ -1885,9 +1955,11 @@
       if (highContrastActive) {
         document.body.classList.add('high-contrast');
         localStorage.setItem('accessibility_highContrast', 'true');
+        console.log('Alto contraste ativado');
       } else {
         document.body.classList.remove('high-contrast');
         localStorage.setItem('accessibility_highContrast', 'false');
+        console.log('Alto contraste desativado');
       }
     }
  
@@ -1898,6 +1970,7 @@
       applyFontSize(100);
       document.body.classList.remove('high-contrast');
       localStorage.setItem('accessibility_highContrast', 'false');
+      console.log('Configurações resetadas para o padrão');
     }
  
     // Abrir/fechar painel
@@ -2040,16 +2113,18 @@
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
  
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.classList.toggle('open');
-      navMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-    });
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      });
+    }
  
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
-        if (navMenu.classList.contains('open')) {
+        if (navMenu && navMenu.classList.contains('open')) {
           navToggle.classList.remove('open');
           navMenu.classList.remove('open');
           navToggle.setAttribute('aria-expanded', 'false');
