@@ -53,7 +53,6 @@
       scroll-behavior: smooth
     }
  
-    /* CORREÇÃO: Redução de movimento para usuários com sensibilidade */
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -73,14 +72,14 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
  
-    /* ========== ALTO CONTRASTE ========== */
+    /* ========== ALTO CONTRASTE MELHORADO ========== */
     body.high-contrast {
       --navy: #000000;
       --blue: #1a1a1a;
-      --ice: #333333;
+      --ice: #FFFFFF;
       --white: #000000;
       --text-dark: #FFFFFF;
-      --text-body: #EEEEEE;
+      --text-body: #FFFFFF;
       background: #000000;
       color: #FFFFFF;
     }
@@ -91,14 +90,16 @@
     body.high-contrast .btn-submit {
       background: #FFFFFF;
       color: #000000;
+      border: 2px solid #FFFFFF;
     }
  
     body.high-contrast .hero-bg::after {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 38%, rgba(0, 0, 0, 0.7) 100%);
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 38%, rgba(0, 0, 0, 0.8) 100%);
     }
  
     body.high-contrast .aside-card {
       background: #1a1a1a;
+      border: 2px solid #FFFFFF;
     }
  
     body.high-contrast #contato {
@@ -112,11 +113,11 @@
     body.high-contrast .svc,
     body.high-contrast .dep-card {
       background: #111111;
-      border-color: #333;
+      border: 2px solid #FFFFFF;
     }
  
     body.high-contrast .faq-item {
-      border-color: #333;
+      border: 2px solid #FFFFFF;
     }
  
     body.high-contrast .faq-q {
@@ -124,20 +125,44 @@
     }
  
     body.high-contrast .faq-q:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
     }
  
     body.high-contrast .faq-a-inner {
       color: #EEEEEE;
     }
  
-    /* ========== AJUSTE DE FONTE CORRIGIDO - SEM QUEBRAR LAYOUT ========== */
-    /* Apenas elementos de texto principais */
+    body.high-contrast .section-label {
+      color: #FFFFFF;
+    }
+ 
+    body.high-contrast .divider-line {
+      background: rgba(255, 255, 255, 0.3);
+    }
+ 
+    body.high-contrast .divider-text {
+      color: #FFFFFF;
+    }
+ 
+    body.high-contrast .valor-card {
+      background: #111111;
+      border: 2px solid #FFFFFF;
+    }
+ 
+    body.high-contrast .mission-box {
+      background: #1a1a1a;
+      border-left: 4px solid #FFFFFF;
+    }
+ 
+    /* ========== AJUSTE DE FONTE MELHORADO - ATÉ 150% COM RESPONSIVIDADE ========== */
+    /* Base para todos os textos */
     body.font-size-90 p, body.font-size-90 li, body.font-size-90 .section-desc, 
     body.font-size-90 .hero-desc, body.font-size-90 .step p, body.font-size-90 .svc-body p,
     body.font-size-90 .sc-desc, body.font-size-90 .sc-step p, body.font-size-90 .dep-text,
     body.font-size-90 .faq-a-inner, body.font-size-90 .ci, body.font-size-90 .fg label,
-    body.font-size-90 .hero-eyebrow, body.font-size-90 .divider-text, body.font-size-90 .section-label {
+    body.font-size-90 .hero-eyebrow, body.font-size-90 .divider-text, body.font-size-90 .section-label,
+    body.font-size-90 .step h4, body.font-size-90 .svc-body h3, body.font-size-90 .sc-step h3,
+    body.font-size-90 .dep-author strong, body.font-size-90 .faq-q {
       font-size: 90% !important;
     }
     
@@ -145,7 +170,9 @@
     body.font-size-100 .hero-desc, body.font-size-100 .step p, body.font-size-100 .svc-body p,
     body.font-size-100 .sc-desc, body.font-size-100 .sc-step p, body.font-size-100 .dep-text,
     body.font-size-100 .faq-a-inner, body.font-size-100 .ci, body.font-size-100 .fg label,
-    body.font-size-100 .hero-eyebrow, body.font-size-100 .divider-text, body.font-size-100 .section-label {
+    body.font-size-100 .hero-eyebrow, body.font-size-100 .divider-text, body.font-size-100 .section-label,
+    body.font-size-100 .step h4, body.font-size-100 .svc-body h3, body.font-size-100 .sc-step h3,
+    body.font-size-100 .dep-author strong, body.font-size-100 .faq-q {
       font-size: 100% !important;
     }
     
@@ -153,7 +180,9 @@
     body.font-size-110 .hero-desc, body.font-size-110 .step p, body.font-size-110 .svc-body p,
     body.font-size-110 .sc-desc, body.font-size-110 .sc-step p, body.font-size-110 .dep-text,
     body.font-size-110 .faq-a-inner, body.font-size-110 .ci, body.font-size-110 .fg label,
-    body.font-size-110 .hero-eyebrow, body.font-size-110 .divider-text, body.font-size-110 .section-label {
+    body.font-size-110 .hero-eyebrow, body.font-size-110 .divider-text, body.font-size-110 .section-label,
+    body.font-size-110 .step h4, body.font-size-110 .svc-body h3, body.font-size-110 .sc-step h3,
+    body.font-size-110 .dep-author strong, body.font-size-110 .faq-q {
       font-size: 110% !important;
     }
     
@@ -161,7 +190,9 @@
     body.font-size-120 .hero-desc, body.font-size-120 .step p, body.font-size-120 .svc-body p,
     body.font-size-120 .sc-desc, body.font-size-120 .sc-step p, body.font-size-120 .dep-text,
     body.font-size-120 .faq-a-inner, body.font-size-120 .ci, body.font-size-120 .fg label,
-    body.font-size-120 .hero-eyebrow, body.font-size-120 .divider-text, body.font-size-120 .section-label {
+    body.font-size-120 .hero-eyebrow, body.font-size-120 .divider-text, body.font-size-120 .section-label,
+    body.font-size-120 .step h4, body.font-size-120 .svc-body h3, body.font-size-120 .sc-step h3,
+    body.font-size-120 .dep-author strong, body.font-size-120 .faq-q {
       font-size: 120% !important;
     }
     
@@ -169,7 +200,9 @@
     body.font-size-130 .hero-desc, body.font-size-130 .step p, body.font-size-130 .svc-body p,
     body.font-size-130 .sc-desc, body.font-size-130 .sc-step p, body.font-size-130 .dep-text,
     body.font-size-130 .faq-a-inner, body.font-size-130 .ci, body.font-size-130 .fg label,
-    body.font-size-130 .hero-eyebrow, body.font-size-130 .divider-text, body.font-size-130 .section-label {
+    body.font-size-130 .hero-eyebrow, body.font-size-130 .divider-text, body.font-size-130 .section-label,
+    body.font-size-130 .step h4, body.font-size-130 .svc-body h3, body.font-size-130 .sc-step h3,
+    body.font-size-130 .dep-author strong, body.font-size-130 .faq-q {
       font-size: 130% !important;
     }
     
@@ -177,7 +210,9 @@
     body.font-size-140 .hero-desc, body.font-size-140 .step p, body.font-size-140 .svc-body p,
     body.font-size-140 .sc-desc, body.font-size-140 .sc-step p, body.font-size-140 .dep-text,
     body.font-size-140 .faq-a-inner, body.font-size-140 .ci, body.font-size-140 .fg label,
-    body.font-size-140 .hero-eyebrow, body.font-size-140 .divider-text, body.font-size-140 .section-label {
+    body.font-size-140 .hero-eyebrow, body.font-size-140 .divider-text, body.font-size-140 .section-label,
+    body.font-size-140 .step h4, body.font-size-140 .svc-body h3, body.font-size-140 .sc-step h3,
+    body.font-size-140 .dep-author strong, body.font-size-140 .faq-q {
       font-size: 140% !important;
     }
     
@@ -185,13 +220,41 @@
     body.font-size-150 .hero-desc, body.font-size-150 .step p, body.font-size-150 .svc-body p,
     body.font-size-150 .sc-desc, body.font-size-150 .sc-step p, body.font-size-150 .dep-text,
     body.font-size-150 .faq-a-inner, body.font-size-150 .ci, body.font-size-150 .fg label,
-    body.font-size-150 .hero-eyebrow, body.font-size-150 .divider-text, body.font-size-150 .section-label {
+    body.font-size-150 .hero-eyebrow, body.font-size-150 .divider-text, body.font-size-150 .section-label,
+    body.font-size-150 .step h4, body.font-size-150 .svc-body h3, body.font-size-150 .sc-step h3,
+    body.font-size-150 .dep-author strong, body.font-size-150 .faq-q {
       font-size: 150% !important;
     }
     
-    /* Títulos mantêm tamanho proporcional mas sem quebrar */
-    body.font-size-110 h1, body.font-size-110 h2, body.font-size-110 h3,
-    body.font-size-120 h1, body.font-size-120 h2, body.font-size-120 h3,
+    /* Botões e elementos de navegação mantêm tamanho adequado */
+    body.font-size-130 .btn-primary,
+    body.font-size-130 .nav-cta,
+    body.font-size-130 .sc-cta,
+    body.font-size-130 .btn-submit,
+    body.font-size-130 .accessibility-btn,
+    body.font-size-130 .accessibility-option {
+      font-size: 0.9rem !important;
+    }
+    
+    body.font-size-140 .btn-primary,
+    body.font-size-140 .nav-cta,
+    body.font-size-140 .sc-cta,
+    body.font-size-140 .btn-submit,
+    body.font-size-140 .accessibility-btn,
+    body.font-size-140 .accessibility-option {
+      font-size: 0.95rem !important;
+    }
+    
+    body.font-size-150 .btn-primary,
+    body.font-size-150 .nav-cta,
+    body.font-size-150 .sc-cta,
+    body.font-size-150 .btn-submit,
+    body.font-size-150 .accessibility-btn,
+    body.font-size-150 .accessibility-option {
+      font-size: 1rem !important;
+    }
+    
+    /* Títulos mantêm proporção */
     body.font-size-130 h1, body.font-size-130 h2, body.font-size-130 h3,
     body.font-size-140 h1, body.font-size-140 h2, body.font-size-140 h3,
     body.font-size-150 h1, body.font-size-150 h2, body.font-size-150 h3 {
@@ -235,7 +298,7 @@
  
     body.high-contrast nav {
       background: #0a0a0a;
-      border-bottom: 1px solid #333;
+      border-bottom: 2px solid #FFFFFF;
     }
  
     .nav-logo {
@@ -281,7 +344,6 @@
       background: var(--blue) !important
     }
  
-    /* Botão hambúrguer (escondido no desktop) */
     .nav-toggle {
       display: none;
       background: none;
@@ -1221,7 +1283,7 @@
       outline: 3px solid #FFD966;
       outline-offset: 4px;
       border-radius: 4px;
-      background-color: rgba(255, 255, 0, 0.05);
+      background-color: rgba(255, 217, 102, 0.15);
     }
  
     @media (forced-colors: active) {
@@ -1247,7 +1309,7 @@
       border-width: 0;
     }
  
-    /* ========== BOTÃO E PAINEL DE ACESSIBILIDADE - LADO DIREITO ========== */
+    /* ========== BOTÃO E PAINEL DE ACESSIBILIDADE ========== */
     .accessibility-btn {
       position: fixed;
       bottom: 20px;
@@ -1293,7 +1355,7 @@
  
     body.high-contrast .accessibility-panel {
       background: #1a1a1a;
-      border-color: #FFFFFF;
+      border: 2px solid #FFFFFF;
     }
  
     .accessibility-panel.open {
@@ -1311,7 +1373,7 @@
     }
  
     body.high-contrast .accessibility-panel-header {
-      border-bottom-color: #FFFFFF;
+      border-bottom: 2px solid #FFFFFF;
     }
  
     .accessibility-panel-header h3 {
@@ -1378,7 +1440,7 @@
  
     body.high-contrast .accessibility-option {
       background: rgba(255, 255, 255, 0.15);
-      border-color: #FFFFFF;
+      border: 2px solid #FFFFFF;
       color: #FFFFFF;
     }
  
@@ -1400,9 +1462,9 @@
     body.high-contrast .accessibility-option.reset-btn {
       background: #FFFFFF;
       color: #000000;
+      border: 2px solid #000000;
     }
  
-    /* Ajuste para o VLibras não conflitar */
     .vw-plugin-top-wrapper {
       z-index: 999 !important;
     }
@@ -1490,6 +1552,11 @@
         right: 20px;
         left: auto;
       }
+      
+      .vw-access-button {
+        bottom: 15px !important;
+        right: 85px !important;
+      }
     }
   </style>
 </head>
@@ -1512,7 +1579,7 @@
  
       <ul class="nav-links" id="nav-menu">
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="https://teixeira-pri.github.io/site-icedream/quem-somos.html">Quem Somos</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
         <li><a href="#como">Como Funciona</a></li>
         <li><a href="#contato" class="nav-cta">Orçamento</a></li>
       </ul>
@@ -1854,18 +1921,12 @@
     const decreaseFontBtn = document.getElementById('decreaseFontBtn');
     const resetAccessibilityBtn = document.getElementById('resetAccessibilityBtn');
  
-    let currentFontSize = 100; // porcentagem
+    let currentFontSize = 100;
     let highContrastActive = false;
  
-    // Aplicar tamanho da fonte - Apenas texto, sem quebrar layout
     function applyFontSize(percent) {
-      // Remove todas as classes de fonte existentes
-      const classes = ['font-size-90', 'font-size-100', 'font-size-110', 'font-size-120', 
-                       'font-size-130', 'font-size-140', 'font-size-150'];
-      
+      const classes = ['font-size-90', 'font-size-100', 'font-size-110', 'font-size-120', 'font-size-130', 'font-size-140', 'font-size-150'];
       document.body.classList.remove(...classes);
-      
-      // Adiciona a nova classe
       let className = 'font-size-100';
       if (percent === 90) className = 'font-size-90';
       else if (percent === 100) className = 'font-size-100';
@@ -1874,94 +1935,38 @@
       else if (percent === 130) className = 'font-size-130';
       else if (percent === 140) className = 'font-size-140';
       else if (percent === 150) className = 'font-size-150';
-      
       document.body.classList.add(className);
       localStorage.setItem('accessibility_fontSize', percent);
       currentFontSize = percent;
     }
  
-    // Carregar configurações do localStorage
     function loadAccessibilitySettings() {
       const savedFontSize = localStorage.getItem('accessibility_fontSize');
       const savedHighContrast = localStorage.getItem('accessibility_highContrast');
-      
-      if (savedFontSize) {
-        currentFontSize = parseInt(savedFontSize);
-        applyFontSize(currentFontSize);
-      }
-      
-      if (savedHighContrast === 'true') {
-        highContrastActive = true;
-        document.body.classList.add('high-contrast');
-      }
+      if (savedFontSize) { currentFontSize = parseInt(savedFontSize); applyFontSize(currentFontSize); }
+      if (savedHighContrast === 'true') { highContrastActive = true; document.body.classList.add('high-contrast'); }
     }
  
-    // Aumentar fonte (máx 150% para não quebrar layout)
-    function increaseFont() {
-      if (currentFontSize < 150) {
-        currentFontSize += 10;
-        applyFontSize(currentFontSize);
-      }
-    }
- 
-    // Diminuir fonte (mín 90%)
-    function decreaseFont() {
-      if (currentFontSize > 90) {
-        currentFontSize -= 10;
-        applyFontSize(currentFontSize);
-      }
-    }
- 
-    // Alto contraste
+    function increaseFont() { if (currentFontSize < 150) { currentFontSize += 10; applyFontSize(currentFontSize); } }
+    function decreaseFont() { if (currentFontSize > 90) { currentFontSize -= 10; applyFontSize(currentFontSize); } }
     function toggleHighContrast() {
       highContrastActive = !highContrastActive;
-      if (highContrastActive) {
-        document.body.classList.add('high-contrast');
-        localStorage.setItem('accessibility_highContrast', 'true');
-      } else {
-        document.body.classList.remove('high-contrast');
-        localStorage.setItem('accessibility_highContrast', 'false');
-      }
+      if (highContrastActive) { document.body.classList.add('high-contrast'); localStorage.setItem('accessibility_highContrast', 'true'); }
+      else { document.body.classList.remove('high-contrast'); localStorage.setItem('accessibility_highContrast', 'false'); }
     }
+    function resetAccessibility() { currentFontSize = 100; highContrastActive = false; applyFontSize(100); document.body.classList.remove('high-contrast'); localStorage.setItem('accessibility_highContrast', 'false'); }
  
-    // Resetar todas as configurações
-    function resetAccessibility() {
-      currentFontSize = 100;
-      highContrastActive = false;
-      applyFontSize(100);
-      document.body.classList.remove('high-contrast');
-      localStorage.setItem('accessibility_highContrast', 'false');
-    }
+    function openPanel() { accessibilityPanel.classList.add('open'); accessibilityBtn.setAttribute('aria-expanded', 'true'); }
+    function closePanel() { accessibilityPanel.classList.remove('open'); accessibilityBtn.setAttribute('aria-expanded', 'false'); }
+    function togglePanel() { if (accessibilityPanel.classList.contains('open')) closePanel(); else openPanel(); }
  
-    // Abrir/fechar painel
-    function openPanel() {
-      accessibilityPanel.classList.add('open');
-      accessibilityBtn.setAttribute('aria-expanded', 'true');
-    }
- 
-    function closePanel() {
-      accessibilityPanel.classList.remove('open');
-      accessibilityBtn.setAttribute('aria-expanded', 'false');
-    }
- 
-    function togglePanel() {
-      if (accessibilityPanel.classList.contains('open')) {
-        closePanel();
-      } else {
-        openPanel();
-      }
-    }
- 
-    // Fechar ao clicar fora
     document.addEventListener('click', function(event) {
       if (accessibilityPanel.classList.contains('open')) {
-        if (!accessibilityPanel.contains(event.target) && !accessibilityBtn.contains(event.target)) {
-          closePanel();
-        }
+        if (!accessibilityPanel.contains(event.target) && !accessibilityBtn.contains(event.target)) closePanel();
       }
     });
+    document.addEventListener('keydown', function(event) { if (event.key === 'Escape' && accessibilityPanel.classList.contains('open')) closePanel(); });
  
-    // Eventos
     accessibilityBtn.addEventListener('click', togglePanel);
     accessibilityClose.addEventListener('click', closePanel);
     highContrastBtn.addEventListener('click', toggleHighContrast);
@@ -1969,14 +1974,6 @@
     decreaseFontBtn.addEventListener('click', decreaseFont);
     resetAccessibilityBtn.addEventListener('click', resetAccessibility);
  
-    // Fechar com ESC
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && accessibilityPanel.classList.contains('open')) {
-        closePanel();
-      }
-    });
- 
-    // Carregar configurações ao iniciar
     loadAccessibilitySettings();
  
     // ========================================================
