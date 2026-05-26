@@ -20,9 +20,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#052C5C;--blue:#197AD2;--ice:#76C4F8;--white:#FAFCFF}
+    :root{--navy:#052C5C;--blue:#197AD2;--ice:#76C4F8;--white:#FAFCFF;--text-dark:#052C5C;--text-body:#1a3a5c}
     html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);line-height:1.6}
+    body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);line-height:1.6;transition:background 0.3s ease, color 0.3s ease}
+ 
+    /* ========== ALTO CONTRASTE ========== */
+    body.high-contrast{--navy:#000000;--blue:#1a1a1a;--ice:#333333;--white:#000000;--text-dark:#FFFFFF;--text-body:#EEEEEE;background:#000000;color:#FFFFFF}
+    body.high-contrast .btn-primary,body.high-contrast .nav-cta,body.high-contrast .sc-cta,body.high-contrast .btn-submit{background:#FFFFFF;color:#000000}
+    body.high-contrast .hero-overlay{background:rgba(0,0,0,0.85)}
+    body.high-contrast .mission-box{background:#1a1a1a;border-left-color:#FFFFFF}
+    body.high-contrast .valor-card{background:#111111;border-color:#333}
+    body.high-contrast .valor-title,body.high-contrast .valor-desc{color:#EEEEEE}
+    body.high-contrast footer{background:#050505}
+ 
+    /* ========== AJUSTE DE FONTE ========== */
+    body.font-size-90 p,body.font-size-90 li,body.font-size-90 .section-text,body.font-size-90 .valor-desc,body.font-size-90 .hero-eyebrow{font-size:90% !important}
+    body.font-size-100 p,body.font-size-100 li,body.font-size-100 .section-text,body.font-size-100 .valor-desc,body.font-size-100 .hero-eyebrow{font-size:100% !important}
+    body.font-size-110 p,body.font-size-110 li,body.font-size-110 .section-text,body.font-size-110 .valor-desc,body.font-size-110 .hero-eyebrow{font-size:110% !important}
+    body.font-size-120 p,body.font-size-120 li,body.font-size-120 .section-text,body.font-size-120 .valor-desc,body.font-size-120 .hero-eyebrow{font-size:120% !important}
+    body.font-size-130 p,body.font-size-130 li,body.font-size-130 .section-text,body.font-size-130 .valor-desc,body.font-size-130 .hero-eyebrow{font-size:130% !important}
+    body.font-size-140 p,body.font-size-140 li,body.font-size-140 .section-text,body.font-size-140 .valor-desc,body.font-size-140 .hero-eyebrow{font-size:140% !important}
+    body.font-size-150 p,body.font-size-150 li,body.font-size-150 .section-text,body.font-size-150 .valor-desc,body.font-size-150 .hero-eyebrow{font-size:150% !important}
  
     /* SKIP LINK */
     .skip-link{position:absolute;top:-40px;left:0;background:var(--navy);color:var(--white);padding:8px 16px;text-decoration:none;z-index:999;font-size:.875rem;font-weight:500;transition:top .2s}
@@ -30,6 +48,7 @@
  
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 7%;background:rgba(250,252,255,0.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(5,44,92,.08)}
+    body.high-contrast nav{background:#0a0a0a;border-bottom-color:#333}
     .nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
     .nav-logo img{height:72px}
     .nav-links{display:flex;gap:2.2rem;list-style:none}
@@ -46,43 +65,12 @@
     .nav-toggle.open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
  
     /* HERO */
-    .hero{
-      position:relative;
-      margin-top:100px;
-      overflow:hidden;
-      background-color:#052C5C;
-    }
-    .hero-img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(5,44,92,0.50);
-    }
-    /* Texto descido para não cobrir os rostos:
-       usamos bottom em vez de top/center,
-       ficando na faixa inferior da imagem */
-    .hero-content{
-      position:absolute;
-      z-index:1;
-      text-align:center;
-      width:100%;
-      bottom:12%;   /* distância do rodapé da imagem */
-      left:0;
-      padding:0 2rem;
-    }
-    .hero-eyebrow{
-      font-size:.72rem;font-weight:500;
-      letter-spacing:.22em;text-transform:uppercase;
-      color:#b8ddfc;margin-bottom:.8rem
-    }
-    .hero h1{
-      font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:clamp(2.5rem,6vw,5rem);line-height:1.1;color:#fff
-    }
+    .hero{position:relative;margin-top:100px;overflow:hidden;background-color:#052C5C;}
+    .hero-img{width:100%;height:auto;display:block;}
+    .hero-overlay{position:absolute;inset:0;background:rgba(5,44,92,0.50);}
+    .hero-content{position:absolute;z-index:1;text-align:center;width:100%;bottom:12%;left:0;padding:0 2rem;}
+    .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#b8ddfc;margin-bottom:.8rem}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,6vw,5rem);line-height:1.1;color:#fff}
  
     /* CONTENT */
     .content{padding:5rem 7%;max-width:1200px;margin:0 auto}
@@ -118,43 +106,47 @@
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
     .reveal.visible{opacity:1;transform:translateY(0)}
  
-    /* VLibras - Ajuste de z-index para não conflitar com o menu */
-    .vw-access-button {
-      z-index: 99 !important;
-      bottom: 20px !important;
-      right: 20px !important;
-    }
-    .vw-plugin-wrapper {
-      z-index: 98 !important;
-    }
+    /* ========== BOTÃO E PAINEL DE ACESSIBILIDADE - LADO DIREITO ========== */
+    .accessibility-btn{position:fixed;bottom:20px;right:20px;z-index:1000;background:var(--navy);border:none;border-radius:50px;width:56px;height:56px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform 0.2s,background 0.2s;display:flex;align-items:center;justify-content:center}
+    .accessibility-btn:hover{transform:scale(1.05);background:var(--blue)}
+    .accessibility-btn span{font-size:28px}
+    .accessibility-panel{position:fixed;bottom:90px;right:20px;z-index:1000;background:#F7EFE6;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.2);width:280px;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity 0.3s,visibility 0.3s,transform 0.3s;border:1px solid #4A2A1B}
+    body.high-contrast .accessibility-panel{background:#1a1a1a;border-color:#FFFFFF}
+    .accessibility-panel.open{opacity:1;visibility:visible;transform:translateY(0)}
+    .accessibility-panel-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #4A2A1B}
+    body.high-contrast .accessibility-panel-header{border-bottom-color:#FFFFFF}
+    .accessibility-panel-header h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;color:#4A2A1B;margin:0}
+    body.high-contrast .accessibility-panel-header h3{color:#FFFFFF}
+    .accessibility-close{background:none;border:none;font-size:24px;cursor:pointer;color:#4A2A1B;padding:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.2s}
+    .accessibility-close:hover{background:rgba(74,42,27,0.1)}
+    body.high-contrast .accessibility-close{color:#FFFFFF}
+    body.high-contrast .accessibility-close:hover{background:rgba(255,255,255,0.2)}
+    .accessibility-options{padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+    .accessibility-option{width:100%;background:rgba(74,42,27,0.08);border:1px solid #4A2A1B;border-radius:8px;padding:10px 16px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:#4A2A1B;cursor:pointer;transition:all 0.2s;text-align:left}
+    body.high-contrast .accessibility-option{background:rgba(255,255,255,0.15);border-color:#FFFFFF;color:#FFFFFF}
+    .accessibility-option:hover{background:rgba(74,42,27,0.15);transform:translateX(4px)}
+    body.high-contrast .accessibility-option:hover{background:rgba(255,255,255,0.25)}
+    .accessibility-option.reset-btn{background:#4A2A1B;color:#F7EFE6;margin-top:8px}
+    body.high-contrast .accessibility-option.reset-btn{background:#FFFFFF;color:#000000}
+ 
+    /* VLibras - Ajuste de z-index */
+    .vw-access-button{z-index:99 !important;bottom:20px !important;right:100px !important}
+    .vw-plugin-wrapper{z-index:98 !important}
  
     /* MOBILE */
     @media(max-width:800px){
       .nav-toggle{display:flex}
-      .nav-links{
-        position:fixed;top:0;right:0;height:100vh;width:75%;max-width:320px;
-        background:var(--white);flex-direction:column;justify-content:center;
-        align-items:center;gap:2rem;padding:2rem;
-        transform:translateX(100%);transition:transform .35s ease;
-        box-shadow:-4px 0 20px rgba(5,44,92,.15)
-      }
+      .nav-links{position:fixed;top:0;right:0;height:100vh;width:75%;max-width:320px;background:var(--white);flex-direction:column;justify-content:center;align-items:center;gap:2rem;padding:2rem;transform:translateX(100%);transition:transform .35s ease;box-shadow:-4px 0 20px rgba(5,44,92,.15)}
       .nav-links.open{transform:translateX(0)}
       .nav-links a{font-size:1rem}
       .hero{margin-top:80px}
-      /* No mobile a imagem é mais alta proporcionalmente,
-         então subimos um pouco o bottom */
       .hero-content{bottom:8%}
       .content{padding:3rem 5%}
       .valores-grid{grid-template-columns:1fr}
       .section-title{font-size:1.8rem}
       .section-block{margin-bottom:3.5rem}
-      
-      /* VLibras mobile - ajuste de posição */
-      .vw-access-button {
-        bottom: 15px !important;
-        right: 15px !important;
-        transform: scale(0.9);
-      }
+      .vw-access-button{bottom:15px !important;right:80px !important;transform:scale(0.9)}
+      .accessibility-panel{width:calc(100% - 40px);max-width:280px;right:20px;left:auto}
     }
   </style>
 </head>
@@ -186,12 +178,7 @@
 <main id="main-content">
  
   <section class="hero" aria-labelledby="hero-title">
-    <img
-      src="images/banner_quem_somos.png"
-      alt=""
-      class="hero-img"
-      aria-hidden="true"
-    />
+    <img src="images/banner_quem_somos.png" alt="" class="hero-img" aria-hidden="true"/>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Conheça a Ice Dream</p>
@@ -275,12 +262,25 @@
   </p>
 </footer>
  
-<!-- =============================================
-     VLibras - Acessibilidade em Libras
-     Botão azul aparece no canto inferior direito.
-     Ao clicar, o boneco 3D traduz a página em Libras.
-     Funciona em desktop e mobile.
-============================================== -->
+<!-- ========== BOTÃO DE ACESSIBILIDADE ========== -->
+<button class="accessibility-btn" id="accessibilityBtn" aria-label="Abrir painel de acessibilidade" aria-expanded="false">
+  <span>♿</span>
+</button>
+
+<div class="accessibility-panel" id="accessibilityPanel" role="dialog" aria-label="Painel de acessibilidade">
+  <div class="accessibility-panel-header">
+    <h3>Acessibilidade</h3>
+    <button class="accessibility-close" id="accessibilityClose" aria-label="Fechar painel">✕</button>
+  </div>
+  <div class="accessibility-options">
+    <button class="accessibility-option" id="highContrastBtn">✅ Alto Contraste</button>
+    <button class="accessibility-option" id="increaseFontBtn">🔍 Aumentar Fonte</button>
+    <button class="accessibility-option" id="decreaseFontBtn">🔍 Diminuir Fonte</button>
+    <button class="accessibility-option reset-btn" id="resetAccessibilityBtn">⟳ Redefinir Configurações</button>
+  </div>
+</div>
+ 
+<!-- VLibras -->
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
   <div vw-plugin-wrapper>
@@ -291,24 +291,92 @@
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
-<!-- =============================================
-     Fim VLibras
-============================================== -->
  
 <script>
+  // ========================================================
+  // ACESSIBILIDADE
+  // ========================================================
+  const accessibilityBtn = document.getElementById('accessibilityBtn');
+  const accessibilityPanel = document.getElementById('accessibilityPanel');
+  const accessibilityClose = document.getElementById('accessibilityClose');
+  const highContrastBtn = document.getElementById('highContrastBtn');
+  const increaseFontBtn = document.getElementById('increaseFontBtn');
+  const decreaseFontBtn = document.getElementById('decreaseFontBtn');
+  const resetAccessibilityBtn = document.getElementById('resetAccessibilityBtn');
+ 
+  let currentFontSize = 100;
+  let highContrastActive = false;
+ 
+  function applyFontSize(percent) {
+    const classes = ['font-size-90', 'font-size-100', 'font-size-110', 'font-size-120', 'font-size-130', 'font-size-140', 'font-size-150'];
+    document.body.classList.remove(...classes);
+    let className = 'font-size-100';
+    if (percent === 90) className = 'font-size-90';
+    else if (percent === 100) className = 'font-size-100';
+    else if (percent === 110) className = 'font-size-110';
+    else if (percent === 120) className = 'font-size-120';
+    else if (percent === 130) className = 'font-size-130';
+    else if (percent === 140) className = 'font-size-140';
+    else if (percent === 150) className = 'font-size-150';
+    document.body.classList.add(className);
+    localStorage.setItem('accessibility_fontSize', percent);
+    currentFontSize = percent;
+  }
+ 
+  function loadAccessibilitySettings() {
+    const savedFontSize = localStorage.getItem('accessibility_fontSize');
+    const savedHighContrast = localStorage.getItem('accessibility_highContrast');
+    if (savedFontSize) { currentFontSize = parseInt(savedFontSize); applyFontSize(currentFontSize); }
+    if (savedHighContrast === 'true') { highContrastActive = true; document.body.classList.add('high-contrast'); }
+  }
+ 
+  function increaseFont() { if (currentFontSize < 150) { currentFontSize += 10; applyFontSize(currentFontSize); } }
+  function decreaseFont() { if (currentFontSize > 90) { currentFontSize -= 10; applyFontSize(currentFontSize); } }
+  function toggleHighContrast() {
+    highContrastActive = !highContrastActive;
+    if (highContrastActive) { document.body.classList.add('high-contrast'); localStorage.setItem('accessibility_highContrast', 'true'); }
+    else { document.body.classList.remove('high-contrast'); localStorage.setItem('accessibility_highContrast', 'false'); }
+  }
+  function resetAccessibility() { currentFontSize = 100; highContrastActive = false; applyFontSize(100); document.body.classList.remove('high-contrast'); localStorage.setItem('accessibility_highContrast', 'false'); }
+ 
+  function openPanel() { accessibilityPanel.classList.add('open'); accessibilityBtn.setAttribute('aria-expanded', 'true'); }
+  function closePanel() { accessibilityPanel.classList.remove('open'); accessibilityBtn.setAttribute('aria-expanded', 'false'); }
+  function togglePanel() { if (accessibilityPanel.classList.contains('open')) closePanel(); else openPanel(); }
+ 
+  document.addEventListener('click', function(event) {
+    if (accessibilityPanel.classList.contains('open')) {
+      if (!accessibilityPanel.contains(event.target) && !accessibilityBtn.contains(event.target)) closePanel();
+    }
+  });
+  document.addEventListener('keydown', function(event) { if (event.key === 'Escape' && accessibilityPanel.classList.contains('open')) closePanel(); });
+ 
+  accessibilityBtn.addEventListener('click', togglePanel);
+  accessibilityClose.addEventListener('click', closePanel);
+  highContrastBtn.addEventListener('click', toggleHighContrast);
+  increaseFontBtn.addEventListener('click', increaseFont);
+  decreaseFontBtn.addEventListener('click', decreaseFont);
+  resetAccessibilityBtn.addEventListener('click', resetAccessibility);
+ 
+  loadAccessibilitySettings();
+ 
+  // ========================================================
+  // MENU HAMBÚRGUER
+  // ========================================================
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
  
-  navToggle.addEventListener('click', () => {
-    const isOpen = navToggle.classList.toggle('open');
-    navMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-    navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-  });
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    });
+  }
  
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      if (navMenu.classList.contains('open')) {
+      if (navMenu && navMenu.classList.contains('open')) {
         navToggle.classList.remove('open');
         navMenu.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
@@ -317,13 +385,11 @@
     });
   });
  
+  // ========================================================
+  // REVEAL ANIMATIONS
+  // ========================================================
   const obs = new IntersectionObserver(es => {
-    es.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: .1 });
  
   document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
