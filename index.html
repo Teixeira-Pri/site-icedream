@@ -1478,6 +1478,10 @@
     .vw-plugin-top-wrapper {
       z-index: 999 !important;
     }
+
+    [vw-access-button] {
+      display: none !important;
+    }
  
     .field-error {
       display: block;
@@ -1576,10 +1580,6 @@
         left: auto;
       }
       
-      .vw-access-button {
-        bottom: 15px !important;
-        right: 85px !important;
-      }
     }
   </style>
 </head>
@@ -1917,6 +1917,7 @@
       <button class="accessibility-option" id="highContrastBtn">✅ Alto Contraste</button>
       <button class="accessibility-option" id="increaseFontBtn">🔍 Aumentar Fonte</button>
       <button class="accessibility-option" id="decreaseFontBtn">🔍 Diminuir Fonte</button>
+      <button class="accessibility-option" id="vlibrasBtn">🤟 Libras (VLibras)</button>
       <button class="accessibility-option reset-btn" id="resetAccessibilityBtn">⟳ Redefinir Configurações</button>
     </div>
   </div>
@@ -1999,6 +2000,11 @@
     increaseFontBtn.addEventListener('click', increaseFont);
     decreaseFontBtn.addEventListener('click', decreaseFont);
     resetAccessibilityBtn.addEventListener('click', resetAccessibility);
+
+    document.getElementById('vlibrasBtn').addEventListener('click', function () {
+      closePanel();
+      document.querySelector('[vw-access-button]').click();
+    });
  
     loadAccessibilitySettings();
  
