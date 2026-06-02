@@ -2031,7 +2031,7 @@
     const mensagemField = document.getElementById('mensagem');
 
     nomeField.addEventListener('blur', () => {
-      if (!nomeField.value.trim()) setFieldError(nomeField, 'nome-error', 'Por favor, informe seu nome.');
+      if (!nomeField.value.trim()) setFieldError(nomeField, 'nome-error', 'Informe seu nome para que possamos entrar em contato.');
       else clearFieldError(nomeField, 'nome-error');
     });
     nomeField.addEventListener('input', () => {
@@ -2041,8 +2041,8 @@
 
     emailField.addEventListener('blur', () => {
       const val = emailField.value.trim();
-      if (!val) setFieldError(emailField, 'email-error', 'Por favor, informe seu e-mail.');
-      else if (!isValidEmail(val)) setFieldError(emailField, 'email-error', 'Informe um e-mail válido.');
+      if (!val) setFieldError(emailField, 'email-error', 'Informe seu e-mail para que possamos responder sua solicitação.');
+      else if (!isValidEmail(val)) setFieldError(emailField, 'email-error', 'E-mail inválido. Use o formato nome@empresa.com');
       else clearFieldError(emailField, 'email-error');
     });
     emailField.addEventListener('input', () => {
@@ -2051,7 +2051,7 @@
     });
 
     mensagemField.addEventListener('blur', () => {
-      if (!mensagemField.value.trim()) setFieldError(mensagemField, 'mensagem-error', 'Por favor, descreva seu evento.');
+      if (!mensagemField.value.trim()) setFieldError(mensagemField, 'mensagem-error', 'Descreva seu evento: modalidade desejada, data e número de participantes.');
       else clearFieldError(mensagemField, 'mensagem-error');
     });
     mensagemField.addEventListener('input', () => {
@@ -2067,14 +2067,14 @@
       const mensagem = mensagemField.value.trim();
       let hasErrors = false;
 
-      if (!nome) { setFieldError(nomeField, 'nome-error', 'Por favor, informe seu nome.'); hasErrors = true; }
+      if (!nome) { setFieldError(nomeField, 'nome-error', 'Informe seu nome para que possamos entrar em contato.'); hasErrors = true; }
       else clearFieldError(nomeField, 'nome-error');
 
-      if (!email) { setFieldError(emailField, 'email-error', 'Por favor, informe seu e-mail.'); hasErrors = true; }
-      else if (!isValidEmail(email)) { setFieldError(emailField, 'email-error', 'Informe um e-mail válido.'); hasErrors = true; }
+      if (!email) { setFieldError(emailField, 'email-error', 'Informe seu e-mail para que possamos responder sua solicitação.'); hasErrors = true; }
+      else if (!isValidEmail(email)) { setFieldError(emailField, 'email-error', 'E-mail inválido. Use o formato nome@empresa.com'); hasErrors = true; }
       else clearFieldError(emailField, 'email-error');
 
-      if (!mensagem) { setFieldError(mensagemField, 'mensagem-error', 'Por favor, descreva seu evento.'); hasErrors = true; }
+      if (!mensagem) { setFieldError(mensagemField, 'mensagem-error', 'Descreva seu evento: modalidade desejada, data e número de participantes.'); hasErrors = true; }
       else clearFieldError(mensagemField, 'mensagem-error');
 
       if (hasErrors) {
