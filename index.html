@@ -507,7 +507,7 @@
       font-weight: 500;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: #197AD2;
+      color: #0E5FA5;
       margin-bottom: .7rem
     }
  
@@ -702,7 +702,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.2rem;
       font-weight: 300;
-      color: var(--ice);
+      color: #197AD2;
       line-height: 1
     }
  
@@ -1136,7 +1136,7 @@
     .dep-author span {
       font-size: .78rem;
       font-weight: 300;
-      color: #5a7a9a
+      color: #4a6a8a
     }
  
     #faq {
@@ -1469,6 +1469,19 @@
       z-index: 999 !important;
     }
  
+    .field-error {
+      display: block;
+      font-size: .68rem;
+      color: #ffb347;
+      margin-top: .3rem;
+      min-height: 1.1em;
+    }
+
+    .fg input.invalid,
+    .fg textarea.invalid {
+      border-color: #ffb347;
+    }
+
     @media(max-width:800px) {
       .services-grid {
         grid-template-columns: 1fr
@@ -1822,7 +1835,8 @@
           <div class="row2">
             <div class="fg">
               <label for="nome" class="required">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" autocomplete="name" />
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" autocomplete="name" aria-describedby="nome-error" aria-invalid="false" />
+              <span class="field-error" id="nome-error"></span>
             </div>
             <div class="fg">
               <label for="empresa" class="optional">Empresa</label>
@@ -1832,7 +1846,8 @@
           <div class="row2">
             <div class="fg">
               <label for="email" class="required">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" autocomplete="email" />
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" autocomplete="email" aria-describedby="email-error" aria-invalid="false" />
+              <span class="field-error" id="email-error"></span>
             </div>
             <div class="fg">
               <label for="telefone" class="optional">Telefone</label>
@@ -1863,7 +1878,8 @@
           </div>
           <div class="fg">
             <label for="mensagem" class="required">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Descreva o evento, data, local e número de participantes..." required aria-required="true"></textarea>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva o evento, data, local e número de participantes..." required aria-required="true" aria-describedby="mensagem-error" aria-invalid="false"></textarea>
+            <span class="field-error" id="mensagem-error"></span>
           </div>
           <div class="g-recaptcha" data-sitekey="6LeXOtksAAAAABfLqWdn9wHjVayUMwH1xEi5Jtwb"></div>
           <button type="submit" class="btn-submit">Enviar Solicitação</button>
@@ -1984,24 +2000,84 @@
     const form = document.getElementById('contact-form');
     const liveRegion = document.getElementById('form-live-region');
  
+    function setFieldError(field, errorId, message) {
+      field.classList.add('invalid');
+      field.setAttribute('aria-invalid', 'true');
+      document.getElementById(errorId).textContent = message;
+    }
+
+    function clearFieldError(field, errorId) {
+      field.classList.remove('invalid');
+      field.setAttribute('aria-invalid', 'false');
+      document.getElementById(errorId).textContent = '';
+    }
+
+    function isValidEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    const nomeField = document.getElementById('nome');
+    const emailField = document.getElementById('email');
+    const mensagemField = document.getElementById('mensagem');
+
+    nomeField.addEventListener('blur', () => {
+      if (!nomeField.value.trim()) setFieldError(nomeField, 'nome-error', 'Por favor, informe seu nome.');
+      else clearFieldError(nomeField, 'nome-error');
+    });
+    nomeField.addEventListener('input', () => {
+      if (nomeField.classList.contains('invalid') && nomeField.value.trim())
+        clearFieldError(nomeField, 'nome-error');
+    });
+
+    emailField.addEventListener('blur', () => {
+      const val = emailField.value.trim();
+      if (!val) setFieldError(emailField, 'email-error', 'Por favor, informe seu e-mail.');
+      else if (!isValidEmail(val)) setFieldError(emailField, 'email-error', 'Informe um e-mail válido.');
+      else clearFieldError(emailField, 'email-error');
+    });
+    emailField.addEventListener('input', () => {
+      if (emailField.classList.contains('invalid') && isValidEmail(emailField.value.trim()))
+        clearFieldError(emailField, 'email-error');
+    });
+
+    mensagemField.addEventListener('blur', () => {
+      if (!mensagemField.value.trim()) setFieldError(mensagemField, 'mensagem-error', 'Por favor, descreva seu evento.');
+      else clearFieldError(mensagemField, 'mensagem-error');
+    });
+    mensagemField.addEventListener('input', () => {
+      if (mensagemField.classList.contains('invalid') && mensagemField.value.trim())
+        clearFieldError(mensagemField, 'mensagem-error');
+    });
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const nome = document.getElementById('nome').value.trim();
+      const nome = nomeField.value.trim();
+      const email = emailField.value.trim();
+      const mensagem = mensagemField.value.trim();
+      let hasErrors = false;
+
+      if (!nome) { setFieldError(nomeField, 'nome-error', 'Por favor, informe seu nome.'); hasErrors = true; }
+      else clearFieldError(nomeField, 'nome-error');
+
+      if (!email) { setFieldError(emailField, 'email-error', 'Por favor, informe seu e-mail.'); hasErrors = true; }
+      else if (!isValidEmail(email)) { setFieldError(emailField, 'email-error', 'Informe um e-mail válido.'); hasErrors = true; }
+      else clearFieldError(emailField, 'email-error');
+
+      if (!mensagem) { setFieldError(mensagemField, 'mensagem-error', 'Por favor, descreva seu evento.'); hasErrors = true; }
+      else clearFieldError(mensagemField, 'mensagem-error');
+
+      if (hasErrors) {
+        const firstInvalid = form.querySelector('.invalid');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
       const empresa = document.getElementById('empresa').value.trim();
-      const email = document.getElementById('email').value.trim();
       const telefone = document.getElementById('telefone').value.trim();
       const tipoEvento = document.getElementById('tipo-evento').value;
       const modalidade = document.getElementById('modalidade').value;
-      const mensagem = document.getElementById('mensagem').value.trim();
       const btn = form.querySelector('.btn-submit');
-
-      if (!nome || !email || !mensagem) {
-        liveRegion.textContent = 'Erro: Por favor, preencha os campos obrigatórios: nome, e-mail e mensagem.';
-        liveRegion.setAttribute('aria-live', 'assertive');
-        setTimeout(() => { liveRegion.textContent = ''; }, 5000);
-        return;
-      }
 
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
