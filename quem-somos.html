@@ -21,7 +21,18 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--navy:#052C5C;--blue:#197AD2;--ice:#76C4F8;--white:#FAFCFF;--text-dark:#052C5C;--text-body:#1a3a5c}
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;scroll-padding-bottom:80px}
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+      }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
     body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);line-height:1.6;transition:background 0.3s ease, color 0.3s ease}
  
     /* ========== ALTO CONTRASTE MELHORADO ========== */
@@ -36,6 +47,14 @@
     body.high-contrast .section-title{color:#FFFFFF}
     body.high-contrast .section-text{color:#EEEEEE}
     body.high-contrast .section-title::before{background:#FFFFFF}
+    body.high-contrast .nav-links a:not(.nav-cta){color:#FFFFFF}
+    body.high-contrast .nav-links a:not(.nav-cta):hover{color:#CCCCCC}
+    body.high-contrast .nav-toggle-bar{background:#FFFFFF}
+    body.high-contrast .nav-cta:hover{background:#CCCCCC !important;color:#000000 !important}
+    body.high-contrast .accessibility-btn{background:#FFFFFF;border:2px solid #000000}
+    body.high-contrast .accessibility-btn:hover{background:#DDDDDD}
+    body.high-contrast .mission-box p{color:#FFFFFF}
+    [vw-access-button]{display:none !important}
  
     /* ========== AJUSTE DE FONTE MELHORADO - ATÉ 150% ========== */
     body.font-size-90 p,body.font-size-90 li,body.font-size-90 .section-text,body.font-size-90 .valor-desc,body.font-size-90 .hero-eyebrow,
@@ -149,7 +168,7 @@
     .valor-desc{font-size:.92rem;line-height:1.75;color:#4a6a8a}
  
     /* FOOTER */
-    footer{background:#031e3f;text-align:center;padding:1.8rem 7%;color:rgba(250,252,255,.6);font-size:.78rem}
+    footer{background:#031e3f;text-align:center;padding:1.8rem 7% 5.5rem;color:rgba(250,252,255,.6);font-size:.78rem}
     footer strong{color:var(--ice)}
     footer a{color:var(--ice);text-decoration:none}
     footer a:hover{text-decoration:underline}
@@ -343,6 +362,7 @@
     <button class="accessibility-option" id="highContrastBtn">✅ Alto Contraste</button>
     <button class="accessibility-option" id="increaseFontBtn">🔍 Aumentar Fonte</button>
     <button class="accessibility-option" id="decreaseFontBtn">🔍 Diminuir Fonte</button>
+    <button class="accessibility-option" id="vlibrasBtn">🤟 Libras (VLibras)</button>
     <button class="accessibility-option reset-btn" id="resetAccessibilityBtn">⟳ Redefinir Configurações</button>
   </div>
 </div>
@@ -423,6 +443,11 @@
   increaseFontBtn.addEventListener('click', increaseFont);
   decreaseFontBtn.addEventListener('click', decreaseFont);
   resetAccessibilityBtn.addEventListener('click', resetAccessibility);
+
+  document.getElementById('vlibrasBtn').addEventListener('click', function () {
+    closePanel();
+    document.querySelector('[vw-access-button]').click();
+  });
  
   loadAccessibilitySettings();
  
