@@ -163,6 +163,107 @@
       background: #1a1a1a;
       border-left: 4px solid #FFFFFF;
     }
+
+    /* Botão de acessibilidade — ficava invisível (preto no preto) */
+    body.high-contrast .accessibility-btn {
+      background: #FFFFFF;
+      border: 2px solid #000000;
+    }
+    body.high-contrast .accessibility-btn:hover {
+      background: #DDDDDD;
+    }
+
+    /* Links do menu — var(--navy)=#000000 no nav #0a0a0a */
+    body.high-contrast .nav-links a:not(.nav-cta) {
+      color: #FFFFFF;
+    }
+    body.high-contrast .nav-links a:not(.nav-cta):hover {
+      color: #CCCCCC;
+    }
+
+    /* Barras do hambúrguer — var(--navy)=#000000 no nav escuro */
+    body.high-contrast .nav-toggle-bar {
+      background: #FFFFFF;
+    }
+
+    /* Hover do botão CTA nav */
+    body.high-contrast .nav-cta:hover {
+      background: #CCCCCC !important;
+      color: #000000 !important;
+    }
+
+    /* FAQ — fundo #fff hardcoded + texto forçado branco = branco no branco */
+    body.high-contrast #faq {
+      background: #111111;
+    }
+
+    /* Títulos de seção — var(--navy)=#000000 em fundos pretos */
+    body.high-contrast .section-title {
+      color: #FFFFFF;
+    }
+
+    /* Títulos dos cards de serviço — var(--navy)=#000000 no card #111111 */
+    body.high-contrast .svc-body h3 {
+      color: #FFFFFF;
+    }
+
+    /* Títulos e números dos passos — var(--navy) e cor hardcoded em fundo preto */
+    body.high-contrast .step h4 {
+      color: #FFFFFF;
+    }
+    body.high-contrast .step-num {
+      color: #FFFFFF;
+    }
+    body.high-contrast .step {
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Depoimentos — nomes e cargos em fundo #111111 */
+    body.high-contrast .dep-author strong {
+      color: #FFFFFF;
+    }
+    body.high-contrast .dep-author span {
+      color: #CCCCCC;
+    }
+    body.high-contrast .dep-author {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Ícone +/− do FAQ — borders e pseudo-elementos hardcoded */
+    body.high-contrast .faq-icon {
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+    body.high-contrast .faq-icon::before,
+    body.high-contrast .faq-icon::after {
+      background: #FFFFFF;
+    }
+    body.high-contrast .faq-q.open .faq-icon {
+      background: #FFFFFF;
+      border-color: #FFFFFF;
+    }
+    body.high-contrast .faq-q.open .faq-icon::before,
+    body.high-contrast .faq-q.open .faq-icon::after {
+      background: #000000;
+    }
+    body.high-contrast .faq-a-inner {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+    body.high-contrast .faq-a-inner strong {
+      color: #FFFFFF;
+    }
+
+    /* Inputs do formulário — quase invisíveis em fundo #0a0a0a */
+    body.high-contrast .fg input,
+    body.high-contrast .fg textarea,
+    body.high-contrast .fg select {
+      background: #0a0a0a;
+      border: 2px solid #FFFFFF;
+    }
+    body.high-contrast .fg input:focus,
+    body.high-contrast .fg textarea:focus,
+    body.high-contrast .fg select:focus {
+      outline: 3px solid #FFD966;
+    }
  
     /* ========== AJUSTE DE FONTE MELHORADO - ATÉ 150% COM RESPONSIVIDADE ========== */
     /* Base para todos os textos */
