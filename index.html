@@ -108,12 +108,18 @@
     }
  
     body.high-contrast .btn-primary,
-    body.high-contrast .nav-cta,
     body.high-contrast .sc-cta,
     body.high-contrast .btn-submit {
       background: #FFFFFF;
       color: #000000;
       border: 2px solid #FFFFFF;
+    }
+
+    /* Botão ORÇAMENTO do nav — branco no fundo escuro, borda preta para delimitar */
+    body.high-contrast .nav-cta {
+      background: #FFFFFF;
+      color: #000000;
+      border: 2px solid #000000;
     }
  
     body.high-contrast .hero-bg::after {
@@ -216,6 +222,11 @@
 
     /* Títulos de seção — var(--navy)=#000000 em fundos pretos */
     body.high-contrast .section-title {
+      color: #FFFFFF;
+    }
+
+    /* Depoimentos: #depoimentos .section-header .section-title tem especificidade maior, precisa de override */
+    body.high-contrast #depoimentos .section-title {
       color: #FFFFFF;
     }
 
