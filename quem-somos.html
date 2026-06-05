@@ -359,7 +359,7 @@
   <span>♿</span>
 </button>
 
-<div class="accessibility-panel" id="accessibilityPanel" role="dialog" aria-label="Painel de acessibilidade">
+<div class="accessibility-panel" id="accessibilityPanel" role="dialog" aria-modal="true" aria-label="Painel de acessibilidade">
   <div class="accessibility-panel-header">
     <h3>Acessibilidade</h3>
     <button class="accessibility-close" id="accessibilityClose" aria-label="Fechar painel">✕</button>
@@ -432,16 +432,36 @@
   }
   function resetAccessibility() { currentFontSize = 100; highContrastActive = false; applyFontSize(100); document.body.classList.remove('high-contrast'); localStorage.setItem('accessibility_highContrast', 'false'); }
  
-  function openPanel() { accessibilityPanel.classList.add('open'); accessibilityBtn.setAttribute('aria-expanded', 'true'); }
-  function closePanel() { accessibilityPanel.classList.remove('open'); accessibilityBtn.setAttribute('aria-expanded', 'false'); }
+  function openPanel() {
+    accessibilityPanel.classList.add('open');
+    accessibilityBtn.setAttribute('aria-expanded', 'true');
+    const firstFocusable = accessibilityPanel.querySelector('button');
+    if (firstFocusable) firstFocusable.focus();
+  }
+  function closePanel() {
+    accessibilityPanel.classList.remove('open');
+    accessibilityBtn.setAttribute('aria-expanded', 'false');
+    accessibilityBtn.focus();
+  }
   function togglePanel() { if (accessibilityPanel.classList.contains('open')) closePanel(); else openPanel(); }
- 
+
   document.addEventListener('click', function(event) {
     if (accessibilityPanel.classList.contains('open')) {
       if (!accessibilityPanel.contains(event.target) && !accessibilityBtn.contains(event.target)) closePanel();
     }
   });
-  document.addEventListener('keydown', function(event) { if (event.key === 'Escape' && accessibilityPanel.classList.contains('open')) closePanel(); });
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      if (accessibilityPanel.classList.contains('open')) { closePanel(); return; }
+      if (navMenu && navMenu.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menu');
+        navToggle.focus();
+      }
+    }
+  });
  
   accessibilityBtn.addEventListener('click', togglePanel);
   accessibilityClose.addEventListener('click', closePanel);
